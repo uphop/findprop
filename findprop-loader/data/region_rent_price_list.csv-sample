@@ -1,0 +1,7 @@
+region,bedroomCategory,countOfRents,mean,lowerQuartile,median,upperQuartile,currency,period,source,published,recordedFrom,recordedTo
+London,Room,850,644,500,600,700,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+London,Studio,2880,1000,820,950,1133,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+London,One Bedroom,17330,1286,1050,1200,1435,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+London,Two Bedrooms,23700,1605,1275,1450,1750,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+London,Three Bedrooms,10090,1998,1525,1750,2200,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+London,Four or More Bedrooms,4150,2894,1950,2440,3350,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31

@@ -1,0 +1,67 @@
+localAuthority,relatedLocalAuthority
+Barking and Dagenham,Newham
+Barking and Dagenham,Redbridge
+Barnet,Camden
+Barnet,Islington
+Bexley,Greenwich
+Bexley,Lewisham
+Brent,Hammersmith and Fulham
+Brent,Kensington and Chelsea
+Bromley,Lewisham
+Bromley,Greenwich
+Camden,Islington
+Camden,City of London
+City of London,Tower Hamlets
+City of London,Southwark
+Croydon,Lewisham
+Croydon,Southwark
+Ealing,Hammersmith and Fulham
+Ealing,Brent
+Enfield,Haringey
+Enfield,Waltham Forest
+Greenwich,Newham
+Greenwich,Tower Hamlets
+Hackney,Tower Hamlets
+Hackney,City of London
+Hammersmith and Fulham,Kensington and Chelsea
+Hammersmith and Fulham,Wandsworth
+Haringey,Hackney
+Haringey,Islington
+Harrow,Brent
+Harrow,Barnet
+Havering,Barking and Dagenham
+Havering,Redbridge
+Hillingdon,Ealing
+Hillingdon,Hounslow
+Hounslow,Hammersmith and Fulham
+Hounslow,Richmond upon Thames
+Islington,Hackney
+Islington,Camden
+Kensington and Chelsea,Westminster
+Kensington and Chelsea,Lambeth
+Kingston upon Thames,Wandsworth
+Kingston upon Thames,Richmond upon Thames
+Lambeth,Southwark
+Lambeth,Kensington and Chelsea
+Lewisham,Southwark
+Lewisham,Tower Hamlets
+Merton,Wandsworth
+Merton,Lambeth
+Newham,Tower Hamlets
+Newham,Hackney
+Redbridge,Newham
+Redbridge,Waltham Forest
+Richmond upon Thames,Wandsworth
+Richmond upon Thames,Hammersmith and Fulham
+Southwark,Tower Hamlets
+Southwark,Lambeth
+Sutton,Merton
+Sutton,Kingston upon Thames
+Tower Hamlets,City of London
+Tower Hamlets,Hackney
+Waltham Forest,Islington
+Waltham Forest,Hackney
+Wandsworth,Hammersmith and Fulham
+Wandsworth,Kensington and Chelsea
+Westminster,City of London
+Westminster,Lambeth

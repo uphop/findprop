@@ -1,0 +1,194 @@
+localAuthority,bedroomCategory,countOfRents,mean,lowerQuartile,median,upperQuartile,currency,period,source,published,recordedFrom,recordedTo
+Barking and Dagenham,Room,10,631,367,542,751,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barking and Dagenham,Studio,10,745,730,740,750,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barking and Dagenham,One Bedroom,230,991,900,1000,1050,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barking and Dagenham,Two Bedrooms,400,1214,1150,1200,1300,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barking and Dagenham,Three Bedrooms,250,1433,1350,1400,1500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barking and Dagenham,Four or More Bedrooms,40,1738,1550,1700,1900,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barnet,Room,20,573,498,592,642,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barnet,Studio,140,914,800,900,1000,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barnet,One Bedroom,590,1142,1050,1150,1250,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barnet,Two Bedrooms,1160,1400,1300,1400,1500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barnet,Three Bedrooms,360,1809,1600,1800,1950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Barnet,Four or More Bedrooms,170,2453,2045,2388,2800,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bexley,Room,10,479,392,450,542,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bexley,Studio,20,775,725,750,800,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bexley,One Bedroom,190,931,875,904,1000,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bexley,Two Bedrooms,350,1201,1100,1200,1250,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bexley,Three Bedrooms,230,1418,1300,1400,1500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bexley,Four or More Bedrooms,70,1918,1700,1925,2100,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Brent,Room,60,565,477,550,650,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Brent,Studio,120,872,750,850,950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Brent,One Bedroom,330,1174,1050,1150,1250,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Brent,Two Bedrooms,560,1430,1300,1400,1525,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Brent,Three Bedrooms,420,1789,1650,1750,1900,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Brent,Four or More Bedrooms,180,2169,1900,2100,2400,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bromley,Room,10,620,560,600,607,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bromley,Studio,50,814,750,800,850,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bromley,One Bedroom,670,1034,950,1025,1100,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bromley,Two Bedrooms,1020,1313,1200,1300,1400,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bromley,Three Bedrooms,430,1654,1475,1600,1785,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Bromley,Four or More Bedrooms,200,2341,1800,2100,2500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Camden,Studio,140,1036,900,995,1100,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Camden,One Bedroom,320,1600,1300,1500,1855,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Camden,Two Bedrooms,300,2129,1635,2000,2500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Camden,Three Bedrooms,120,2971,2125,2675,3659,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Camden,Four or More Bedrooms,50,4184,2253,3423,4767,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+City of London,Studio,40,1332,1213,1322,1452,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+City of London,One Bedroom,90,1738,1500,1711,1904,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+City of London,Two Bedrooms,50,2194,1975,2230,2450,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+City of London,Three Bedrooms,10,4224,3000,3300,6067,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Croydon,Room,30,588,485,500,750,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Croydon,Studio,100,790,750,795,840,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Croydon,One Bedroom,690,984,900,950,1050,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Croydon,Two Bedrooms,990,1241,1150,1250,1325,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Croydon,Three Bedrooms,350,1542,1400,1500,1650,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Croydon,Four or More Bedrooms,160,2028,1750,1950,2250,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Ealing,Room,90,660,542,650,742,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Ealing,Studio,150,983,900,950,1000,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Ealing,One Bedroom,560,1226,1100,1200,1314,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Ealing,Two Bedrooms,780,1536,1350,1495,1650,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Ealing,Three Bedrooms,350,1950,1600,1800,2050,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Ealing,Four or More Bedrooms,190,2717,2150,2450,3000,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Enfield,Room,20,678,492,600,918,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Enfield,Studio,60,790,675,823,900,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Enfield,One Bedroom,240,1043,950,1000,1150,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Enfield,Two Bedrooms,370,1340,1250,1325,1450,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Enfield,Three Bedrooms,230,1645,1500,1650,1750,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Enfield,Four or More Bedrooms,60,2174,1850,2100,2300,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Greenwich,Room,40,613,487,592,700,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Greenwich,Studio,40,990,788,962,1100,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Greenwich,One Bedroom,570,1207,1025,1200,1325,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Greenwich,Two Bedrooms,910,1471,1250,1400,1650,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Greenwich,Three Bedrooms,340,1761,1425,1700,1950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Greenwich,Four or More Bedrooms,90,2449,1750,2100,2800,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hackney,Room,20,607,554,642,642,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hackney,Studio,80,1084,900,1050,1296,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hackney,One Bedroom,420,1395,1250,1350,1517,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hackney,Two Bedrooms,490,1759,1500,1650,1950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hackney,Three Bedrooms,210,2300,1900,2250,2600,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hackney,Four or More Bedrooms,70,3044,2800,3075,3358,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hammersmith and Fulham,Studio,140,1040,900,1018,1170,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hammersmith and Fulham,One Bedroom,880,1424,1300,1400,1550,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hammersmith and Fulham,Two Bedrooms,910,1896,1600,1798,2125,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hammersmith and Fulham,Three Bedrooms,300,2573,2100,2400,2900,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hammersmith and Fulham,Four or More Bedrooms,220,4272,3250,3953,4990,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Haringey,Room,60,594,500,574,676,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Haringey,Studio,160,862,750,850,950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Haringey,One Bedroom,560,1250,1100,1250,1360,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Haringey,Two Bedrooms,670,1563,1350,1500,1700,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Haringey,Three Bedrooms,230,1938,1600,1800,2100,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Haringey,Four or More Bedrooms,210,2589,1844,2300,2950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Harrow,Room,40,569,477,546,692,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Harrow,Studio,70,809,700,800,900,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Harrow,One Bedroom,390,1060,950,1050,1150,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Harrow,Two Bedrooms,700,1324,1250,1300,1400,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Harrow,Three Bedrooms,550,1633,1550,1650,1750,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Harrow,Four or More Bedrooms,190,2074,1800,2000,2300,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Havering,Room,10,589,542,608,624,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Havering,Studio,20,780,700,775,800,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Havering,One Bedroom,270,928,850,925,1000,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Havering,Two Bedrooms,480,1164,1075,1150,1250,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Havering,Three Bedrooms,380,1418,1300,1400,1500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Havering,Four or More Bedrooms,80,1794,1600,1750,1950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hillingdon,Room,30,507,442,492,542,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hillingdon,Studio,100,821,725,775,929,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hillingdon,One Bedroom,310,994,915,995,1075,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hillingdon,Two Bedrooms,420,1262,1200,1250,1350,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hillingdon,Three Bedrooms,260,1448,1300,1475,1600,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hillingdon,Four or More Bedrooms,120,2047,1750,1950,2275,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hounslow,Room,60,560,475,550,600,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hounslow,Studio,90,839,750,850,900,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hounslow,One Bedroom,490,1113,970,1095,1240,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hounslow,Two Bedrooms,740,1371,1200,1300,1450,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hounslow,Three Bedrooms,360,1670,1475,1600,1795,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Hounslow,Four or More Bedrooms,120,2436,1700,2000,2550,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Islington,Room,50,615,492,635,700,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Islington,Studio,110,1074,900,1009,1200,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Islington,One Bedroom,900,1460,1256,1400,1603,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Islington,Two Bedrooms,740,1923,1600,1860,2167,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Islington,Three Bedrooms,310,2420,1930,2275,2750,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Islington,Four or More Bedrooms,140,3405,2850,3250,3900,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kensington and Chelsea,Studio,290,1269,1083,1278,1408,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kensington and Chelsea,One Bedroom,900,1922,1500,1766,2123,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kensington and Chelsea,Two Bedrooms,1040,2783,2123,2535,3200,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kensington and Chelsea,Three Bedrooms,310,4534,3358,4312,5417,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kensington and Chelsea,Four or More Bedrooms,110,7236,4800,6500,8243,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kingston upon Thames,Room,10,628,610,642,692,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kingston upon Thames,Studio,40,867,825,850,920,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kingston upon Thames,One Bedroom,420,1088,1000,1100,1175,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kingston upon Thames,Two Bedrooms,600,1398,1250,1350,1500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kingston upon Thames,Three Bedrooms,290,1806,1560,1750,2000,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Kingston upon Thames,Four or More Bedrooms,140,2633,2000,2400,2950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lambeth,Room,10,578,500,585,610,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lambeth,Studio,50,1008,900,970,1150,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lambeth,One Bedroom,610,1325,1150,1300,1450,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lambeth,Two Bedrooms,940,1662,1400,1600,1850,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lambeth,Three Bedrooms,340,2231,1800,2200,2500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lambeth,Four or More Bedrooms,150,3091,2425,3000,3520,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lewisham,Room,70,658,542,625,750,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lewisham,Studio,110,876,800,875,950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lewisham,One Bedroom,730,1145,1000,1100,1250,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lewisham,Two Bedrooms,920,1388,1250,1350,1500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lewisham,Three Bedrooms,330,1695,1500,1650,1800,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Lewisham,Four or More Bedrooms,100,2356,1950,2214,2500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Merton,Room,10,668,592,600,750,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Merton,Studio,40,923,850,900,1000,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Merton,One Bedroom,380,1215,1100,1200,1327,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Merton,Two Bedrooms,550,1518,1330,1450,1650,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Merton,Three Bedrooms,230,1933,1650,1838,2194,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Merton,Four or More Bedrooms,120,3063,2300,2750,3300,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Newham,Room,30,885,580,740,801,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Newham,Studio,70,1146,925,1215,1329,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Newham,One Bedroom,860,1314,1160,1350,1464,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Newham,Two Bedrooms,900,1593,1358,1600,1797,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Newham,Three Bedrooms,380,1838,1575,1750,2050,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Newham,Four or More Bedrooms,90,2042,1800,1950,2200,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Redbridge,Room,60,793,592,667,836,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Redbridge,Studio,40,764,676,776,865,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Redbridge,One Bedroom,410,1044,950,1050,1150,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Redbridge,Two Bedrooms,630,1288,1200,1275,1375,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Redbridge,Three Bedrooms,320,1606,1450,1600,1700,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Redbridge,Four or More Bedrooms,110,2079,1800,1950,2400,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Richmond upon Thames,Room,10,666,621,650,677,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Richmond upon Thames,Studio,80,974,850,945,1050,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Richmond upon Thames,One Bedroom,650,1249,1100,1225,1350,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Richmond upon Thames,Two Bedrooms,1060,1691,1450,1600,1850,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Richmond upon Thames,Three Bedrooms,440,2248,1698,2040,2650,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Richmond upon Thames,Four or More Bedrooms,240,3869,2950,3625,4400,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Southwark,Room,20,691,646,681,739,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Southwark,Studio,60,1104,950,1050,1200,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Southwark,One Bedroom,860,1373,1150,1300,1525,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Southwark,Two Bedrooms,1080,1726,1450,1650,1970,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Southwark,Three Bedrooms,370,2180,1825,2100,2500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Southwark,Four or More Bedrooms,150,3161,2500,3000,3713,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Sutton,Room,10,503,472,517,517,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Sutton,Studio,50,792,750,795,825,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Sutton,One Bedroom,420,929,875,925,995,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Sutton,Two Bedrooms,570,1179,1095,1175,1275,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Sutton,Three Bedrooms,160,1530,1398,1500,1600,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Sutton,Four or More Bedrooms,50,2048,1750,1975,2200,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Tower Hamlets,Room,30,601,542,592,682,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Tower Hamlets,Studio,80,1151,1000,1150,1235,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Tower Hamlets,One Bedroom,660,1395,1200,1350,1541,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Tower Hamlets,Two Bedrooms,740,1708,1500,1650,1875,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Tower Hamlets,Three Bedrooms,250,2143,1800,2050,2383,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Tower Hamlets,Four or More Bedrooms,60,2700,2150,2500,3250,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Waltham Forest,Room,30,973,592,642,1365,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Waltham Forest,Studio,50,833,750,850,950,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Waltham Forest,One Bedroom,470,1119,1000,1100,1200,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Waltham Forest,Two Bedrooms,630,1382,1230,1350,1500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Waltham Forest,Three Bedrooms,280,1686,1500,1650,1800,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Waltham Forest,Four or More Bedrooms,100,2048,1850,2000,2300,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Wandsworth,Room,10,476,442,463,500,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Wandsworth,Studio,110,1036,950,1000,1062,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Wandsworth,One Bedroom,780,1411,1250,1397,1550,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Wandsworth,Two Bedrooms,1410,1811,1525,1750,2000,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Wandsworth,Three Bedrooms,530,2341,1895,2300,2700,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Wandsworth,Four or More Bedrooms,350,3341,2600,3300,3800,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Westminster,Room,20,750,691,737,801,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Westminster,Studio,160,1351,1213,1235,1443,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Westminster,One Bedroom,510,2040,1582,1885,2340,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Westminster,Two Bedrooms,590,2718,2100,2492,3196,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Westminster,Three Bedrooms,180,4053,3012,3683,4485,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
+Westminster,Four or More Bedrooms,40,7463,4890,5633,9967,gbp,month,ons,2022-02-23,2021-01-01,2021-12-31
