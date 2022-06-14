@@ -7,6 +7,7 @@ drop procedure if exists get_nearest_postcodes^;
 drop table if exists postcode_area_rent_price^;
 drop table if exists postcode_rent_price^;
 drop table if exists local_authority_rent_price^;
+drop table if exists local_authority_utility_price^;
 drop table if exists region_rent_price^;
 
 -- Drop geo tables
@@ -100,6 +101,24 @@ create table local_authority_rent_price (
     primary key (id),
     foreign key (local_authority_id) references local_authority (id),
     index local_authority_rent_price_per_period_idx (property_type, bedrooms, recorded_from, recorded_to)
+)^;
+
+create table local_authority_utility_price (
+	id int not null auto_increment,
+    property_type enum('room', 'studio', 'flat') not null,
+    bedrooms int,
+    utility_type enum('tv_license', 'council_tax', 'internet', 'energy', 'water') not null,
+    price_mean int not null,
+    currency enum('gbp', 'usd', 'eur') not null,
+    period enum('one_off', 'year', 'month', 'week', 'day') not null,
+    source varchar(250) not null,
+    published date not null,
+    recorded_from date,
+    recorded_to date,
+    local_authority_id int not null,
+    primary key (id),
+    foreign key (local_authority_id) references local_authority (id),
+    index local_authority_utility_price_per_period_idx (property_type, bedrooms, utility_type, recorded_from, recorded_to)
 )^;
 
 create table postcode_area_rent_price (

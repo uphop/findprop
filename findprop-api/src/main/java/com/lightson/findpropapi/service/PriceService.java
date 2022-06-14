@@ -12,16 +12,19 @@ import org.springframework.stereotype.Service;
 
 import com.lightson.findpropapi.entity.LocalAuthority;
 import com.lightson.findpropapi.entity.LocalAuthorityRentPrice;
+import com.lightson.findpropapi.entity.LocalAuthorityUtilityPrice;
 import com.lightson.findpropapi.entity.Postcode;
 import com.lightson.findpropapi.entity.PostcodeAreaRentPrice;
 import com.lightson.findpropapi.entity.Region;
 import com.lightson.findpropapi.entity.RegionRentPrice;
 import com.lightson.findpropapi.model.RentPriceResponse;
+import com.lightson.findpropapi.model.UtilityPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeAreaDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeDetails;
 import com.lightson.findpropapi.model.RentPriceRegionDetails;
 import com.lightson.findpropapi.repository.LocalAuthorityRentPriceRepository;
+import com.lightson.findpropapi.repository.LocalAuthorityUtilityPriceRepository;
 import com.lightson.findpropapi.repository.PostcodeAreaRentPriceRepository;
 import com.lightson.findpropapi.repository.PostcodeRepository;
 import com.lightson.findpropapi.repository.RegionRentPriceRepository;
@@ -37,6 +40,9 @@ public class PriceService {
 
         @Autowired
         private LocalAuthorityRentPriceRepository localAuthorityRentPriceRepository;
+
+        @Autowired
+        private LocalAuthorityUtilityPriceRepository localAuthorityUtilityPriceRepository;
 
         @Autowired
         private PostcodeAreaRentPriceRepository postcodeAreaRentPriceRepository;
@@ -68,7 +74,8 @@ public class PriceService {
                         return response;
                 }
                 // set geos
-                response.setPostcodeDetails(new RentPricePostcodeDetails(postcode.getCode(), postcode.getLongitude(), postcode.getLatitude()));
+                response.setPostcodeDetails(new RentPricePostcodeDetails(postcode.getCode(), postcode.getLongitude(),
+                                postcode.getLatitude()));
 
                 String postcodeArea = postcode.getCode().split(" ")[0];
                 LocalAuthority localAuthority = postcode.getLocalAuthority();
@@ -84,6 +91,13 @@ public class PriceService {
                                 .findByLocalAuthorityAndPropertyTypeAndBedrooms(localAuthority, propertyType, bedrooms);
                 response.setLocalAuthorityDetails(
                                 new RentPriceLocalAuthorityDetails(localAuthority.getName(), localAuthorityRentPrice));
+
+                // set utility prices of local authority
+                Set<LocalAuthorityUtilityPrice> localAuthorityUtilityPrices = localAuthorityUtilityPriceRepository
+                                .findByLocalAuthorityAndPropertyTypeAndBedrooms(localAuthority, propertyType, bedrooms);
+                response.setUtilityDetails(
+                                new UtilityPriceLocalAuthorityDetails(localAuthority.getName(),
+                                localAuthorityUtilityPrices));
 
                 // set rent price of postcode area
                 PostcodeAreaRentPrice postcodeAreaRentPrice = postcodeAreaRentPriceRepository

@@ -1,0 +1,826 @@
+localAuthority,bedroomCategory,utilityCategory,mean,currency,period,source,published,recordedFrom,recordedTo
+Barking and Dagenham,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Studio,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Studio,council_tax,1332,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Studio,council_tax,1323,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Studio,council_tax,1436,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Studio,council_tax,1355,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Studio,council_tax,1316,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Studio,council_tax,1337,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Studio,council_tax,816,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Studio,council_tax,1469,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Studio,council_tax,1295,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Studio,council_tax,1396,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Studio,council_tax,1276,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Studio,council_tax,1246,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Studio,council_tax,930,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Studio,council_tax,1404,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Studio,council_tax,1526,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Studio,council_tax,1473,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Studio,council_tax,1247,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Studio,council_tax,1324,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Studio,council_tax,1276,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Studio,council_tax,1022,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Studio,council_tax,1599,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Studio,council_tax,1238,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Studio,council_tax,1356,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Studio,council_tax,1326,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Studio,council_tax,1141,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Studio,council_tax,1392,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Studio,council_tax,1523,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Studio,council_tax,1188,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Studio,council_tax,1444,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Studio,council_tax,1149,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Studio,council_tax,1449,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Studio,council_tax,653,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Studio,council_tax,644,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Studio,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barnet,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bexley,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Brent,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bromley,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Camden,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+City of London,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Croydon,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Ealing,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Enfield,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hackney,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Haringey,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Harrow,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Havering,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Islington,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Merton,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Newham,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Southwark,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Sutton,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Westminster,Studio,energy,50,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Studio,water,23,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,One Bedroom,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,One Bedroom,council_tax,1522,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,One Bedroom,council_tax,1512,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,One Bedroom,council_tax,1642,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,One Bedroom,council_tax,1548,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,One Bedroom,council_tax,1504,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,One Bedroom,council_tax,1528,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,One Bedroom,council_tax,933,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,One Bedroom,council_tax,1678,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,One Bedroom,council_tax,1480,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,One Bedroom,council_tax,1596,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,One Bedroom,council_tax,1458,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,One Bedroom,council_tax,1424,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,One Bedroom,council_tax,1063,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,One Bedroom,council_tax,1604,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,One Bedroom,council_tax,1744,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,One Bedroom,council_tax,1683,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,One Bedroom,council_tax,1425,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,One Bedroom,council_tax,1513,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,One Bedroom,council_tax,1458,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,One Bedroom,council_tax,1168,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,One Bedroom,council_tax,1828,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,One Bedroom,council_tax,1415,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,One Bedroom,council_tax,1550,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,One Bedroom,council_tax,1515,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,One Bedroom,council_tax,1304,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,One Bedroom,council_tax,1591,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,One Bedroom,council_tax,1741,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,One Bedroom,council_tax,1358,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,One Bedroom,council_tax,1650,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,One Bedroom,council_tax,1313,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,One Bedroom,council_tax,1656,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,One Bedroom,council_tax,746,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,One Bedroom,council_tax,736,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,One Bedroom,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barnet,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bexley,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Brent,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bromley,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Camden,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+City of London,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Croydon,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Ealing,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Enfield,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Greenwich,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hackney,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Haringey,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Harrow,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Havering,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hounslow,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Islington,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lambeth,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lewisham,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Merton,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Newham,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Redbridge,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Southwark,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Sutton,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Westminster,One Bedroom,energy,66,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,One Bedroom,water,28,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Two Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Two Bedrooms,council_tax,1713,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Two Bedrooms,council_tax,1701,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Two Bedrooms,council_tax,1847,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Two Bedrooms,council_tax,1742,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Two Bedrooms,council_tax,1692,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Two Bedrooms,council_tax,1719,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Two Bedrooms,council_tax,1049,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Two Bedrooms,council_tax,1888,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Two Bedrooms,council_tax,1665,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Two Bedrooms,council_tax,1795,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Two Bedrooms,council_tax,1640,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Two Bedrooms,council_tax,1602,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Two Bedrooms,council_tax,1196,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Two Bedrooms,council_tax,1805,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Two Bedrooms,council_tax,1962,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Two Bedrooms,council_tax,1893,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Two Bedrooms,council_tax,1603,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Two Bedrooms,council_tax,1702,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Two Bedrooms,council_tax,1640,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Two Bedrooms,council_tax,1314,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Two Bedrooms,council_tax,2056,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Two Bedrooms,council_tax,1592,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Two Bedrooms,council_tax,1744,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Two Bedrooms,council_tax,1704,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Two Bedrooms,council_tax,1467,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Two Bedrooms,council_tax,1789,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Two Bedrooms,council_tax,1959,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Two Bedrooms,council_tax,1528,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Two Bedrooms,council_tax,1857,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Two Bedrooms,council_tax,1477,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Two Bedrooms,council_tax,1863,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Two Bedrooms,council_tax,839,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Two Bedrooms,council_tax,828,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Two Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barnet,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bexley,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Brent,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bromley,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Camden,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+City of London,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Croydon,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Ealing,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Enfield,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hackney,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Haringey,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Harrow,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Havering,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Islington,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Merton,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Newham,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Southwark,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Sutton,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Westminster,Two Bedrooms,energy,97,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Two Bedrooms,water,33,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Three Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Three Bedrooms,council_tax,2093,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Three Bedrooms,council_tax,2079,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Three Bedrooms,council_tax,2257,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Three Bedrooms,council_tax,2129,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Three Bedrooms,council_tax,2067,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Three Bedrooms,council_tax,2102,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Three Bedrooms,council_tax,1283,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Three Bedrooms,council_tax,2308,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Three Bedrooms,council_tax,2035,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Three Bedrooms,council_tax,2194,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Three Bedrooms,council_tax,2004,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Three Bedrooms,council_tax,1958,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Three Bedrooms,council_tax,1461,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Three Bedrooms,council_tax,2206,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Three Bedrooms,council_tax,2398,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Three Bedrooms,council_tax,2314,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Three Bedrooms,council_tax,1960,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Three Bedrooms,council_tax,2081,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Three Bedrooms,council_tax,2005,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Three Bedrooms,council_tax,1606,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Three Bedrooms,council_tax,2513,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Three Bedrooms,council_tax,1945,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Three Bedrooms,council_tax,2131,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Three Bedrooms,council_tax,2083,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Three Bedrooms,council_tax,1793,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Three Bedrooms,council_tax,2187,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Three Bedrooms,council_tax,2394,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Three Bedrooms,council_tax,1867,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Three Bedrooms,council_tax,2269,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Three Bedrooms,council_tax,1805,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Three Bedrooms,council_tax,2277,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Three Bedrooms,council_tax,1026,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Three Bedrooms,council_tax,1011,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Three Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barnet,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bexley,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Brent,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bromley,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Camden,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+City of London,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Croydon,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Ealing,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Enfield,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hackney,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Haringey,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Harrow,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Havering,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Islington,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Merton,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Newham,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Southwark,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Sutton,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Westminster,Three Bedrooms,energy,121,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Three Bedrooms,water,43,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Four or More Bedrooms,tv_license,159,gbp,year,tvlicensing.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Four or More Bedrooms,council_tax,2474,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Four or More Bedrooms,council_tax,2457,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Four or More Bedrooms,council_tax,2667,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Four or More Bedrooms,council_tax,2516,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Four or More Bedrooms,council_tax,2443,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Four or More Bedrooms,council_tax,2484,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Four or More Bedrooms,council_tax,1516,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Four or More Bedrooms,council_tax,2727,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Four or More Bedrooms,council_tax,2404,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Four or More Bedrooms,council_tax,2593,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Four or More Bedrooms,council_tax,2369,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Four or More Bedrooms,council_tax,2314,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Four or More Bedrooms,council_tax,1727,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Four or More Bedrooms,council_tax,2607,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Four or More Bedrooms,council_tax,2835,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Four or More Bedrooms,council_tax,2735,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Four or More Bedrooms,council_tax,2316,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Four or More Bedrooms,council_tax,2459,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Four or More Bedrooms,council_tax,2369,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Four or More Bedrooms,council_tax,1897,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Four or More Bedrooms,council_tax,2970,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Four or More Bedrooms,council_tax,2299,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Four or More Bedrooms,council_tax,2519,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Four or More Bedrooms,council_tax,2462,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Four or More Bedrooms,council_tax,2119,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Four or More Bedrooms,council_tax,2585,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Four or More Bedrooms,council_tax,2829,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Four or More Bedrooms,council_tax,2207,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Four or More Bedrooms,council_tax,2682,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Four or More Bedrooms,council_tax,2133,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Four or More Bedrooms,council_tax,2691,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Four or More Bedrooms,council_tax,1212,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Four or More Bedrooms,council_tax,1195,gbp,year,londoncouncils.gov.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Four or More Bedrooms,internet,30,gbp,month,glide.co.uk,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barnet,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bexley,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Brent,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Bromley,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Camden,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+City of London,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Croydon,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Ealing,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Enfield,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hackney,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Haringey,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Harrow,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Havering,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Islington,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Merton,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Newham,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Southwark,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Sutton,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Westminster,Four or More Bedrooms,energy,137,gbp,month,edfenergy.com,2022-01-01,2021-01-01,2021-12-31
+Barking and Dagenham,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Barnet,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bexley,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Brent,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Bromley,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Camden,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+City of London,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Croydon,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Ealing,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Enfield,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Greenwich,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hackney,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hammersmith and Fulham,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Haringey,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Harrow,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Havering,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hillingdon,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Hounslow,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Islington,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kensington and Chelsea,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Kingston upon Thames,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lambeth,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Lewisham,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Merton,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Newham,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Redbridge,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Richmond upon Thames,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Southwark,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Sutton,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Tower Hamlets,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Waltham Forest,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Wandsworth,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
+Westminster,Four or More Bedrooms,water,49,gbp,month,moneyhelper.org.uk,2022-01-01,2021-01-01,2021-12-31
