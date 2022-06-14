@@ -18,6 +18,7 @@ import com.lightson.findpropapi.entity.PostcodeAreaRentPrice;
 import com.lightson.findpropapi.entity.Region;
 import com.lightson.findpropapi.entity.RegionRentPrice;
 import com.lightson.findpropapi.model.RentPriceResponse;
+import com.lightson.findpropapi.model.UpfrontPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.UtilityPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeAreaDetails;
@@ -92,13 +93,6 @@ public class PriceService {
                 response.setLocalAuthorityDetails(
                                 new RentPriceLocalAuthorityDetails(localAuthority.getName(), localAuthorityRentPrice));
 
-                // set utility prices of local authority
-                Set<LocalAuthorityUtilityPrice> localAuthorityUtilityPrices = localAuthorityUtilityPriceRepository
-                                .findByLocalAuthorityAndPropertyTypeAndBedrooms(localAuthority, propertyType, bedrooms);
-                response.setUtilityDetails(
-                                new UtilityPriceLocalAuthorityDetails(localAuthority.getName(),
-                                localAuthorityUtilityPrices));
-
                 // set rent price of postcode area
                 PostcodeAreaRentPrice postcodeAreaRentPrice = postcodeAreaRentPriceRepository
                                 .findByPostcodeAreaAndPropertyTypeAndBedrooms(postcodeArea, propertyType, bedrooms);
@@ -113,6 +107,16 @@ public class PriceService {
                         response.addRelatedLocalAuthorityDetails(relatedLocalAuthority.getName(),
                                         relatedLocalAuthorityRentPrice);
                 }
+
+                // set utility prices of local authority
+                Set<LocalAuthorityUtilityPrice> localAuthorityUtilityPrices = localAuthorityUtilityPriceRepository
+                                .findByLocalAuthorityAndPropertyTypeAndBedrooms(localAuthority, propertyType, bedrooms);
+                response.setUtilityDetails(
+                                new UtilityPriceLocalAuthorityDetails(localAuthority.getName(),
+                                                localAuthorityUtilityPrices));
+
+                // set upfront prices of local authority
+                response.setUpfrontDetails(new UpfrontPriceLocalAuthorityDetails(localAuthorityRentPrice));
 
                 // set status
                 response.setStatus(RentPriceResponse.StatusEnum.OK);

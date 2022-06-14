@@ -14,46 +14,59 @@ public class RentPriceDetails implements Serializable {
     private Integer priceHigh;
     private String currency;
     private String period;
-    
+
     public Integer getPriceCount() {
         return priceCount;
     }
+
     public void setPriceCount(Integer priceCount) {
         this.priceCount = priceCount;
     }
+
     public Integer getPriceMean() {
         return priceMean;
     }
+
     public void setPriceMean(Integer priceMean) {
         this.priceMean = priceMean;
     }
+
     public Integer getPriceLow() {
         return priceLow;
     }
+
     public void setPriceLow(Integer priceLow) {
         this.priceLow = priceLow;
     }
+
     public Integer getPriceMedian() {
         return priceMedian;
     }
+
     public void setPriceMedian(Integer priceMedian) {
         this.priceMedian = priceMedian;
     }
+
     public Integer getPriceHigh() {
         return priceHigh;
     }
+
     public void setPriceHigh(Integer priceHigh) {
         this.priceHigh = priceHigh;
     }
+
     public String getCurrency() {
         return currency;
     }
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
     public String getPeriod() {
         return period;
     }
+
     public void setPeriod(String period) {
         this.period = period;
     }
