@@ -2,21 +2,14 @@ package com.example.findpropapp.ui.main;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.findpropapp.DefaultMapsActivity;
 import com.example.findpropapp.R;
-import com.example.findpropapp.model.RentPriceLocalAuthorityDetails;
-import com.example.findpropapp.model.RentPricePostcodeAreaDetails;
-import com.example.findpropapp.model.RentPriceRegionDetails;
 import com.example.findpropapp.model.RentPriceResponse;
-import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
@@ -32,7 +25,6 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,26 +33,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RentTotalCostDetailsFragment extends Fragment {
-    private static final String TAG = RentTotalCostDetailsFragment.class.getSimpleName();
+public class RentPriceOverviewFragment extends Fragment {
+    private static final String TAG = RentPriceOverviewFragment.class.getSimpleName();
     private static final String ARG_CURRENT_PRICE_DETAILS = "CURRENT_PRICE_DETAILS";
-    private static float DEFAULT_PRICE_OFFSET = 100f;
     private static final Map<RentPriceEntryType, int[]> priceEntryColorMap = new HashMap<RentPriceEntryType, int[]>() {
         {
             {
-                put(RentPriceEntryType.region, new int [] {
+                put(RentPriceEntryType.region, new int[]{
                         Color.valueOf(0, 0, 0, 0).toArgb(),
                         android.graphics.Color.rgb(153, 0, 0)
-                        });
-                put(RentPriceEntryType.local_authority, new int [] {
+                });
+                put(RentPriceEntryType.local_authority, new int[]{
                         Color.valueOf(0, 0, 0, 0).toArgb(),
                         android.graphics.Color.rgb(0, 0, 153)
                 });
-                put(RentPriceEntryType.related_local_authority, new int [] {
+                put(RentPriceEntryType.related_local_authority, new int[]{
                         Color.valueOf(0, 0, 0, 0).toArgb(),
                         android.graphics.Color.rgb(0, 102, 0)
                 });
-                put(RentPriceEntryType.postcode_area, new int [] {
+                put(RentPriceEntryType.postcode_area, new int[]{
                         Color.valueOf(0, 0, 0, 0).toArgb(),
                         android.graphics.Color.rgb(102, 102, 102)
                 });
@@ -69,14 +60,15 @@ public class RentTotalCostDetailsFragment extends Fragment {
     };
     private static final int DEFAULT_TEXT_COLOR = Color.WHITE;
     private static final int DEFAULT_TEXT_SIZE = 10;
+    private static float DEFAULT_PRICE_OFFSET = 100f;
     private RentPriceResponse currentPriceDetails;
 
-    public RentTotalCostDetailsFragment() {
+    public RentPriceOverviewFragment() {
         // Required empty public constructor
     }
 
-    public static RentTotalCostDetailsFragment newInstance(RentPriceResponse currentAnchorDetails) {
-        RentTotalCostDetailsFragment fragment = new RentTotalCostDetailsFragment();
+    public static RentPriceOverviewFragment newInstance(RentPriceResponse currentAnchorDetails) {
+        RentPriceOverviewFragment fragment = new RentPriceOverviewFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_CURRENT_PRICE_DETAILS, currentAnchorDetails);
         fragment.setArguments(args);
@@ -219,13 +211,13 @@ public class RentTotalCostDetailsFragment extends Fragment {
         for (int i = 0; i < rentPrices.size(); i++) {
             // create a new stacked bar entry
             BarEntry barEntry = new BarEntry(i,
-                    new float[] {rentPrices.get(i).getPriceLow(),
+                    new float[]{rentPrices.get(i).getPriceLow(),
                             rentPrices.get(i).getPriceHigh() - rentPrices.get(i).getPriceLow()});
             barEntries.add(barEntry);
 
 
             // add two color instances for each stacked bar entry
-            barColors.add(Color.valueOf(0, 0, 0, 0).toArgb());
+            barColors.add(priceEntryColorMap.get(rentPrices.get(i).getType())[0]);
             barColors.add(priceEntryColorMap.get(rentPrices.get(i).getType())[1]);
 
             Entry lineEntry = new Entry(i, (float) rentPrices.get(i).getPriceMean());
@@ -269,13 +261,10 @@ public class RentTotalCostDetailsFragment extends Fragment {
         data.setData(barData);
         data.setData(lineData);
         chart.setData(data);
-
-
     }
 
-
     private void updateChart(View mView) {
-        ArrayList<RentPriceEntry> rentPrices = RentTotalCostDetailsHelper.getRentPriceEntries(this.currentPriceDetails);
+        ArrayList<RentPriceEntry> rentPrices = RentPriceOverviewHelper.getRentPriceEntries(this.currentPriceDetails);
 
         CombinedChart chart = mView.findViewById(R.id.rent_price_overview_chart);
         styleChartDataset(chart, rentPrices);

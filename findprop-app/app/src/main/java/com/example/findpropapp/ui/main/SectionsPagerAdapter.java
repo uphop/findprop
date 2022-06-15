@@ -35,9 +35,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return RentTotalCostDetailsFragment.newInstance(currentPriceDetails);
+                return RentPriceOverviewFragment.newInstance(currentPriceDetails);
             case 1:
-                return RentMarketOverviewFragment.newInstance(currentPriceDetails);
+                return RentTotalCostOverviewFragment.newInstance(currentPriceDetails);
             default:
                 return null;
         }

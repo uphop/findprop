@@ -5,10 +5,10 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.RentMarketOverviewFragment">
+    tools:context=".ui.main.RentTotalCostOverviewFragment">
 
-    <com.github.mikephil.charting.charts.CandleStickChart
-        android:id="@+id/rent_market_overview_chart"
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/rent_total_cost_overview_chart"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
