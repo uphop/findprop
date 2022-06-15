@@ -51,7 +51,7 @@ public class UpfrontPriceLocalAuthorityDetails implements Serializable {
     }
 
     private static int getRentalDeposit(RentPriceDetails price) {
-        int pricePcw = price.getPricePCW();
+        int pricePcw = RentPriceDetails.getPricePCW(price);
         int priceAnnual = pricePcw * RentPriceDetails.WEEKS_IN_YEAR;
         if (priceAnnual > DEFAULT_ANNUAL_RENT_BAND_THRESHOLD) {
             return pricePcw * DEFAULT_DEPOSIT_HIGHER_BAND_WEEKS;

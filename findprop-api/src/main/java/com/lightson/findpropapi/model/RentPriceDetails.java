@@ -112,16 +112,16 @@ public class RentPriceDetails implements Serializable {
         return outputRentPrice;
     }
 
-    public int getPricePCW() {
-        switch (this.period) {
+    public static int getPricePCW(RentPriceDetails price) {
+        switch (price.getPeriod()) {
             case day:
-                return this.priceMean * DAYS_IN_WEEK;
+                return price.getPriceMean() * DAYS_IN_WEEK;
             case week:
-                return this.priceMean;
+                return price.getPriceMean();
             case month:
-                return this.priceMean * MONTHS_IN_YEAR / WEEKS_IN_YEAR;
+                return price.getPriceMean() * MONTHS_IN_YEAR / WEEKS_IN_YEAR;
             case year:
-                return this.priceMean / WEEKS_IN_YEAR;
+                return price.getPriceMean() / WEEKS_IN_YEAR;
             case one_off:
                 return -1;
             default:
@@ -129,16 +129,16 @@ public class RentPriceDetails implements Serializable {
         }
     }
 
-    public int getPricePCM() {
-        switch (this.period) {
+    public static int getPricePCM(RentPriceDetails price) {
+        switch (price.getPeriod()) {
             case day:
-                return this.priceMean * DAYS_IN_MONTH;
+                return price.getPriceMean() * DAYS_IN_MONTH;
             case week:
-                return this.priceMean * WEEKS_IN_YEAR / MONTHS_IN_YEAR;
+                return price.getPriceMean() * WEEKS_IN_YEAR / MONTHS_IN_YEAR;
             case month:
-                return this.priceMean;
+                return price.getPriceMean();
             case year:
-                return this.priceMean / MONTHS_IN_YEAR;
+                return price.getPriceMean() / MONTHS_IN_YEAR;
             case one_off:
                 return -1;
             default:

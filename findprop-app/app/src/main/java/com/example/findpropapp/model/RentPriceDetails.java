@@ -71,38 +71,4 @@ public class RentPriceDetails implements Serializable {
     public void setPeriod(RentPricePeriodEnum period) {
         this.period = period;
     }
-
-    public int getPricePCW() {
-        switch (this.period) {
-            case day:
-                return this.priceMean * DAYS_IN_WEEK;
-            case week:
-                return this.priceMean;
-            case month:
-                return this.priceMean * MONTHS_IN_YEAR / WEEKS_IN_YEAR;
-            case year:
-                return this.priceMean / WEEKS_IN_YEAR;
-            case one_off:
-                return -1;
-            default:
-                return -1;
-        }
-    }
-
-    public int getPricePCM() {
-        switch (this.period) {
-            case day:
-                return this.priceMean * DAYS_IN_MONTH;
-            case week:
-                return this.priceMean * WEEKS_IN_YEAR / MONTHS_IN_YEAR;
-            case month:
-                return this.priceMean;
-            case year:
-                return this.priceMean / MONTHS_IN_YEAR;
-            case one_off:
-                return -1;
-            default:
-                return -1;
-        }
-    }
 }
