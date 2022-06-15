@@ -2,16 +2,16 @@ package com.lightson.findpropapi.model;
 
 import java.io.Serializable;
 
-public enum RentPricePeriodEnum implements Serializable {
-    one_off("One-off"),
-    year("Year"),
-    month("Month"),
-    week("Week"),
-    day("Day");
+public enum UtilityFeeEnum implements Serializable {
+    tv_license("TV license"),
+    council_tax("Council tax"),
+    internet("Internet"),
+    energy("Energy"),
+    water("Water");
 
     private String displayName;
 
-    RentPricePeriodEnum(String displayName) {
+    UtilityFeeEnum(String displayName) {
         this.displayName = displayName;
     }
 

@@ -9,10 +9,9 @@ import com.lightson.findpropapi.entity.LocalAuthorityRentPrice;
 public class UpfrontPriceLocalAuthorityDetails implements Serializable {
     private String localAuthority;
     private List<UpfrontPriceDetails> price;
-    private final static int DEFAULT_ANNUAL_RENT_BAND_THRESHOLD = 50000;
-    private final static int DEFAULT_DEPOSIT_LOWER_BAND_WEEKS = 5;
-    private final static int DEFAULT_DEPOSIT_HIGHER_BAND_WEEKS = 5;
-    private final static String DEPOSIT_FEE_NAME = "deposit";
+    public final static int DEFAULT_ANNUAL_RENT_BAND_THRESHOLD = 50000;
+    public final static int DEFAULT_DEPOSIT_LOWER_BAND_WEEKS = 5;
+    public final static int DEFAULT_DEPOSIT_HIGHER_BAND_WEEKS = 5;
 
     public UpfrontPriceLocalAuthorityDetails(String localAuthority, List<UpfrontPriceDetails> price) {
         this.localAuthority = localAuthority;
@@ -24,10 +23,11 @@ public class UpfrontPriceLocalAuthorityDetails implements Serializable {
 
         price = new ArrayList<UpfrontPriceDetails>();
         UpfrontPriceDetails deposit = new UpfrontPriceDetails();
-        deposit.setCurrency(localAuthorityDetails.getCurrency());
-        deposit.setPeriod(RentPricePeriodEnum.one_off.toString());
-        deposit.setUpfrontFeeType(DEPOSIT_FEE_NAME);
-        deposit.setPriceMean(getRentalDeposit(localAuthorityDetails.getPriceMean(), localAuthorityDetails.getPeriod()));
+        deposit.setCurrency(RentPriceCurrencyEnum.valueOf(localAuthorityDetails.getCurrency()));
+        deposit.setPeriod(RentPricePeriodEnum.one_off);
+        deposit.setUpfrontFeeType(UpfrontFeeEnum.tenancy_deposit);
+        deposit.setPriceMean(UpfrontPriceLocalAuthorityDetails
+                .getRentalDeposit(RentPriceDetails.fromLocalAuthorityRentPrice(localAuthorityDetails)));
         price.add(deposit);
     }
 
@@ -50,9 +50,9 @@ public class UpfrontPriceLocalAuthorityDetails implements Serializable {
         this.price = price;
     }
 
-    private static int getRentalDeposit(int price, String period) {
-        int pricePcw = RentPriceHelper.getPricePCW(price, period);
-        int priceAnnual = pricePcw * RentPriceHelper.WEEKS_IN_YEAR;
+    private static int getRentalDeposit(RentPriceDetails price) {
+        int pricePcw = price.getPricePCW();
+        int priceAnnual = pricePcw * RentPriceDetails.WEEKS_IN_YEAR;
         if (priceAnnual > DEFAULT_ANNUAL_RENT_BAND_THRESHOLD) {
             return pricePcw * DEFAULT_DEPOSIT_HIGHER_BAND_WEEKS;
         } else {

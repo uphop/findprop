@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class UpfrontPriceDetails implements Serializable {
     private Integer priceMean;
-    private String upfrontFeeType;
-    private String currency;
-    private String period;
-    public UpfrontPriceDetails(Integer priceMean, String upfrontFeeType, String currency, String period) {
+    private UpfrontFeeEnum upfrontFeeType;
+    private RentPriceCurrencyEnum currency;
+    private RentPricePeriodEnum period;
+    public UpfrontPriceDetails(Integer priceMean, UpfrontFeeEnum upfrontFeeType, RentPriceCurrencyEnum currency, RentPricePeriodEnum period) {
         this.priceMean = priceMean;
         this.upfrontFeeType = upfrontFeeType;
         this.currency = currency;
@@ -22,22 +22,22 @@ public class UpfrontPriceDetails implements Serializable {
         this.priceMean = priceMean;
     }
     
-    public String getCurrency() {
+    public RentPriceCurrencyEnum getCurrency() {
         return currency;
     }
-    public void setCurrency(String currency) {
+    public void setCurrency(RentPriceCurrencyEnum currency) {
         this.currency = currency;
     }
-    public String getPeriod() {
+    public RentPricePeriodEnum getPeriod() {
         return period;
     }
-    public void setPeriod(String period) {
+    public void setPeriod(RentPricePeriodEnum period) {
         this.period = period;
     }
-    public String getUpfrontFeeType() {
+    public UpfrontFeeEnum getUpfrontFeeType() {
         return upfrontFeeType;
     }
-    public void setUpfrontFeeType(String upfrontFeeType) {
+    public void setUpfrontFeeType(UpfrontFeeEnum upfrontFeeType) {
         this.upfrontFeeType = upfrontFeeType;
     }
     @Override

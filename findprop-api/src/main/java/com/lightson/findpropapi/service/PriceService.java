@@ -23,6 +23,7 @@ import com.lightson.findpropapi.model.UtilityPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeAreaDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeDetails;
+import com.lightson.findpropapi.model.RentPricePropertyTypeEnum;
 import com.lightson.findpropapi.model.RentPriceRegionDetails;
 import com.lightson.findpropapi.repository.LocalAuthorityRentPriceRepository;
 import com.lightson.findpropapi.repository.LocalAuthorityUtilityPriceRepository;
@@ -61,7 +62,7 @@ public class PriceService {
                 response.setLatitude(latitude);
                 response.setLongitude(longitude);
                 response.setMaxRange(maxRange);
-                response.setPropertyType(propertyType);
+                response.setPropertyType(RentPricePropertyTypeEnum.valueOf(propertyType));
 
                 // find nearest postcode
                 Postcode postcode = this.postcodeRepository.findByDistance(longitude, latitude, maxRange);

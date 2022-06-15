@@ -21,7 +21,7 @@ public class RentPriceResponse implements Serializable {
     private double longitude;
     private double latitude;
     private double maxRange;
-    private String propertyType;
+    private RentPricePropertyTypeEnum propertyType;
     private int bedrooms;
 
     private RentPricePostcodeDetails postcodeDetails;
@@ -59,11 +59,11 @@ public class RentPriceResponse implements Serializable {
         this.maxRange = maxRange;
     }
 
-    public String getPropertyType() {
+    public RentPricePropertyTypeEnum getPropertyType() {
         return propertyType;
     }
 
-    public void setPropertyType(String propertyType) {
+    public void setPropertyType(RentPricePropertyTypeEnum propertyType) {
         this.propertyType = propertyType;
     }
 

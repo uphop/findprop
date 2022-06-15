@@ -6,52 +6,64 @@ import com.lightson.findpropapi.entity.LocalAuthorityUtilityPrice;
 
 public class UtilityPriceDetails implements Serializable {
     private Integer priceMean;
-    private String utilityType;
-    private String currency;
-    private String period;
-    public UtilityPriceDetails(Integer priceMean, String utilityType, String currency, String period) {
+    private UtilityFeeEnum utilityType;
+    private RentPriceCurrencyEnum currency;
+    private RentPricePeriodEnum period;
+
+    public UtilityPriceDetails(Integer priceMean, UtilityFeeEnum utilityType, RentPriceCurrencyEnum currency,
+            RentPricePeriodEnum period) {
         this.priceMean = priceMean;
         this.utilityType = utilityType;
         this.currency = currency;
         this.period = period;
     }
+
     public UtilityPriceDetails() {
     }
+
     public Integer getPriceMean() {
         return priceMean;
     }
+
     public void setPriceMean(Integer priceMean) {
         this.priceMean = priceMean;
     }
-    public String getUtilityType() {
+
+    public UtilityFeeEnum getUtilityType() {
         return utilityType;
     }
-    public void setUtilityType(String utilityType) {
+
+    public void setUtilityType(UtilityFeeEnum utilityType) {
         this.utilityType = utilityType;
     }
-    public String getCurrency() {
+
+    public RentPriceCurrencyEnum getCurrency() {
         return currency;
     }
-    public void setCurrency(String currency) {
+
+    public void setCurrency(RentPriceCurrencyEnum currency) {
         this.currency = currency;
     }
-    public String getPeriod() {
+
+    public RentPricePeriodEnum getPeriod() {
         return period;
     }
-    public void setPeriod(String period) {
+
+    public void setPeriod(RentPricePeriodEnum period) {
         this.period = period;
     }
+
     @Override
     public String toString() {
         return "UtilityPriceDetails [currency=" + currency + ", period=" + period + ", priceMean=" + priceMean
                 + ", utilityType=" + utilityType + "]";
     }
-    
+
     public static UtilityPriceDetails fromLocalAuthorityUtilityPrice(LocalAuthorityUtilityPrice inputUtilityPrice) {
         UtilityPriceDetails outputUtilityPrice = new UtilityPriceDetails();
-        outputUtilityPrice.setUtilityType(inputUtilityPrice.getUtilityType());
-        outputUtilityPrice.setCurrency(inputUtilityPrice.getCurrency());
-        outputUtilityPrice.setPeriod(inputUtilityPrice.getPeriod());
+        outputUtilityPrice.setUtilityType(UtilityFeeEnum.valueOf(inputUtilityPrice.getUtilityType()));
+        outputUtilityPrice.setCurrency(RentPriceCurrencyEnum.valueOf(inputUtilityPrice.getCurrency()));
+        outputUtilityPrice.setPeriod(RentPricePeriodEnum.valueOf(inputUtilityPrice.getPeriod()));
         outputUtilityPrice.setPriceMean(inputUtilityPrice.getPriceMean());
         return outputUtilityPrice;
     }
