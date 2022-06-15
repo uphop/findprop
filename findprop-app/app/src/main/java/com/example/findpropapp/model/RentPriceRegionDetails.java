@@ -10,6 +10,7 @@ public class RentPriceRegionDetails implements Serializable {
         this.region = region;
         this.price = price;
     }
+
     public RentPriceRegionDetails() {
     }
 
@@ -29,11 +30,4 @@ public class RentPriceRegionDetails implements Serializable {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "RentPriceRegionDetails{" +
-                "region='" + region + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }

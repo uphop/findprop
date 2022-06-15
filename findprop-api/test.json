@@ -1,0 +1,133 @@
+{
+    "timestamp": "2022-06-15T06:08:54.670+0000",
+    "status": "OK",
+    "code": 200,
+    "longitude": -0.009654032621240687,
+    "latitude": 51.4836840837556,
+    "maxRange": 250.0,
+    "propertyType": "flat",
+    "bedrooms": 2,
+    "postcodeDetails": {
+        "postcode": "SE10 9HT",
+        "longitude": -0.009594,
+        "latitude": 51.483529
+    },
+    "regionDetails": {
+        "region": "London",
+        "price": {
+            "priceCount": 23700,
+            "priceMean": 1605,
+            "priceLow": 1275,
+            "priceMedian": 1450,
+            "priceHigh": 1750,
+            "currency": "gbp",
+            "period": "month",
+            "pricePCW": 370,
+            "pricePCM": 1605
+        }
+    },
+    "localAuthorityDetails": {
+        "localAuthority": "Greenwich",
+        "price": {
+            "priceCount": 910,
+            "priceMean": 1471,
+            "priceLow": 1250,
+            "priceMedian": 1400,
+            "priceHigh": 1650,
+            "currency": "gbp",
+            "period": "month",
+            "pricePCW": 339,
+            "pricePCM": 1471
+        }
+    },
+    "utilityDetails": {
+        "localAuthority": "Greenwich",
+        "price": [
+            {
+                "priceMean": 159,
+                "utilityType": "tv_license",
+                "currency": "gbp",
+                "period": "year"
+            },
+            {
+                "priceMean": 1640,
+                "utilityType": "council_tax",
+                "currency": "gbp",
+                "period": "year"
+            },
+            {
+                "priceMean": 30,
+                "utilityType": "internet",
+                "currency": "gbp",
+                "period": "month"
+            },
+            {
+                "priceMean": 97,
+                "utilityType": "energy",
+                "currency": "gbp",
+                "period": "month"
+            },
+            {
+                "priceMean": 33,
+                "utilityType": "water",
+                "currency": "gbp",
+                "period": "month"
+            }
+        ]
+    },
+    "upfrontDetails": {
+        "localAuthority": "Greenwich",
+        "price": [
+            {
+                "priceMean": 1695,
+                "upfrontFeeType": "tenancy_deposit",
+                "currency": "gbp",
+                "period": "one_off"
+            }
+        ]
+    },
+    "relatedLocalAuthorityDetails": [
+        {
+            "localAuthority": "Tower Hamlets",
+            "price": {
+                "priceCount": 740,
+                "priceMean": 1708,
+                "priceLow": 1500,
+                "priceMedian": 1650,
+                "priceHigh": 1875,
+                "currency": "gbp",
+                "period": "month",
+                "pricePCW": 394,
+                "pricePCM": 1708
+            }
+        },
+        {
+            "localAuthority": "Newham",
+            "price": {
+                "priceCount": 900,
+                "priceMean": 1593,
+                "priceLow": 1358,
+                "priceMedian": 1600,
+                "priceHigh": 1797,
+                "currency": "gbp",
+                "period": "month",
+                "pricePCW": 367,
+                "pricePCM": 1593
+            }
+        }
+    ],
+    "postcodeAreaDetails": {
+        "postcodeArea": "SE10",
+        "price": {
+            "priceCount": 230,
+            "priceMean": 1777,
+            "priceLow": 1550,
+            "priceMedian": 1700,
+            "priceHigh": 1950,
+            "currency": "gbp",
+            "period": "month",
+            "pricePCW": 410,
+            "pricePCM": 1777
+        }
+    }
+}

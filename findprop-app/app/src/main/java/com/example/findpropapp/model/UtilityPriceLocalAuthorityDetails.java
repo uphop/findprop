@@ -1,17 +1,18 @@
 package com.example.findpropapp.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-public class RentPriceLocalAuthorityDetails implements Serializable {
+public class UtilityPriceLocalAuthorityDetails implements Serializable {
     private String localAuthority;
-    private RentPriceDetails price;
+    private List<UtilityPriceDetails> price;
 
-    public RentPriceLocalAuthorityDetails(String localAuthority, RentPriceDetails price) {
+    public UtilityPriceLocalAuthorityDetails(String localAuthority, List<UtilityPriceDetails> price) {
         this.localAuthority = localAuthority;
         this.price = price;
     }
 
-    public RentPriceLocalAuthorityDetails() {
+    public UtilityPriceLocalAuthorityDetails() {
     }
 
     public String getLocalAuthority() {
@@ -22,11 +23,11 @@ public class RentPriceLocalAuthorityDetails implements Serializable {
         this.localAuthority = localAuthority;
     }
 
-    public RentPriceDetails getPrice() {
+    public List<UtilityPriceDetails> getPrice() {
         return price;
     }
 
-    public void setPrice(RentPriceDetails price) {
+    public void setPrice(List<UtilityPriceDetails> price) {
         this.price = price;
     }
 }

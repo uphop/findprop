@@ -3,11 +3,11 @@ package com.example.findpropapp.model;
 import java.io.Serializable;
 
 public class RentPricePostcodeAreaDetails implements Serializable {
-    private String PostcodeArea;
+    private String postcodeArea;
     private RentPriceDetails price;
 
-    public RentPricePostcodeAreaDetails(String PostcodeArea, RentPriceDetails price) {
-        this.PostcodeArea = PostcodeArea;
+    public RentPricePostcodeAreaDetails(String postcodeArea, RentPriceDetails price) {
+        this.postcodeArea = postcodeArea;
         this.price = price;
     }
 
@@ -15,11 +15,11 @@ public class RentPricePostcodeAreaDetails implements Serializable {
     }
 
     public String getPostcodeArea() {
-        return PostcodeArea;
+        return postcodeArea;
     }
 
-    public void setPostcodeArea(String PostcodeArea) {
-        this.PostcodeArea = PostcodeArea;
+    public void setPostcodeArea(String postcodeArea) {
+        this.postcodeArea = postcodeArea;
     }
 
     public RentPriceDetails getPrice() {
@@ -28,13 +28,5 @@ public class RentPricePostcodeAreaDetails implements Serializable {
 
     public void setPrice(RentPriceDetails price) {
         this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "RentPricePostcodeAreaDetails{" +
-                "PostcodeArea='" + PostcodeArea + '\'' +
-                ", price=" + price +
-                '}';
     }
 }

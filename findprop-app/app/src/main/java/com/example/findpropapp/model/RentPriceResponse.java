@@ -1,6 +1,7 @@
 package com.example.findpropapp.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,12 +19,14 @@ public class RentPriceResponse implements Serializable {
     private double longitude;
     private double latitude;
     private double maxRange;
-    private String propertyType;
+    private RentPricePropertyTypeEnum propertyType;
     private int bedrooms;
 
     private RentPricePostcodeDetails postcodeDetails;
     private RentPriceRegionDetails regionDetails;
     private RentPriceLocalAuthorityDetails localAuthorityDetails;
+    private UtilityPriceLocalAuthorityDetails utilityDetails;
+    private UpfrontPriceLocalAuthorityDetails upfrontDetails;
     private List<RentPriceLocalAuthorityDetails> relatedLocalAuthorityDetails;
     private RentPricePostcodeAreaDetails postcodeAreaDetails;
 
@@ -54,11 +57,11 @@ public class RentPriceResponse implements Serializable {
         this.maxRange = maxRange;
     }
 
-    public String getPropertyType() {
+    public RentPricePropertyTypeEnum getPropertyType() {
         return propertyType;
     }
 
-    public void setPropertyType(String propertyType) {
+    public void setPropertyType(RentPricePropertyTypeEnum propertyType) {
         this.propertyType = propertyType;
     }
 
@@ -132,5 +135,21 @@ public class RentPriceResponse implements Serializable {
 
     public void setPostcodeDetails(RentPricePostcodeDetails postcodeDetails) {
         this.postcodeDetails = postcodeDetails;
+    }
+
+    public UtilityPriceLocalAuthorityDetails getUtilityDetails() {
+        return utilityDetails;
+    }
+
+    public void setUtilityDetails(UtilityPriceLocalAuthorityDetails utilityDetails) {
+        this.utilityDetails = utilityDetails;
+    }
+
+    public UpfrontPriceLocalAuthorityDetails getUpfrontDetails() {
+        return upfrontDetails;
+    }
+
+    public void setUpfrontDetails(UpfrontPriceLocalAuthorityDetails upfrontDetails) {
+        this.upfrontDetails = upfrontDetails;
     }
 }
