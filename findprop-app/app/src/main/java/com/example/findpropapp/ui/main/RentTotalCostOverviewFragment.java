@@ -17,12 +17,17 @@ import com.example.findpropapp.model.UtilityFeeEnum;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.IMarker;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.LegendEntry;
+import com.github.mikephil.charting.components.MarkerView;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -174,7 +179,11 @@ public class RentTotalCostOverviewFragment extends Fragment {
         chart.setDrawCenterText(true);
         chart.setDrawEntryLabels(false);
         chart.setDrawRoundedSlices(false);
-        chart.setDrawMarkers(true);
+        chart.setHighlightPerTapEnabled(true);
+
+        RentTotalCostMarker mv = new RentTotalCostMarker(this.getActivity(), R.layout.fragment_rent_total_cost_overview);
+        // set the marker to the chart
+        chart.setMarkerView(mv);
     }
 
     private void updateChart(View mView) {
