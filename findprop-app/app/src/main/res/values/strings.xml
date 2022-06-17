@@ -96,8 +96,8 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_rent_price_details">Renting near ...</string>
-    <string name="tab_text_1">Total rent cost</string>
-    <string name="tab_text_2">Current rent market</string>
+    <string name="tab_text_1">Rent price overview</string>
+    <string name="tab_text_2">Total rent cost</string>
 
     <string name="rent_price_details_range_text_start">Rent prices range between</string>
     <string name="title_activity_street_view">StreetViewActivity</string>

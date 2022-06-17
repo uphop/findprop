@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class RentPriceOverviewHelper {
+public class RentPriceOverviewPreprocessor {
     public static ArrayList<RentPriceEntry> getRentPriceEntries(RentPriceResponse currentPriceDetails) {
         ArrayList<RentPriceEntry> rentPrices = new ArrayList<RentPriceEntry>();
         if (currentPriceDetails == null) {

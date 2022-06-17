@@ -11,11 +11,6 @@ public class RentPriceDetails implements Serializable {
     private RentPriceCurrencyEnum currency;
     private RentPricePeriodEnum period;
 
-    public final static int DAYS_IN_WEEK = 7;
-    public final static int DAYS_IN_MONTH = 31;
-    public final static int MONTHS_IN_YEAR = 12;
-    public final static int WEEKS_IN_YEAR = 52;
-
     public Integer getPriceCount() {
         return priceCount;
     }

@@ -23,7 +23,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.findpropapp.adapter.FIndPropApiAdapter;
 import com.example.findpropapp.adapter.RentPriceCallback;
 import com.example.findpropapp.databinding.ActivityMapsBinding;
+import com.example.findpropapp.model.RentPriceDetails;
 import com.example.findpropapp.model.RentPriceLocalAuthorityDetails;
+import com.example.findpropapp.model.RentPricePostcodeAreaDetails;
 import com.example.findpropapp.model.RentPricePostcodeDetails;
 import com.example.findpropapp.model.RentPriceResponse;
 import com.example.findpropapp.ui.main.RentPriceDetailsActivity;
@@ -58,7 +60,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private static final String ARG_CURRENT_LON = "ARG_CURRENT_LON";
 
     private static final String DEFAULT_PROPERTY_TYPE = "flat";
-    private static final int DEFAULT_BEDROOM_COUNT = 1;
+    private static final int DEFAULT_BEDROOM_COUNT = 2;
     private static final double DEFAULT_MAX_RANGE = 250.0;
 
     private GoogleMap mMap;
@@ -269,6 +271,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
     private void updateCurrentAnchor(RentPriceResponse rentPrices) {
         RentPricePostcodeDetails postcodeDetails = rentPrices.getPostcodeDetails();
+        RentPricePostcodeAreaDetails postcodeAreaDetails = rentPrices.getPostcodeAreaDetails();
         RentPriceLocalAuthorityDetails localAuthorityDetails = rentPrices.getLocalAuthorityDetails();
 
         // Configure marker position and title
@@ -285,7 +288,9 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Update marker snippet text and show snippet
         StringBuilder snippetText = new StringBuilder();
         snippetText.append("Typical rent here is ");
-        snippetText.append(RentPriceValueFormatter.getPriceWithPeriodAsString(localAuthorityDetails.getPrice()));
+        // Set rent price - take postcode area rent, if available; otherwise, local authority rent
+        RentPriceDetails price = (postcodeAreaDetails != null) ? postcodeAreaDetails.getPrice() : localAuthorityDetails.getPrice();
+        snippetText.append(RentPriceValueFormatter.getPriceWithPeriodAsString(price));
         marker.setSnippet(snippetText.toString());
         marker.showInfoWindow();
 

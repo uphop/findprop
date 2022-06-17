@@ -106,7 +106,7 @@ public class RentPriceOverviewFragment extends Fragment {
     }
 
     private void styleDescription(CombinedChart chart, ArrayList<RentPriceEntry> rentPrices) {
-        Description description = new Description();
+        Description description = chart.getDescription();
         description.setEnabled(true);
         description.setTextColor(DEFAULT_TEXT_COLOR);
         description.setTextSize(DEFAULT_TEXT_SIZE);
@@ -125,8 +125,6 @@ public class RentPriceOverviewFragment extends Fragment {
 
         }
         description.setText(descriptionText.toString());
-
-        chart.setDescription(description);
     }
 
     private void styleLegend(CombinedChart chart, ArrayList<RentPriceEntry> rentPrices) {
@@ -264,7 +262,7 @@ public class RentPriceOverviewFragment extends Fragment {
     }
 
     private void updateChart(View mView) {
-        ArrayList<RentPriceEntry> rentPrices = RentPriceOverviewHelper.getRentPriceEntries(this.currentPriceDetails);
+        ArrayList<RentPriceEntry> rentPrices = RentPriceOverviewPreprocessor.getRentPriceEntries(this.currentPriceDetails);
 
         CombinedChart chart = mView.findViewById(R.id.rent_price_overview_chart);
         styleChartDataset(chart, rentPrices);
