@@ -127,6 +127,12 @@ public class RentPriceOverviewFragment extends Fragment {
         description.setText(descriptionText.toString());
     }
 
+    private void styleMarker(CombinedChart chart, ArrayList<RentPriceEntry> rentPrices) {
+        RentPriceOverviewMarkerView mv = new RentPriceOverviewMarkerView(this.getContext(), R.layout.layout_custom_marker_view, rentPrices);
+        mv.setChartView(chart);
+        chart.setMarker(mv);
+    }
+
     private void styleLegend(CombinedChart chart, ArrayList<RentPriceEntry> rentPrices) {
         Legend legend = chart.getLegend();
         legend.setYEntrySpace(10f);
@@ -253,6 +259,8 @@ public class RentPriceOverviewFragment extends Fragment {
                 return RentPriceValueFormatter.getPriceWithPeriodAsString((int) value, currentPriceDetails.getLocalAuthorityDetails().getPrice().getPeriod());
             }
         });
+        lineDataSet.setDrawHighlightIndicators(false);
+        lineDataSet.setDrawHorizontalHighlightIndicator(false);
         LineData lineData = new LineData(lineDataSet);
 
         CombinedData data = new CombinedData();
@@ -266,6 +274,7 @@ public class RentPriceOverviewFragment extends Fragment {
 
         CombinedChart chart = mView.findViewById(R.id.rent_price_overview_chart);
         styleChartDataset(chart, rentPrices);
+        styleMarker(chart, rentPrices);
         styleXAxis(chart, rentPrices);
         styleYAxis(chart, rentPrices);
         styleLegend(chart, rentPrices);

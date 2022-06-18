@@ -6,13 +6,15 @@ public class RentPriceEntry {
     private int priceHigh;
     private String label;
     private RentPriceEntryType type;
+    private String description;
 
-    public RentPriceEntry(int priceMean, int priceLow, int priceHigh, String label, RentPriceEntryType type) {
+    public RentPriceEntry(int priceMean, int priceLow, int priceHigh, String label, RentPriceEntryType type, String description) {
         this.priceMean = priceMean;
         this.priceLow = priceLow;
         this.priceHigh = priceHigh;
         this.label = label;
         this.type = type;
+        this.description = description;
     }
 
     public int getPriceMean() {
@@ -27,17 +29,21 @@ public class RentPriceEntry {
         return label;
     }
 
-    public String getFormattedLabel() {
-        return String.format("%s (%s)", this.getType().getDisplayName(), this.getLabel());
-    }
-
     public void setLabel(String label) {
         this.label = label;
     }
 
-    public void setType(RentPriceEntryType type) {this.type = type;}
+    public String getFormattedLabel() {
+        return String.format("%s (%s)", this.getType().getDisplayName(), this.getLabel());
+    }
 
-    public RentPriceEntryType getType() { return type;}
+    public RentPriceEntryType getType() {
+        return type;
+    }
+
+    public void setType(RentPriceEntryType type) {
+        this.type = type;
+    }
 
     public int getPriceLow() {
         return priceLow;
@@ -53,5 +59,13 @@ public class RentPriceEntry {
 
     public void setPriceHigh(int priceHigh) {
         this.priceHigh = priceHigh;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

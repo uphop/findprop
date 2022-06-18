@@ -1,9 +1,10 @@
-package com.example.findpropapp;
+package com.example.findpropapp.ui.main;
 
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 
+import com.example.findpropapp.R;
 import com.example.findpropapp.model.RentPriceResponse;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;

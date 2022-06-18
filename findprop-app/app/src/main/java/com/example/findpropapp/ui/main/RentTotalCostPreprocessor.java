@@ -26,8 +26,12 @@ public class RentTotalCostPreprocessor {
         UtilityPriceLocalAuthorityDetails utilityCosts = currentPriceDetails.getUtilityDetails();
         if (utilityCosts != null) {
             // aggregate all utility costs except council tax under single cost entry
+
+            StringBuilder utilityDescription = new StringBuilder();
+            utilityDescription.append("Your expected monthly utility costs: ");
+            utilityDescription.append(System.getProperty("line.separator"));
+
             int totalCost = 0;
-            StringBuilder label = new StringBuilder();
             List<UtilityPriceDetails> utilityPriceDetails = utilityCosts.getPrice();
             for(int i = 0; i < utilityPriceDetails.size(); i++) {
                 UtilityPriceDetails utilityPriceDetail = utilityPriceDetails.get(i);
@@ -35,19 +39,25 @@ public class RentTotalCostPreprocessor {
 
                 // exclude council tax into separate cost category
                 if(utilityPriceDetail.getUtilityType() == UtilityFeeEnum.council_tax) {
+                    StringBuilder councilTaxDescription = new StringBuilder();
+                    councilTaxDescription.append("This is your council tax");
+
                     RentCostEntry councilTaxCostEntry = new RentCostEntry();
                     councilTaxCostEntry.setPriceMean(pcmCost);
                     councilTaxCostEntry.setLabel(RentCostEntryType.council_tax.getDisplayName());
                     councilTaxCostEntry.setType(RentCostEntryType.council_tax);
+                    councilTaxCostEntry.setDescription(councilTaxDescription.toString());
                     rentCosts.add(councilTaxCostEntry);
                 } else {
                     totalCost += pcmCost;
-                    label.append(utilityPriceDetail.getUtilityType().getDisplayName());
-                    label.append(" (");
-                    label.append(RentPriceValueFormatter.getPriceWithPeriodAsString(pcmCost, RentPricePeriodEnum.month));
-                    label.append(") ");
+                    utilityDescription.append(" - ");
+                    utilityDescription.append(utilityPriceDetail.getUtilityType().getDisplayName());
+                    utilityDescription.append(" (");
+                    utilityDescription.append(RentPriceValueFormatter.getPriceWithPeriodAsString(pcmCost, RentPricePeriodEnum.month));
+                    utilityDescription.append(")");
                     if(i < utilityPriceDetails.size() - 1) {
-                        label.append(",");
+                        utilityDescription.append(", ");
+                        utilityDescription.append(System.getProperty("line.separator"));
                     }
                 }
             }
@@ -56,6 +66,7 @@ public class RentTotalCostPreprocessor {
             utilityCostEntry.setPriceMean(totalCost);
             utilityCostEntry.setLabel(RentCostEntryType.utility.getDisplayName());
             utilityCostEntry.setType(RentCostEntryType.utility);
+            utilityCostEntry.setDescription(utilityDescription.toString());
             rentCosts.add(utilityCostEntry);
         }
 
@@ -63,19 +74,28 @@ public class RentTotalCostPreprocessor {
         int rentPrice = currentPriceDetails.getPostcodeAreaDetails() != null ?
                 currentPriceDetails.getPostcodeAreaDetails().getPrice().getPriceMean() :
                 currentPriceDetails.getLocalAuthorityDetails().getPrice().getPriceMean();
+
+        StringBuilder rentDescription = new StringBuilder();
+        rentDescription.append("Typical rent is ");
+        rentDescription.append(RentPriceValueFormatter.getPriceWithPeriodAsString(rentPrice, RentPricePeriodEnum.month));
+
         rentCosts.add(new RentCostEntry(
                 rentPrice,
                 RentCostEntryType.rent.getDisplayName(),
-                RentCostEntryType.rent));
+                RentCostEntryType.rent, rentDescription.toString()));
 
         // set upfront costs
         UpfrontPriceLocalAuthorityDetails upfrontCosts = currentPriceDetails.getUpfrontDetails();
         if (upfrontCosts != null) {
             for (UpfrontPriceDetails upfrontCost : upfrontCosts.getPrice()) {
+                StringBuilder upfrontDescription = new StringBuilder();
+                upfrontDescription.append("Put aside up to ");
+                upfrontDescription.append(RentPriceValueFormatter.getPriceWithPeriodAsString(upfrontCost.getPriceMean(), RentPricePeriodEnum.month));
+
                 rentCosts.add(new RentCostEntry(
                         upfrontCost.getPriceMean(),
-                        upfrontCost.getUpfrontFeeType().getDisplayName(),
-                        RentCostEntryType.upfront));
+                        RentCostEntryType.upfront.getDisplayName(),
+                        RentCostEntryType.upfront, upfrontDescription.toString()));
             }
         }
 

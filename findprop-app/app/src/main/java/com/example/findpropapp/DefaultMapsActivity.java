@@ -18,7 +18,6 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.findpropapp.adapter.FIndPropApiAdapter;
 import com.example.findpropapp.adapter.RentPriceCallback;
@@ -30,6 +29,7 @@ import com.example.findpropapp.model.RentPricePostcodeDetails;
 import com.example.findpropapp.model.RentPriceResponse;
 import com.example.findpropapp.ui.main.RentPriceDetailsActivity;
 import com.example.findpropapp.ui.main.RentPriceValueFormatter;
+import com.example.findpropapp.ui.main.StreetViewMapActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -47,9 +47,9 @@ import java.util.Map;
 
 public class DefaultMapsActivity extends FragmentActivity implements
         OnMapReadyCallback,
-        GoogleMap.OnMapLongClickListener,
         GoogleMap.OnMapClickListener,
-        GoogleMap.OnInfoWindowClickListener {
+        GoogleMap.OnInfoWindowClickListener,
+        GoogleMap.OnInfoWindowLongClickListener {
 
     private static final String TAG = DefaultMapsActivity.class.getSimpleName();
     // Default map params
@@ -112,8 +112,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Add a single map click handler for setting new markers
         mMap.setOnMapClickListener(this);
 
-        // Add a long map click handler for starting street view
-        mMap.setOnMapLongClickListener(this);
+        // Add a long info window click handler for starting street view
+        mMap.setOnInfoWindowLongClickListener(this);
 
         // Set a listener for info window events
         mMap.setOnInfoWindowClickListener(this);
@@ -213,7 +213,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         }
     }
 
-        private void getDeviceLocation() {
+    private void getDeviceLocation() {
         try {
             if (locationPermissionGranted) {
                 @SuppressLint("MissingPermission") Task<Location> locationResult = fusedLocationClient.getLastLocation();
@@ -258,6 +258,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
                         public void onSuccess(RentPriceResponse rentPrices) {
                             updateCurrentAnchor(rentPrices);
                         }
+
                         @Override
                         public void onFailure(Exception e) {
                             // TODO: handle postcode retrieval failure
@@ -299,10 +300,10 @@ public class DefaultMapsActivity extends FragmentActivity implements
     }
 
     @Override
-    public void onMapLongClick(@NonNull LatLng latLng) {
+    public void onInfoWindowLongClick(@NonNull Marker marker) {
         Intent intent = new Intent(this, StreetViewMapActivity.class);
-        intent.putExtra(ARG_CURRENT_LAT, latLng.latitude);
-        intent.putExtra(ARG_CURRENT_LON, latLng.longitude);
+        intent.putExtra(ARG_CURRENT_LAT, marker.getPosition().latitude);
+        intent.putExtra(ARG_CURRENT_LON, marker.getPosition().longitude);
         startActivity(intent);
     }
 }

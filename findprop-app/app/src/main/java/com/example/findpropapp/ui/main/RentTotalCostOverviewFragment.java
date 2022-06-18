@@ -2,7 +2,6 @@ package com.example.findpropapp.ui.main;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,22 +11,14 @@ import androidx.fragment.app.Fragment;
 import com.example.findpropapp.R;
 import com.example.findpropapp.model.RentPricePeriodEnum;
 import com.example.findpropapp.model.RentPriceResponse;
-import com.example.findpropapp.model.UpfrontFeeEnum;
-import com.example.findpropapp.model.UtilityFeeEnum;
-import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.IMarker;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.LegendEntry;
-import com.github.mikephil.charting.components.MarkerView;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -174,16 +165,18 @@ public class RentTotalCostOverviewFragment extends Fragment {
         legend.setCustom(legendEntryMap.values().toArray(new LegendEntry[0]));
     }
 
+    private void styleMarker(PieChart chart, ArrayList<RentCostEntry> rentCosts) {
+        RentTotalCostMarkerView mv = new RentTotalCostMarkerView(this.getContext(), R.layout.layout_custom_marker_view, rentCosts);
+        mv.setChartView(chart);
+        chart.setMarker(mv);
+    }
+
     private void styleChart(PieChart chart, ArrayList<RentCostEntry> rentCosts) {
         chart.setDrawHoleEnabled(true);
         chart.setDrawCenterText(true);
         chart.setDrawEntryLabels(false);
         chart.setDrawRoundedSlices(false);
         chart.setHighlightPerTapEnabled(true);
-
-        RentTotalCostMarker mv = new RentTotalCostMarker(this.getActivity(), R.layout.fragment_rent_total_cost_overview);
-        // set the marker to the chart
-        chart.setMarkerView(mv);
     }
 
     private void updateChart(View mView) {
@@ -191,11 +184,11 @@ public class RentTotalCostOverviewFragment extends Fragment {
 
         PieChart chart = mView.findViewById(R.id.rent_total_cost_overview_chart);
         styleChartDataset(chart, rentCosts);
+        styleMarker(chart, rentCosts);
         styleHole(chart, rentCosts);
         styleLegend(chart, rentCosts);
         styleDescription(chart, rentCosts);
         styleChart(chart, rentCosts);
-
         chart.invalidate(); // refresh
     }
 }

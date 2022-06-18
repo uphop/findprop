@@ -32,7 +32,7 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".StreetViewMapActivity"
+            android:name=".ui.main.StreetViewMapActivity"
             android:exported="false"
             android:label="@string/title_activity_street_view_map" />
         <activity

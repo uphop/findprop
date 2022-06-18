@@ -4,15 +4,17 @@ public class RentCostEntry {
     private int priceMean;
     private String label;
     private RentCostEntryType type;
+    private String description;
 
     public RentCostEntry() {
 
     }
 
-    public RentCostEntry(int priceMean, String label, RentCostEntryType type) {
+    public RentCostEntry(int priceMean, String label, RentCostEntryType type, String description) {
         this.priceMean = priceMean;
         this.label = label;
         this.type = type;
+        this.description = description;
     }
 
     public int getPriceMean() {
@@ -41,5 +43,13 @@ public class RentCostEntry {
 
     public void setType(RentCostEntryType type) {
         this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
