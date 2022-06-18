@@ -105,4 +105,8 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_rent_price_steet_view">RentPriceSteetViewActivity</string>
     <string name="title_activity_street_view_map">StreetViewMapActivity</string>
+    <string name="is_that_the_first_month_of_your_rent">Is that the first month of your rent?</string>
+    <string name="first_rent_month">First rent month?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>

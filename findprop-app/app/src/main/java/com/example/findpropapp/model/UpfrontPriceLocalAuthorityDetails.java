@@ -6,6 +6,7 @@ import java.util.List;
 
 public class UpfrontPriceLocalAuthorityDetails implements Serializable {
     private String localAuthority;
+    private String postcodeArea;
     private List<UpfrontPriceDetails> price;
     public final static int DEFAULT_ANNUAL_RENT_BAND_THRESHOLD = 50000;
     public final static int DEFAULT_DEPOSIT_LOWER_BAND_WEEKS = 5;
@@ -33,5 +34,13 @@ public class UpfrontPriceLocalAuthorityDetails implements Serializable {
 
     public void setPrice(List<UpfrontPriceDetails> price) {
         this.price = price;
+    }
+
+    public String getPostcodeArea() {
+        return postcodeArea;
+    }
+
+    public void setPostcodeArea(String postcodeArea) {
+        this.postcodeArea = postcodeArea;
     }
 }

@@ -12,19 +12,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/marker_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="411dp"
-        android:layout_marginBottom="731dp"
-        android:text="TextView"
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/first_month_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:checked="false"
+        android:contentDescription="@string/is_that_the_first_month_of_your_rent"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:showText="true"
+        android:text="@string/first_rent_month"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rent_total_cost_overview_chart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:useMaterialThemeColors="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

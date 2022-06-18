@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 
 import androidx.fragment.app.Fragment;
 
@@ -19,6 +20,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,7 +31,7 @@ import java.util.Map;
  * Use the {@link RentTotalCostOverviewFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RentTotalCostOverviewFragment extends Fragment {
+public class RentTotalCostOverviewFragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
     private static final String TAG = RentTotalCostOverviewFragment.class.getSimpleName();
     private static final String ARG_CURRENT_PRICE_DETAILS = "CURRENT_PRICE_DETAILS";
     private static final Map<RentCostEntryType, Integer> costColorMap = new HashMap<RentCostEntryType, Integer>() {
@@ -37,8 +39,6 @@ public class RentTotalCostOverviewFragment extends Fragment {
             {
                 put(RentCostEntryType.utility,
                         android.graphics.Color.rgb(153, 0, 0));
-                put(RentCostEntryType.council_tax,
-                        android.graphics.Color.rgb(102, 102, 102));
                 put(RentCostEntryType.rent,
                         android.graphics.Color.rgb(0, 0, 153));
                 put(RentCostEntryType.upfront,
@@ -52,6 +52,7 @@ public class RentTotalCostOverviewFragment extends Fragment {
     private static final int DEFAULT_HOLE_TEXT_SIZE = 30;
     private static final int DEFAULT_HOLE_COLOR = Color.BLACK;
     private RentPriceResponse currentPriceDetails;
+    private PieChart chart;
 
     public RentTotalCostOverviewFragment() {
         // Required empty public constructor
@@ -78,7 +79,13 @@ public class RentTotalCostOverviewFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View mView = inflater.inflate(R.layout.fragment_rent_total_cost_overview, container, false);
-        updateChart(mView);
+
+        SwitchMaterial firstMonthSwitch = mView.findViewById(R.id.first_month_switch);
+        firstMonthSwitch.setOnCheckedChangeListener(this);
+
+        this.chart = mView.findViewById(R.id.rent_total_cost_overview_chart);
+        updateChart(chart, firstMonthSwitch.isChecked());
+
         return mView;
     }
 
@@ -179,16 +186,25 @@ public class RentTotalCostOverviewFragment extends Fragment {
         chart.setHighlightPerTapEnabled(true);
     }
 
-    private void updateChart(View mView) {
-        ArrayList<RentCostEntry> rentCosts = RentTotalCostPreprocessor.getRentTotalCostEntries(this.currentPriceDetails);
+    private void updateChart(PieChart chart, boolean withUpfrontCosts) {
+        ArrayList<RentCostEntry> rentCosts = RentTotalCostPreprocessor.getRentTotalCostEntries(this.currentPriceDetails, withUpfrontCosts);
 
-        PieChart chart = mView.findViewById(R.id.rent_total_cost_overview_chart);
         styleChartDataset(chart, rentCosts);
         styleMarker(chart, rentCosts);
         styleHole(chart, rentCosts);
         styleLegend(chart, rentCosts);
         styleDescription(chart, rentCosts);
         styleChart(chart, rentCosts);
+        chart.notifyDataSetChanged();
         chart.invalidate(); // refresh
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        // hide visible marker, if any
+        this.chart.highlightValue(null);
+
+        // update chart with new upfront cost visibility
+        updateChart(this.chart, isChecked);
     }
 }

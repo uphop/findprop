@@ -9,6 +9,7 @@ public class RentPriceValueFormatter {
     private static final String DEFAULT_CURRENCY_CHARACTER = "£";
     private static final String DEFAULT_PERIOD_PER_MONTH_TEXT = "pcm";
     private static final String DEFAULT_PERIOD_PER_WEEK_TEXT = "pcw";
+    private static final String DEFAULT_PERIOD_ONE_OFF_TEXT = "";
 
     private final static int DAYS_IN_WEEK = 7;
     private final static int DAYS_IN_MONTH = 31;
@@ -35,13 +36,27 @@ public class RentPriceValueFormatter {
         if (period != null) {
             result.append(DEFAULT_CURRENCY_CHARACTER);
             result.append(price);
-            result.append(" ");
-            if (period == RentPricePeriodEnum.month) {
-                result.append(DEFAULT_PERIOD_PER_MONTH_TEXT);
-            } else {
-                result.append(DEFAULT_PERIOD_PER_WEEK_TEXT);
+            switch (period) {
+                case month:
+                    result.append(" ");
+                    result.append(DEFAULT_PERIOD_PER_MONTH_TEXT);
+                    break;
+                case week:
+                    result.append(" ");
+                    result.append(DEFAULT_PERIOD_PER_WEEK_TEXT);
+                    break;
+                default:
+                    break;
             }
+
         }
+        return result.toString();
+    }
+
+    public static String getPriceAsString(int price) {
+        StringBuilder result = new StringBuilder();
+        result.append(DEFAULT_CURRENCY_CHARACTER);
+        result.append(price);
         return result.toString();
     }
 

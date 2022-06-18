@@ -116,8 +116,13 @@ public class PriceService {
                                 new UtilityPriceLocalAuthorityDetails(localAuthority.getName(),
                                                 localAuthorityUtilityPrices));
 
-                // set upfront prices of local authority
-                response.setUpfrontDetails(new UpfrontPriceLocalAuthorityDetails(localAuthorityRentPrice));
+                // set upfront prices of postcode area (if available), or local authority (if
+                // postcode area prices are not available)
+                if (postcodeAreaRentPrice != null) {
+                        response.setUpfrontDetails(new UpfrontPriceLocalAuthorityDetails(postcodeAreaRentPrice));
+                } else {
+                        response.setUpfrontDetails(new UpfrontPriceLocalAuthorityDetails(localAuthorityRentPrice));
+                }
 
                 // set status
                 response.setStatus(RentPriceResponse.StatusEnum.OK);
