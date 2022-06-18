@@ -5,7 +5,6 @@ import android.widget.TextView;
 
 import com.example.findpropapp.R;
 import com.github.mikephil.charting.components.MarkerView;
-import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.MPPointF;
@@ -27,17 +26,14 @@ public class RentPriceOverviewMarkerView extends MarkerView {
     @Override
     public void refreshContent(Entry e, Highlight highlight) {
         // set marker description from price entry by label
-        if (e instanceof BarEntry) {
-            BarEntry barEntry = (BarEntry) e;
-            String description = getDescription(barEntry);
-            markerContent.setText(description);
-            super.refreshContent(e, highlight);
-        }
+        String description = getDescription(e);
+        markerContent.setText(description);
+        super.refreshContent(e, highlight);
     }
 
-    private String getDescription(BarEntry barEntry) {
-        if (barEntry != null && this.rentPrices != null) {
-            RentPriceEntry priceEntry = rentPrices.get((int) barEntry.getX());
+    private String getDescription(Entry entry) {
+        if (entry != null && this.rentPrices != null) {
+            RentPriceEntry priceEntry = rentPrices.get((int) entry.getX());
             return priceEntry.getDescription();
         }
         return "";

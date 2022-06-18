@@ -60,7 +60,8 @@ public class RentPriceOverviewFragment extends Fragment {
     };
     private static final int DEFAULT_TEXT_COLOR = Color.WHITE;
     private static final int DEFAULT_TEXT_SIZE = 10;
-    private static float DEFAULT_PRICE_OFFSET = 100f;
+    private static final float DEFAULT_PRICE_OFFSET = 100f;
+    private static final float DEFAULT_SPACE_OFFSET = 0.85f;
     private RentPriceResponse currentPriceDetails;
 
     public RentPriceOverviewFragment() {
@@ -179,8 +180,8 @@ public class RentPriceOverviewFragment extends Fragment {
         xAxis.setGranularityEnabled(true);
         xAxis.setCenterAxisLabels(false);
 
-        xAxis.setSpaceMin(chart.getBarData().getBarWidth() / 2f);
-        xAxis.setSpaceMax(chart.getBarData().getBarWidth() / 2f);
+        xAxis.setSpaceMin(chart.getBarData().getBarWidth() / DEFAULT_SPACE_OFFSET);
+        xAxis.setSpaceMax(chart.getBarData().getBarWidth() / DEFAULT_SPACE_OFFSET);
     }
 
     private void styleYAxis(CombinedChart chart, ArrayList<RentPriceEntry> rentPrices) {
@@ -212,6 +213,7 @@ public class RentPriceOverviewFragment extends Fragment {
         ArrayList<Integer> barColors = new ArrayList<Integer>();
         ArrayList<Entry> lineEntries = new ArrayList<Entry>();
 
+        // convert rent prices to bar / line chart entries
         for (int i = 0; i < rentPrices.size(); i++) {
             // create a new stacked bar entry
             BarEntry barEntry = new BarEntry(i,
@@ -228,6 +230,7 @@ public class RentPriceOverviewFragment extends Fragment {
             lineEntries.add(lineEntry);
         }
 
+        // prepare stacked bar chart for min / max values
         BarDataSet barDataSet = new BarDataSet(barEntries, "Bar DataSet"); // add entries to dataset
         barDataSet.setValueTextColor(DEFAULT_TEXT_COLOR); // styling, ...
         barDataSet.setValueTextSize(DEFAULT_TEXT_SIZE);
@@ -242,6 +245,7 @@ public class RentPriceOverviewFragment extends Fragment {
         });
         BarData barData = new BarData(barDataSet);
 
+        // prepare lien chart for average values
         LineDataSet lineDataSet = new LineDataSet(lineEntries, "Line DataSet");
         lineDataSet.setColor(DEFAULT_TEXT_COLOR);
         lineDataSet.setLineWidth(1f);
@@ -260,9 +264,10 @@ public class RentPriceOverviewFragment extends Fragment {
             }
         });
         lineDataSet.setDrawHighlightIndicators(false);
-        lineDataSet.setDrawHorizontalHighlightIndicator(false);
+        lineDataSet.setDrawHorizontalHighlightIndicator(true);
         LineData lineData = new LineData(lineDataSet);
 
+        // compile hybrid chart of bar / line charts, to show both min / max and average rent prices
         CombinedData data = new CombinedData();
         data.setData(barData);
         data.setData(lineData);
