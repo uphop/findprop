@@ -12,5 +12,7 @@
     <string name="title_activity_street_view_map">StreetViewMapActivity</string>
     <string name="is_that_the_first_month_of_your_rent">Is that the first month of your rent?</string>
     <string name="first_rent_month">First rent month?</string>
-    <string name="search_postcode">Search by location name</string>
+    <string name="search_location">Search by location name</string>
+    <string name="property_type">Select property type</string>
+    <string name="bedroom_count">Select bedroom count</string>
 </resources>

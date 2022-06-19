@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.location.Address;
@@ -13,9 +14,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
@@ -41,6 +46,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -66,8 +72,14 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private static final String ARG_CURRENT_LAT = "ARG_CURRENT_LAT";
     private static final String ARG_CURRENT_LON = "ARG_CURRENT_LON";
 
-    private static final String DEFAULT_PROPERTY_TYPE = "flat";
-    private static final int DEFAULT_BEDROOM_COUNT = 2;
+    private static final String[] propertyTypes = {"Room", "Studio", "Flat"};
+    private static final String DEFAULT_PROPERTY_TYPE = "Flat";
+    private String currentPropertyType = DEFAULT_PROPERTY_TYPE;
+
+    private static final String[] bedroomCounts = {"1 bedroom", "2 bedrooms", "3 bedrooms", "4 and more bedrooms"};
+    private static final String DEFAULT_BEDROOM_COUNT = "2 bedrooms";
+    private int currentBedroomCount = 2;
+
     private static final double DEFAULT_MAX_RANGE = 250.0;
 
     private GoogleMap mMap;
@@ -104,10 +116,6 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 .findFragmentById(R.id.map);
         mFragment = mapFragment;
 
-        // Prepare search box
-        searchView = findViewById(R.id.idSearchView);
-        searchView.setOnQueryTextListener(this);
-
         mapFragment.getMapAsync(this);
     }
 
@@ -115,6 +123,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        // Enable dark mode
+        updateMapUI();
 
         // Prompt the user for permission.
         getLocationPermission();
@@ -122,16 +132,20 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Turn on the My Location layer and the related control on the map.
         updateLocationUI();
         getDeviceLocation();
-        updateInfoWindowUI();
-
         // Add a single map click handler for setting new markers
         mMap.setOnMapClickListener(this);
 
-        // Add a long info window click handler for starting street view
-        mMap.setOnInfoWindowLongClickListener(this);
+        // Set tooltip view for markers
+        updateInfoWindowUI();
 
-        // Set a listener for info window events
-        mMap.setOnInfoWindowClickListener(this);
+        // Prepare search box
+        updateSearchUI();
+
+        // Prepare property type filter
+        updatePropertyTypeFilterUI();
+
+        // Prepare bedroom count filter
+        updateBedroomCountFilterUI();
     }
 
     @Override
@@ -143,6 +157,78 @@ public class DefaultMapsActivity extends FragmentActivity implements
             Intent intent = new Intent(this, RentPriceDetailsActivity.class);
             intent.putExtra(ARG_CURRENT_PRICE_DETAILS, currentPriceDetails);
             startActivity(intent);
+        }
+    }
+
+    private void updateSearchUI() {
+        searchView = findViewById(R.id.idSearchView);
+        searchView.setOnQueryTextListener(this);
+    }
+
+    private void updatePropertyTypeFilterUI() {
+        // Set values for property type list
+        Spinner spinner = (Spinner) findViewById(R.id.propertyTypeSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(DefaultMapsActivity.this,
+                android.R.layout.simple_spinner_item, propertyTypes);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        // Set default property type
+        int spinnerPosition = adapter.getPosition(DEFAULT_PROPERTY_TYPE);
+        spinner.setSelection(spinnerPosition);
+
+        spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                currentPropertyType = propertyTypes[position];
+                Log.e(TAG, "currentPropertyType: " + currentPropertyType);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    private void updateBedroomCountFilterUI() {
+        // Set values for bedroom count list
+        Spinner spinner = (Spinner) findViewById(R.id.bedroomCountSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(DefaultMapsActivity.this,
+                android.R.layout.simple_spinner_item, bedroomCounts);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        // Set default bedroom count
+        int spinnerPosition = adapter.getPosition(DEFAULT_BEDROOM_COUNT);
+        spinner.setSelection(spinnerPosition);
+
+        spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                currentBedroomCount = Integer.valueOf(bedroomCounts[position].substring(0, 1));
+                Log.e(TAG, "currentBedroomCount: " + String.valueOf(currentBedroomCount));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    private void updateMapUI() {
+        // Set map style to dark mode
+        try {
+            boolean success = mMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this, R.raw.mapstyle_night));
+
+            if (!success) {
+                Log.e(TAG, "Style parsing failed.");
+            }
+        } catch (Resources.NotFoundException e) {
+            Log.e(TAG, "Can't find style. Error: ", e);
         }
     }
 
@@ -175,6 +261,11 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 return info;
             }
         });
+
+        // Set a listener for info window events
+        mMap.setOnInfoWindowClickListener(this);
+        // Add a long info window click handler for starting street view
+        mMap.setOnInfoWindowLongClickListener(this);
     }
 
     private void getLocationPermission() {
@@ -280,7 +371,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         if (latLng != null) {
             Log.i(TAG, "Capturing new anchor: " + latLng.toString());
             // Get rent prices around that anchor postcode
-            findPropApiClient.getRentPrices(latLng.longitude, latLng.latitude, DEFAULT_MAX_RANGE, DEFAULT_PROPERTY_TYPE, DEFAULT_BEDROOM_COUNT,
+            findPropApiClient.getRentPrices(latLng.longitude, latLng.latitude, DEFAULT_MAX_RANGE, currentPropertyType.toLowerCase(), currentBedroomCount,
                     new RentPriceCallback() {
                         @Override
                         public void onSuccess(RentPriceResponse rentPrices) {
@@ -354,12 +445,20 @@ public class DefaultMapsActivity extends FragmentActivity implements
                     captureCurrentAnchor(latLng);
                 } else {
                     Log.e(TAG, "Failed to get addresses from location, no results for " + location);
+                    Toast.makeText(getApplicationContext(),
+                            "No results for " + location,
+                            Toast.LENGTH_LONG)
+                            .show();
                 }
             } catch (IOException e) {
                 Log.e(TAG, "Failed to get addresses from location: " + e.toString());
             }
         } else {
             Log.e(TAG, "Failed to get addresses from location, location text is empty.");
+            Toast.makeText(getApplicationContext(),
+                    "Location is empty",
+                    Toast.LENGTH_LONG)
+                    .show();
         }
         return false;
     }
@@ -368,4 +467,5 @@ public class DefaultMapsActivity extends FragmentActivity implements
     public boolean onQueryTextChange(String newText) {
         return false;
     }
+
 }
