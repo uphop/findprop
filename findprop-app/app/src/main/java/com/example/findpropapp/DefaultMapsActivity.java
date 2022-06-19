@@ -71,7 +71,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private static final double DEFAULT_MAX_RANGE = 250.0;
 
     private GoogleMap mMap;
-    private View mView;
+    private SupportMapFragment mFragment;
     private SearchView searchView;
     private ActivityMapsBinding binding;
 
@@ -102,8 +102,9 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        mFragment = mapFragment;
 
-        mView = mapFragment.getView();
+        // Prepare search box
         searchView = findViewById(R.id.idSearchView);
         searchView.setOnQueryTextListener(this);
 
@@ -208,22 +209,35 @@ public class DefaultMapsActivity extends FragmentActivity implements
     @SuppressLint("MissingPermission")
     private void updateLocationUI() {
         if (mMap == null) {
+            Log.e(TAG, "Cannot update location, map is not set.");
             return;
         }
         try {
+            // If current location permission is granted, update UI with My Location dot and button
             if (locationPermissionGranted) {
                 mMap.setMyLocationEnabled(true);
-                mMap.getUiSettings().setMyLocationButtonEnabled(false);
-                Log.e(TAG, "Setting current location");
+                mMap.getUiSettings().setMyLocationButtonEnabled(true);
+
+                // Move My Location button to the bottom right corner
+                if (mFragment != null &&
+                        mFragment.getView().findViewById(Integer.parseInt("1")) != null) {
+                    View locationButton = ((View) mFragment.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+                    RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)
+                            locationButton.getLayoutParams();
+                    layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
+                    layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
+                    layoutParams.setMargins(0, 0, 30, 30);
+                }
             } else {
+                // Otherwise hide My Location elements
                 mMap.setMyLocationEnabled(false);
                 mMap.getUiSettings().setMyLocationButtonEnabled(false);
                 lastKnownLocation = null;
                 getLocationPermission();
-                Log.e(TAG, "Cannot set current location.");
+                Log.e(TAG, "Cannot set current location, permission not granted.");
             }
         } catch (SecurityException e) {
-            Log.e("Exception: %s", e.getMessage());
+            Log.e(TAG, "Cannot update location, " + e.getMessage());
         }
     }
 
@@ -333,19 +347,19 @@ public class DefaultMapsActivity extends FragmentActivity implements
             Geocoder geocoder = new Geocoder(DefaultMapsActivity.this);
             try {
                 List<Address> addressList = geocoder.getFromLocationName(location, 1);
-                if(addressList.size() > 0) {
+                if (addressList.size() > 0) {
                     // Add new marker by the first address coordinates
                     Address address = addressList.get(0);
                     LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
                     captureCurrentAnchor(latLng);
                 } else {
-                    Log.e(TAG,"Failed to get addresses from location, no results for " + location);
+                    Log.e(TAG, "Failed to get addresses from location, no results for " + location);
                 }
             } catch (IOException e) {
-                Log.e(TAG,"Failed to get addresses from location: " + e.toString());
+                Log.e(TAG, "Failed to get addresses from location: " + e.toString());
             }
         } else {
-            Log.e(TAG,"Failed to get addresses from location, location text is empty.");
+            Log.e(TAG, "Failed to get addresses from location, location text is empty.");
         }
         return false;
     }
