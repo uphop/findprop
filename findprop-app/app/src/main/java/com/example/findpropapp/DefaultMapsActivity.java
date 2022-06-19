@@ -6,15 +6,19 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -42,14 +46,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DefaultMapsActivity extends FragmentActivity implements
         OnMapReadyCallback,
         GoogleMap.OnMapClickListener,
         GoogleMap.OnInfoWindowClickListener,
-        GoogleMap.OnInfoWindowLongClickListener {
+        GoogleMap.OnInfoWindowLongClickListener,
+        SearchView.OnQueryTextListener {
 
     private static final String TAG = DefaultMapsActivity.class.getSimpleName();
     // Default map params
@@ -64,6 +71,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private static final double DEFAULT_MAX_RANGE = 250.0;
 
     private GoogleMap mMap;
+    private View mView;
+    private SearchView searchView;
     private ActivityMapsBinding binding;
 
     // Location-related attributes
@@ -93,6 +102,11 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
+        mView = mapFragment.getView();
+        searchView = findViewById(R.id.idSearchView);
+        searchView.setOnQueryTextListener(this);
+
         mapFragment.getMapAsync(this);
     }
 
@@ -199,7 +213,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         try {
             if (locationPermissionGranted) {
                 mMap.setMyLocationEnabled(true);
-                mMap.getUiSettings().setMyLocationButtonEnabled(true);
+                mMap.getUiSettings().setMyLocationButtonEnabled(false);
                 Log.e(TAG, "Setting current location");
             } else {
                 mMap.setMyLocationEnabled(false);
@@ -305,5 +319,39 @@ public class DefaultMapsActivity extends FragmentActivity implements
         intent.putExtra(ARG_CURRENT_LAT, marker.getPosition().latitude);
         intent.putExtra(ARG_CURRENT_LON, marker.getPosition().longitude);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        // Get location text from search view
+        String location = searchView.getQuery().toString();
+        searchView.setQuery("", false);
+        searchView.setIconified(true);
+
+        // Get address from location text
+        if (location != null || location.equals("")) {
+            Geocoder geocoder = new Geocoder(DefaultMapsActivity.this);
+            try {
+                List<Address> addressList = geocoder.getFromLocationName(location, 1);
+                if(addressList.size() > 0) {
+                    // Add new marker by the first address coordinates
+                    Address address = addressList.get(0);
+                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+                    captureCurrentAnchor(latLng);
+                } else {
+                    Log.e(TAG,"Failed to get addresses from location, no results for " + location);
+                }
+            } catch (IOException e) {
+                Log.e(TAG,"Failed to get addresses from location: " + e.toString());
+            }
+        } else {
+            Log.e(TAG,"Failed to get addresses from location, location text is empty.");
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
 }
