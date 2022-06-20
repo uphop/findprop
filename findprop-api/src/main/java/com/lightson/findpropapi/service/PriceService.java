@@ -89,10 +89,16 @@ public class PriceService {
                 response.setRegionDetails(new RentPriceRegionDetails(region.getName(), regionRentPrice));
 
                 // set rent price of local authority
+                log.error("propertyType: " + propertyType);
+                log.error("bedrooms: " + String.valueOf(bedrooms));
                 LocalAuthorityRentPrice localAuthorityRentPrice = localAuthorityRentPriceRepository
                                 .findByLocalAuthorityAndPropertyTypeAndBedrooms(localAuthority, propertyType, bedrooms);
                 response.setLocalAuthorityDetails(
                                 new RentPriceLocalAuthorityDetails(localAuthority.getName(), localAuthorityRentPrice));
+
+                if(localAuthorityRentPrice == null) {
+                        log.error("localAuthorityRentPrice is null");
+                }
 
                 // set rent price of postcode area
                 PostcodeAreaRentPrice postcodeAreaRentPrice = postcodeAreaRentPriceRepository
@@ -120,7 +126,7 @@ public class PriceService {
                 // postcode area prices are not available)
                 if (postcodeAreaRentPrice != null) {
                         response.setUpfrontDetails(new UpfrontPriceLocalAuthorityDetails(postcodeAreaRentPrice));
-                } else {
+                } else if (localAuthorityRentPrice != null) {
                         response.setUpfrontDetails(new UpfrontPriceLocalAuthorityDetails(localAuthorityRentPrice));
                 }
 

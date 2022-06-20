@@ -34,12 +34,14 @@
         <activity
             android:name=".ui.main.StreetViewMapActivity"
             android:exported="false"
-            android:label="@string/title_activity_street_view_map" />
+            android:label="@string/title_activity_street_view_map"
+            android:theme="@style/Theme.FindPropApp.NoActionBar"/>
+
         <activity
             android:name=".ui.main.RentPriceDetailsActivity"
             android:exported="false"
             android:label="@string/title_activity_rent_price_details"
-            android:theme="@style/Theme.FindPropApp.NoActionBar" />
+            android:theme="@style/Theme.FindPropApp" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -48,7 +50,9 @@
         <activity
             android:name=".DefaultMapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps">
+            android:label="@string/title_activity_maps"
+            android:theme="@style/Theme.FindPropApp.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
