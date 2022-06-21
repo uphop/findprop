@@ -30,6 +30,7 @@ public class RentPriceResponse implements Serializable {
     private UtilityPriceLocalAuthorityDetails utilityDetails;
     private UpfrontPriceLocalAuthorityDetails upfrontDetails;
     private List<RentPriceLocalAuthorityDetails> relatedLocalAuthorityDetails;
+    private List<RentPriceLocalAuthorityDetails> similarLocalAuthorityDetails;
     private RentPricePostcodeAreaDetails postcodeAreaDetails;
 
     public RentPriceResponse() {
@@ -136,7 +137,21 @@ public class RentPriceResponse implements Serializable {
             this.relatedLocalAuthorityDetails = new ArrayList<RentPriceLocalAuthorityDetails>();
         }
         this.relatedLocalAuthorityDetails.add(new RentPriceLocalAuthorityDetails(localAuthority, inputPrice));
+    }
 
+    public List<RentPriceLocalAuthorityDetails> getSimilarLocalAuthorityDetails() {
+        return similarLocalAuthorityDetails;
+    }
+
+    public void setSimilarLocalAuthorityDetails(List<RentPriceLocalAuthorityDetails> similarLocalAuthorityDetails) {
+        this.similarLocalAuthorityDetails = similarLocalAuthorityDetails;
+    }
+
+    public void addSimilarLocalAuthorityDetails(String localAuthority, LocalAuthorityRentPrice inputPrice) {
+        if (this.similarLocalAuthorityDetails == null) {
+            this.similarLocalAuthorityDetails = new ArrayList<RentPriceLocalAuthorityDetails>();
+        }
+        this.similarLocalAuthorityDetails.add(new RentPriceLocalAuthorityDetails(localAuthority, inputPrice));
     }
 
     public RentPricePostcodeDetails getPostcodeDetails() {

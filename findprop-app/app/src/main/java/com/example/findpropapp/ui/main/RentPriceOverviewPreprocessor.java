@@ -25,9 +25,9 @@ public class RentPriceOverviewPreprocessor {
             StringBuilder postcodeAreaDetailsDescription = new StringBuilder();
             postcodeAreaDetailsDescription.append(resources.getString(R.string.average_price_for));
             postcodeAreaDetailsDescription.append(" ");
-            postcodeAreaDetailsDescription.append(postcodeAreaDetails.getPostcodeArea());
-            postcodeAreaDetailsDescription.append(" ");
             postcodeAreaDetailsDescription.append(resources.getString(R.string.postcode_area));
+            postcodeAreaDetailsDescription.append(" ");
+            postcodeAreaDetailsDescription.append(postcodeAreaDetails.getPostcodeArea());
 
             rentPrices.add(new RentPriceEntry(postcodeAreaDetails.getPrice().getPriceMean(),
                     postcodeAreaDetails.getPrice().getPriceLow(),
@@ -43,9 +43,9 @@ public class RentPriceOverviewPreprocessor {
             StringBuilder localAuthorityDetailsDescription = new StringBuilder();
             localAuthorityDetailsDescription.append(resources.getString(R.string.average_price_for));
             localAuthorityDetailsDescription.append(" ");
-            localAuthorityDetailsDescription.append(localAuthorityDetails.getLocalAuthority());
-            localAuthorityDetailsDescription.append(" ");
             localAuthorityDetailsDescription.append(resources.getString(R.string.borough));
+            localAuthorityDetailsDescription.append(" ");
+            localAuthorityDetailsDescription.append(localAuthorityDetails.getLocalAuthority());
 
             rentPrices.add(new RentPriceEntry(localAuthorityDetails.getPrice().getPriceMean(),
                     localAuthorityDetails.getPrice().getPriceLow(),
@@ -55,7 +55,7 @@ public class RentPriceOverviewPreprocessor {
                     localAuthorityDetailsDescription.toString()));
         }
 
-        // set average related local authority prices
+        /* // set average related local authority prices
         if (currentPriceDetails.getRelatedLocalAuthorityDetails() != null) {
             for (RentPriceLocalAuthorityDetails relatedLocalAuthorityPrice : currentPriceDetails.getRelatedLocalAuthorityDetails()) {
                 if (relatedLocalAuthorityPrice != null) {
@@ -71,6 +71,27 @@ public class RentPriceOverviewPreprocessor {
                             relatedLocalAuthorityPrice.getPrice().getPriceHigh(),
                             relatedLocalAuthorityPrice.getLocalAuthority(),
                             RentPriceEntryType.related_local_authority,
+                            localAuthorityDetailsDescription.toString()));
+                }
+            }
+        }*/
+
+        // set average similar local authority prices
+        if (currentPriceDetails.getSimilarLocalAuthorityDetails() != null) {
+            for (RentPriceLocalAuthorityDetails similarLocalAuthorityPrice : currentPriceDetails.getSimilarLocalAuthorityDetails()) {
+                if (similarLocalAuthorityPrice != null) {
+                    StringBuilder localAuthorityDetailsDescription = new StringBuilder();
+                    localAuthorityDetailsDescription.append(resources.getString(R.string.average_price_for));
+                    localAuthorityDetailsDescription.append(" ");
+                    localAuthorityDetailsDescription.append(resources.getString(R.string.similar_borough));
+                    localAuthorityDetailsDescription.append(" ");
+                    localAuthorityDetailsDescription.append(similarLocalAuthorityPrice.getLocalAuthority());
+
+                    rentPrices.add(new RentPriceEntry(similarLocalAuthorityPrice.getPrice().getPriceMean(),
+                            similarLocalAuthorityPrice.getPrice().getPriceLow(),
+                            similarLocalAuthorityPrice.getPrice().getPriceHigh(),
+                            similarLocalAuthorityPrice.getLocalAuthority(),
+                            RentPriceEntryType.similar_local_authority,
                             localAuthorityDetailsDescription.toString()));
                 }
             }

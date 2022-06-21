@@ -89,16 +89,10 @@ public class PriceService {
                 response.setRegionDetails(new RentPriceRegionDetails(region.getName(), regionRentPrice));
 
                 // set rent price of local authority
-                log.error("propertyType: " + propertyType);
-                log.error("bedrooms: " + String.valueOf(bedrooms));
                 LocalAuthorityRentPrice localAuthorityRentPrice = localAuthorityRentPriceRepository
                                 .findByLocalAuthorityAndPropertyTypeAndBedrooms(localAuthority, propertyType, bedrooms);
                 response.setLocalAuthorityDetails(
                                 new RentPriceLocalAuthorityDetails(localAuthority.getName(), localAuthorityRentPrice));
-
-                if(localAuthorityRentPrice == null) {
-                        log.error("localAuthorityRentPrice is null");
-                }
 
                 // set rent price of postcode area
                 PostcodeAreaRentPrice postcodeAreaRentPrice = postcodeAreaRentPriceRepository
@@ -113,6 +107,16 @@ public class PriceService {
 
                         response.addRelatedLocalAuthorityDetails(relatedLocalAuthority.getName(),
                                         relatedLocalAuthorityRentPrice);
+                }
+
+                // set rent prices of similar local authorities
+                Set<LocalAuthorityRentPrice> similarLocalAuthorityRentPrices = localAuthorityRentPriceRepository
+                                .findSimilarLocalAuthorityRentPrices(localAuthority.getId(),
+                                                propertyType, bedrooms);
+                for (LocalAuthorityRentPrice similarLocalAuthorityRentPrice : similarLocalAuthorityRentPrices) {
+                        response.addSimilarLocalAuthorityDetails(
+                                        similarLocalAuthorityRentPrice.getLocalAuthority().getName(),
+                                        similarLocalAuthorityRentPrice);
                 }
 
                 // set utility prices of local authority

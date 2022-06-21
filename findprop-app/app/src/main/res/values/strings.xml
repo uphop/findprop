@@ -24,6 +24,7 @@
     <string name="postcode_area">postcode area</string>
     <string name="borough">borough</string>
     <string name="nearby_borough">nearby borough</string>
+    <string name="similar_borough">similar borough</string>
     <string name="region">region</string>
     <string name="total_rent_cost_for">Total rent cost for a</string>
     <string name="your_expected_utility_costs">"Your expected monthly utility costs:</string>

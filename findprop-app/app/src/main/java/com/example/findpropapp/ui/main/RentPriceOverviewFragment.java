@@ -51,6 +51,10 @@ public class RentPriceOverviewFragment extends Fragment {
                         Color.valueOf(0, 0, 0, 0).toArgb(),
                         android.graphics.Color.rgb(0, 102, 0)
                 });
+                put(RentPriceEntryType.similar_local_authority, new int[]{
+                        Color.valueOf(0, 0, 0, 0).toArgb(),
+                        android.graphics.Color.rgb(53, 102, 0)
+                });
                 put(RentPriceEntryType.postcode_area, new int[]{
                         Color.valueOf(0, 0, 0, 0).toArgb(),
                         android.graphics.Color.rgb(102, 102, 102)
@@ -60,8 +64,9 @@ public class RentPriceOverviewFragment extends Fragment {
     };
     private static final int DEFAULT_TEXT_COLOR = Color.WHITE;
     private static final int DEFAULT_TEXT_SIZE = 10;
-    private static final float DEFAULT_PRICE_OFFSET = 100f;
+    private static final float DEFAULT_PRICE_OFFSET = 150f;
     private static final float DEFAULT_SPACE_OFFSET = 0.85f;
+    private static final float DEFAULT_LABEL_ROTATION = -30f;
     private RentPriceResponse currentPriceDetails;
 
     public RentPriceOverviewFragment() {
@@ -161,6 +166,7 @@ public class RentPriceOverviewFragment extends Fragment {
                                 priceEntryColorMap.get(rentPrice.getType())[1]));
             }
         });
+
         legend.setCustom(legendEntryMap.values().toArray(new LegendEntry[0]));
     }
 
@@ -172,6 +178,7 @@ public class RentPriceOverviewFragment extends Fragment {
         xAxis.setDrawLabels(true);
         xAxis.setTextSize(DEFAULT_TEXT_SIZE);
         xAxis.setTextColor(DEFAULT_TEXT_COLOR);
+        xAxis.setLabelRotationAngle(DEFAULT_LABEL_ROTATION);
 
         List<String> valueLabels = new ArrayList<>();
         rentPrices.forEach((rentPrice) -> {

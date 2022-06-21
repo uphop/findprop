@@ -1,7 +1,8 @@
 use findprop^;
 
--- Drop helper procedured
+-- Drop helper procedures
 drop procedure if exists get_nearest_postcodes^;
+drop procedure if exists get_similar_local_authority_rent_prices^;
 
 -- Drop price tables
 drop table if exists postcode_area_rent_price^;
@@ -196,4 +197,44 @@ begin
 	and ST_Distance_Sphere(center_point, location) < max_range
 	order by ST_Distance_Sphere(center_point, location) asc
     limit 1;
+end^;
+
+create procedure get_similar_local_authority_rent_prices(in la_id int, in p_type varchar(50), in b_count int)
+begin
+	declare p_mean int;
+    declare la_id1 int;
+    declare la_id2 int;
+    
+    select lpi.price_mean 
+    into p_mean
+	from local_authority_rent_price lpi 
+	where lpi.bedrooms = b_count 
+		and lpi.property_type = p_type 
+		and lpi.local_authority_id = la_id;
+    
+	select la.id 
+    into la_id1
+	from local_authority_rent_price lp inner join local_authority la on lp.local_authority_id = la.id
+	where lp.bedrooms = b_count 
+		and lp.property_type = p_type 
+		and la.id != la_id 
+		and lp.price_mean < p_mean
+	order by price_mean desc
+	limit 1;
+    
+    select la.id 
+    into la_id2
+	from local_authority_rent_price lp inner join local_authority la on lp.local_authority_id = la.id
+	where lp.bedrooms = b_count 
+		and lp.property_type = p_type 
+		and la.id != la_id 
+		and lp.price_mean > p_mean
+	order by price_mean asc
+	limit 1;
+    
+    select lp.* 
+    from local_authority_rent_price lp 
+    where lp.bedrooms = b_count 
+		and lp.property_type = p_type 
+		and lp.local_authority_id in (la_id1, la_id2);
 end^;
