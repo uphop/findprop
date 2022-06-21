@@ -1,26 +1,20 @@
 package com.example.findpropapp.ui.main;
 
 import android.os.Bundle;
-
-import com.example.findpropapp.R;
-import com.example.findpropapp.model.RentPriceResponse;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.findpropapp.R;
 import com.example.findpropapp.databinding.ActivityRentPriceDetailsBinding;
+import com.example.findpropapp.model.RentPriceResponse;
+import com.google.android.material.tabs.TabLayout;
 
 public class RentPriceDetailsActivity extends AppCompatActivity {
 
-    private ActivityRentPriceDetailsBinding binding;
-
     private static final String ARG_CURRENT_PRICE_DETAILS = "CURRENT_PRICE_DETAILS";
+    private ActivityRentPriceDetailsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +39,18 @@ public class RentPriceDetailsActivity extends AppCompatActivity {
 
     private void updateTitle(RentPriceResponse currentPriceDetails) {
         if (currentPriceDetails != null) {
-            String titleText = "Renting near " + currentPriceDetails.getPostcodeDetails().getPostcode() + ", " + currentPriceDetails.getLocalAuthorityDetails().getLocalAuthority();
+            StringBuilder titleText = new StringBuilder();
+            titleText.append(getString(R.string.renting_near));
+            
+            titleText.append(" ");
+            if (currentPriceDetails.getPostcodeDetails() != null) {
+                titleText.append(currentPriceDetails.getPostcodeDetails().getPostcode());
+                titleText.append(", ");
+            }
+            titleText.append(currentPriceDetails.getLocalAuthorityDetails().getLocalAuthority());
+
             TextView titleView = (TextView) findViewById(R.id.title);
-            titleView.setText(titleText);
+            titleView.setText(titleText.toString());
         }
     }
 }

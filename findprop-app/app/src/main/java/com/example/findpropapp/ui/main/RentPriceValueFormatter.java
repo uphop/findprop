@@ -9,7 +9,6 @@ public class RentPriceValueFormatter {
     private static final String DEFAULT_CURRENCY_CHARACTER = "£";
     private static final String DEFAULT_PERIOD_PER_MONTH_TEXT = "pcm";
     private static final String DEFAULT_PERIOD_PER_WEEK_TEXT = "pcw";
-    private static final String DEFAULT_PERIOD_ONE_OFF_TEXT = "";
 
     private final static int DAYS_IN_WEEK = 7;
     private final static int DAYS_IN_MONTH = 31;

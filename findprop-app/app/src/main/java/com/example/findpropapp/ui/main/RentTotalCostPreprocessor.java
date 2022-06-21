@@ -1,7 +1,9 @@
 package com.example.findpropapp.ui.main;
 
-import android.util.Log;
+import android.content.Context;
+import android.content.res.Resources;
 
+import com.example.findpropapp.R;
 import com.example.findpropapp.model.RentPricePeriodEnum;
 import com.example.findpropapp.model.RentPriceResponse;
 import com.example.findpropapp.model.UpfrontPriceDetails;
@@ -15,29 +17,30 @@ import java.util.List;
 public class RentTotalCostPreprocessor {
     private static final String TAG = RentTotalCostOverviewFragment.class.getSimpleName();
 
-    public static ArrayList<RentCostEntry> getRentTotalCostEntries(RentPriceResponse currentPriceDetails, boolean withUpfrontCosts) {
+    public static ArrayList<RentCostEntry> getRentTotalCostEntries(RentPriceResponse currentPriceDetails, boolean withUpfrontCosts, Context context) {
         ArrayList<RentCostEntry> rentCosts = new ArrayList<RentCostEntry>();
         if (currentPriceDetails == null) {
             return rentCosts;
         }
 
-        addUtilityCosts(currentPriceDetails, rentCosts);
-        addRentCosts(currentPriceDetails, rentCosts);
+        addUtilityCosts(currentPriceDetails, rentCosts, context);
+        addRentCosts(currentPriceDetails, rentCosts, context);
         if (withUpfrontCosts) {
-            addUpfrontCosts(currentPriceDetails, rentCosts);
+            addUpfrontCosts(currentPriceDetails, rentCosts, context);
         }
 
         return rentCosts;
     }
 
-    private static void addUtilityCosts(RentPriceResponse currentPriceDetails, ArrayList<RentCostEntry> rentCosts) {
+    private static void addUtilityCosts(RentPriceResponse currentPriceDetails, ArrayList<RentCostEntry> rentCosts, Context context) {
         // set utility costs
         UtilityPriceLocalAuthorityDetails utilityCosts = currentPriceDetails.getUtilityDetails();
         if (utilityCosts != null) {
             // aggregate all utility costs except council tax under single cost entry
-
+            Resources resources = context.getResources();
             StringBuilder utilityDescription = new StringBuilder();
-            utilityDescription.append("Your expected monthly utility costs: ");
+            utilityDescription.append(resources.getString(R.string.your_expected_utility_costs));
+            utilityDescription.append(" ");
             utilityDescription.append(System.getProperty("line.separator"));
 
             int totalCost = 0;
@@ -67,14 +70,16 @@ public class RentTotalCostPreprocessor {
         }
     }
 
-    private static void addRentCosts(RentPriceResponse currentPriceDetails, ArrayList<RentCostEntry> rentCosts) {
+    private static void addRentCosts(RentPriceResponse currentPriceDetails, ArrayList<RentCostEntry> rentCosts, Context context) {
         // set rent price - take postcode area rent, if available; otherwise, local authority rent
         int rentPrice = currentPriceDetails.getPostcodeAreaDetails() != null ?
                 currentPriceDetails.getPostcodeAreaDetails().getPrice().getPriceMean() :
                 currentPriceDetails.getLocalAuthorityDetails().getPrice().getPriceMean();
 
+        Resources resources = context.getResources();
         StringBuilder rentDescription = new StringBuilder();
-        rentDescription.append("Typical rent is ");
+        rentDescription.append(resources.getString(R.string.typical_rent_is));
+        rentDescription.append(" ");
         rentDescription.append(RentPriceValueFormatter.getPriceWithPeriodAsString(rentPrice, RentPricePeriodEnum.month));
 
         rentCosts.add(new RentCostEntry(
@@ -83,15 +88,15 @@ public class RentTotalCostPreprocessor {
                 RentCostEntryType.rent, rentDescription.toString()));
     }
 
-    private static void addUpfrontCosts(RentPriceResponse currentPriceDetails, ArrayList<RentCostEntry> rentCosts) {
+    private static void addUpfrontCosts(RentPriceResponse currentPriceDetails, ArrayList<RentCostEntry> rentCosts, Context context) {
         // set upfront costs
         UpfrontPriceLocalAuthorityDetails upfrontCosts = currentPriceDetails.getUpfrontDetails();
         if (upfrontCosts != null) {
+            Resources resources = context.getResources();
             StringBuilder upfrontDescription = new StringBuilder();
-            upfrontDescription.append("Your expected one-off upfront costs: ");
+            upfrontDescription.append(resources.getString(R.string.your_expected_upfront_costs));
+            upfrontDescription.append(" ");
             upfrontDescription.append(System.getProperty("line.separator"));
-
-
 
             int totalCost = 0;
             List<UpfrontPriceDetails> upfrontPriceDetails = upfrontCosts.getPrice();

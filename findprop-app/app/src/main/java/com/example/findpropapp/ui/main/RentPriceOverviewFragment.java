@@ -113,15 +113,19 @@ public class RentPriceOverviewFragment extends Fragment {
         description.setTextSize(DEFAULT_TEXT_SIZE);
 
         StringBuilder descriptionText = new StringBuilder();
-        descriptionText.append("Rent price for a ");
+        descriptionText.append(getString(R.string.rent_price_for));
+        descriptionText.append(" ");
         descriptionText.append(currentPriceDetails.getPropertyType());
         if (currentPriceDetails.getBedrooms() > 0) {
-            descriptionText.append(" with ");
+            descriptionText.append(" ");
+            descriptionText.append(getString(R.string.with));
+            descriptionText.append(" ");
             descriptionText.append(String.valueOf(currentPriceDetails.getBedrooms()));
+            descriptionText.append(" ");
             if (currentPriceDetails.getBedrooms() > 1) {
-                descriptionText.append(" bedrooms");
+                descriptionText.append(getString(R.string.bedrooms));
             } else {
-                descriptionText.append(" bedroom");
+                descriptionText.append(getString(R.string.bedroom));
             }
 
         }
@@ -275,7 +279,7 @@ public class RentPriceOverviewFragment extends Fragment {
     }
 
     private void updateChart(View mView) {
-        ArrayList<RentPriceEntry> rentPrices = RentPriceOverviewPreprocessor.getRentPriceEntries(this.currentPriceDetails);
+        ArrayList<RentPriceEntry> rentPrices = RentPriceOverviewPreprocessor.getRentPriceEntries(this.currentPriceDetails, this.getContext());
 
         CombinedChart chart = mView.findViewById(R.id.rent_price_overview_chart);
         styleChartDataset(chart, rentPrices);

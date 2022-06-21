@@ -2,7 +2,6 @@ package com.example.findpropapp.ui.main;
 
 public enum RentCostEntryType {
     utility("Utilities"),
-    council_tax("Council tax"),
     rent("Rent"),
     upfront("Upfront costs");
 

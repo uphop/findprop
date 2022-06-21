@@ -11,10 +11,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.findpropapp.R;
 import com.example.findpropapp.model.RentPriceResponse;
 
-/**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
- */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes

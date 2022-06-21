@@ -9,6 +9,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONObject;
 
+import com.example.findpropapp.model.RentPricePropertyTypeEnum;
 import com.example.findpropapp.model.RentPriceResponse;
 import com.example.findpropapp.network.RequestQueueSingleton;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -24,7 +25,7 @@ public class FIndPropApiAdapter {
         this.ctx = ctx;
     }
 
-    public void getRentPrices(double longitude, double latitude, double maxRange, String propertyType, int bedrooms, RentPriceCallback callback) {
+    public void getRentPrices(double longitude, double latitude, double maxRange, RentPricePropertyTypeEnum propertyType, int bedrooms, RentPriceCallback callback) {
         // prepare URL and call backend
         String url = String.format(FINDPROP_API_BASE_URL + "/rent/price?longitude=%f&latitude=%f&maxRange=%f&propertyType=%s&bedrooms=%d",
                 longitude, latitude, maxRange, propertyType, bedrooms);

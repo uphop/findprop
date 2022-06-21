@@ -15,4 +15,25 @@
     <string name="search_location">Search by location name</string>
     <string name="property_type">Select property type</string>
     <string name="bedroom_count">Select bedroom count</string>
+    <string name="renting_near">Renting near</string>
+    <string name="rent_price_for">Rent price for a</string>
+    <string name="with">with</string>
+    <string name="bedrooms">bedrooms</string>
+    <string name="bedroom">bedroom</string>
+    <string name="average_price_for">Average price for</string>
+    <string name="postcode_area">postcode area</string>
+    <string name="borough">borough</string>
+    <string name="nearby_borough">nearby borough</string>
+    <string name="region">region</string>
+    <string name="total_rent_cost_for">Total rent cost for a</string>
+    <string name="your_expected_utility_costs">"Your expected monthly utility costs:</string>
+    <string name="typical_rent_is">Typical rent is</string>
+    <string name="your_expected_upfront_costs">Your expected one-off upfront costs:</string>
+    <string name="room">Room</string>
+    <string name="studio">Studio</string>
+    <string name="flat">Flat</string>
+    <string name="one_bedroom">1 bedroom</string>
+    <string name="two_bedroom">2 bedrooms</string>
+    <string name="three_bedroom">3 bedrooms</string>
+    <string name="four_and_more_bedroom">4 and more bedrooms</string>
 </resources>

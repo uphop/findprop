@@ -1,5 +1,9 @@
 package com.example.findpropapp.ui.main;
 
+import android.content.Context;
+import android.content.res.Resources;
+
+import com.example.findpropapp.R;
 import com.example.findpropapp.model.RentPriceLocalAuthorityDetails;
 import com.example.findpropapp.model.RentPricePostcodeAreaDetails;
 import com.example.findpropapp.model.RentPriceRegionDetails;
@@ -8,19 +12,22 @@ import com.example.findpropapp.model.RentPriceResponse;
 import java.util.ArrayList;
 
 public class RentPriceOverviewPreprocessor {
-    public static ArrayList<RentPriceEntry> getRentPriceEntries(RentPriceResponse currentPriceDetails) {
+    public static ArrayList<RentPriceEntry> getRentPriceEntries(RentPriceResponse currentPriceDetails, Context context) {
         ArrayList<RentPriceEntry> rentPrices = new ArrayList<RentPriceEntry>();
         if (currentPriceDetails == null) {
             return rentPrices;
         }
+        Resources resources = context.getResources();
 
         // set average postcode area price
         RentPricePostcodeAreaDetails postcodeAreaDetails = currentPriceDetails.getPostcodeAreaDetails();
         if (postcodeAreaDetails != null) {
             StringBuilder postcodeAreaDetailsDescription = new StringBuilder();
-            postcodeAreaDetailsDescription.append("Average price for ");
+            postcodeAreaDetailsDescription.append(resources.getString(R.string.average_price_for));
+            postcodeAreaDetailsDescription.append(" ");
             postcodeAreaDetailsDescription.append(postcodeAreaDetails.getPostcodeArea());
-            postcodeAreaDetailsDescription.append(" postcode area");
+            postcodeAreaDetailsDescription.append(" ");
+            postcodeAreaDetailsDescription.append(resources.getString(R.string.postcode_area));
 
             rentPrices.add(new RentPriceEntry(postcodeAreaDetails.getPrice().getPriceMean(),
                     postcodeAreaDetails.getPrice().getPriceLow(),
@@ -34,9 +41,11 @@ public class RentPriceOverviewPreprocessor {
         RentPriceLocalAuthorityDetails localAuthorityDetails = currentPriceDetails.getLocalAuthorityDetails();
         if (localAuthorityDetails != null) {
             StringBuilder localAuthorityDetailsDescription = new StringBuilder();
-            localAuthorityDetailsDescription.append("Average price for  ");
+            localAuthorityDetailsDescription.append(resources.getString(R.string.average_price_for));
+            localAuthorityDetailsDescription.append(" ");
             localAuthorityDetailsDescription.append(localAuthorityDetails.getLocalAuthority());
-            localAuthorityDetailsDescription.append(" borough");
+            localAuthorityDetailsDescription.append(" ");
+            localAuthorityDetailsDescription.append(resources.getString(R.string.borough));
 
             rentPrices.add(new RentPriceEntry(localAuthorityDetails.getPrice().getPriceMean(),
                     localAuthorityDetails.getPrice().getPriceLow(),
@@ -51,9 +60,11 @@ public class RentPriceOverviewPreprocessor {
             for (RentPriceLocalAuthorityDetails relatedLocalAuthorityPrice : currentPriceDetails.getRelatedLocalAuthorityDetails()) {
                 if (relatedLocalAuthorityPrice != null) {
                     StringBuilder localAuthorityDetailsDescription = new StringBuilder();
-                    localAuthorityDetailsDescription.append("Average price for near-by ");
+                    localAuthorityDetailsDescription.append(resources.getString(R.string.average_price_for));
+                    localAuthorityDetailsDescription.append(" ");
                     localAuthorityDetailsDescription.append(relatedLocalAuthorityPrice.getLocalAuthority());
-                    localAuthorityDetailsDescription.append(" borough");
+                    localAuthorityDetailsDescription.append(" ");
+                    localAuthorityDetailsDescription.append(resources.getString(R.string.nearby_borough));
 
                     rentPrices.add(new RentPriceEntry(relatedLocalAuthorityPrice.getPrice().getPriceMean(),
                             relatedLocalAuthorityPrice.getPrice().getPriceLow(),
@@ -69,9 +80,11 @@ public class RentPriceOverviewPreprocessor {
         RentPriceRegionDetails regionDetails = currentPriceDetails.getRegionDetails();
         if (regionDetails != null) {
             StringBuilder regionDetailsDescription = new StringBuilder();
-            regionDetailsDescription.append("Average price for  ");
+            regionDetailsDescription.append(resources.getString(R.string.average_price_for));
+            regionDetailsDescription.append(" ");
             regionDetailsDescription.append(regionDetails.getRegion());
-            regionDetailsDescription.append(" region");
+            regionDetailsDescription.append(" ");
+            regionDetailsDescription.append(resources.getString(R.string.region));
 
             rentPrices.add(new RentPriceEntry(regionDetails.getPrice().getPriceMean(),
                     regionDetails.getPrice().getPriceLow(),

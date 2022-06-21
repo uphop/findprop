@@ -35,8 +35,10 @@ import com.example.findpropapp.model.RentPriceDetails;
 import com.example.findpropapp.model.RentPriceLocalAuthorityDetails;
 import com.example.findpropapp.model.RentPricePostcodeAreaDetails;
 import com.example.findpropapp.model.RentPricePostcodeDetails;
+import com.example.findpropapp.model.RentPricePropertyTypeEnum;
 import com.example.findpropapp.model.RentPriceResponse;
 import com.example.findpropapp.ui.main.RentPriceDetailsActivity;
+import com.example.findpropapp.ui.main.RentPriceEntryType;
 import com.example.findpropapp.ui.main.RentPriceValueFormatter;
 import com.example.findpropapp.ui.main.StreetViewMapActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -54,6 +56,7 @@ import com.google.android.gms.tasks.Task;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -72,12 +75,10 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private static final String ARG_CURRENT_LAT = "ARG_CURRENT_LAT";
     private static final String ARG_CURRENT_LON = "ARG_CURRENT_LON";
 
-    private static final String[] propertyTypes = {"Room", "Studio", "Flat"};
-    private static final String DEFAULT_PROPERTY_TYPE = "Flat";
-    private String currentPropertyType = DEFAULT_PROPERTY_TYPE;
+    private Map<String, RentPricePropertyTypeEnum> propertyTypeMap;
+    private RentPricePropertyTypeEnum currentPropertyType = RentPricePropertyTypeEnum.flat;
 
-    private static final String[] bedroomCounts = {"1 bedroom", "2 bedrooms", "3 bedrooms", "4 and more bedrooms"};
-    private static final String DEFAULT_BEDROOM_COUNT = "2 bedrooms";
+    private Map<String, Integer> bedroomCountMap;
     private int currentBedroomCount = 2;
 
     private static final double DEFAULT_MAX_RANGE = 250.0;
@@ -168,6 +169,17 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private void updatePropertyTypeFilterUI() {
         // Set values for property type list
         Spinner spinner = (Spinner) findViewById(R.id.propertyTypeSpinner);
+        propertyTypeMap = new LinkedHashMap<String, RentPricePropertyTypeEnum>() {
+            {
+                {
+                    put(getString(R.string.room), RentPricePropertyTypeEnum.room);
+                    put(getString(R.string.studio), RentPricePropertyTypeEnum.studio);
+                    put(getString(R.string.flat), RentPricePropertyTypeEnum.flat);
+                }
+            }
+        };
+
+        String[] propertyTypes = propertyTypeMap.keySet().stream().toArray(String[]::new);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(DefaultMapsActivity.this,
                 android.R.layout.simple_spinner_item, propertyTypes);
 
@@ -175,13 +187,13 @@ public class DefaultMapsActivity extends FragmentActivity implements
         spinner.setAdapter(adapter);
 
         // Set default property type
-        int spinnerPosition = adapter.getPosition(DEFAULT_PROPERTY_TYPE);
+        int spinnerPosition = adapter.getPosition(getString(R.string.flat));
         spinner.setSelection(spinnerPosition);
 
         spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                currentPropertyType = propertyTypes[position];
+                currentPropertyType = propertyTypeMap.get(propertyTypes[position]);
                 Log.e(TAG, "currentPropertyType: " + currentPropertyType);
             }
 
@@ -193,7 +205,20 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
     private void updateBedroomCountFilterUI() {
         // Set values for bedroom count list
+        bedroomCountMap = new LinkedHashMap<String, Integer>() {
+            {
+                {
+                    put(getString(R.string.one_bedroom), 1);
+                    put(getString(R.string.two_bedroom), 2);
+                    put(getString(R.string.three_bedroom), 3);
+                    put(getString(R.string.four_and_more_bedroom), 4);
+
+                }
+            }
+        };
+
         Spinner spinner = (Spinner) findViewById(R.id.bedroomCountSpinner);
+        String[] bedroomCounts = bedroomCountMap.keySet().stream().toArray(String[]::new);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(DefaultMapsActivity.this,
                 android.R.layout.simple_spinner_item, bedroomCounts);
 
@@ -201,13 +226,13 @@ public class DefaultMapsActivity extends FragmentActivity implements
         spinner.setAdapter(adapter);
 
         // Set default bedroom count
-        int spinnerPosition = adapter.getPosition(DEFAULT_BEDROOM_COUNT);
+        int spinnerPosition = adapter.getPosition(getString(R.string.two_bedroom));
         spinner.setSelection(spinnerPosition);
 
         spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                currentBedroomCount = Integer.valueOf(bedroomCounts[position].substring(0, 1));
+                currentBedroomCount = bedroomCountMap.get(bedroomCounts[position]);
                 Log.e(TAG, "currentBedroomCount: " + String.valueOf(currentBedroomCount));
             }
 
@@ -371,7 +396,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         if (latLng != null) {
             Log.i(TAG, "Capturing new anchor: " + latLng.toString());
             // Get rent prices around that anchor postcode
-            findPropApiClient.getRentPrices(latLng.longitude, latLng.latitude, DEFAULT_MAX_RANGE, currentPropertyType.toLowerCase(), currentBedroomCount,
+            findPropApiClient.getRentPrices(latLng.longitude, latLng.latitude, DEFAULT_MAX_RANGE, currentPropertyType, currentBedroomCount,
                     new RentPriceCallback() {
                         @Override
                         public void onSuccess(RentPriceResponse rentPrices) {
@@ -407,7 +432,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
         // Update marker snippet text and show snippet
         StringBuilder snippetText = new StringBuilder();
-        snippetText.append("Typical rent here is ");
+        snippetText.append(getString(R.string.typical_rent_is));
+        snippetText.append(" ");
         // Set rent price - take postcode area rent, if available; otherwise, local authority rent
         RentPriceDetails price = (postcodeAreaDetails != null) ? postcodeAreaDetails.getPrice() : localAuthorityDetails.getPrice();
         snippetText.append(RentPriceValueFormatter.getPriceWithPeriodAsString(price));

@@ -26,11 +26,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RentTotalCostOverviewFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class RentTotalCostOverviewFragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
     private static final String TAG = RentTotalCostOverviewFragment.class.getSimpleName();
     private static final String ARG_CURRENT_PRICE_DETAILS = "CURRENT_PRICE_DETAILS";
@@ -123,15 +118,20 @@ public class RentTotalCostOverviewFragment extends Fragment implements CompoundB
         description.setTextSize(DEFAULT_TEXT_SIZE);
 
         StringBuilder descriptionText = new StringBuilder();
-        descriptionText.append("Total rent cost for a ");
+        descriptionText.append(getString(R.string.total_rent_cost_for));
+        descriptionText.append(" ");
         descriptionText.append(currentPriceDetails.getPropertyType());
         if (currentPriceDetails.getBedrooms() > 0) {
-            descriptionText.append(" with ");
+            descriptionText.append(" ");
+            descriptionText.append(getString(R.string.with));
+            descriptionText.append(" ");
             descriptionText.append(String.valueOf(currentPriceDetails.getBedrooms()));
+            descriptionText.append(" ");
             if (currentPriceDetails.getBedrooms() > 1) {
-                descriptionText.append(" bedrooms");
+                descriptionText.append(getString(R.string.bedrooms));
             } else {
-                descriptionText.append(" bedroom");
+
+                descriptionText.append(getString(R.string.bedroom));
             }
 
         }
@@ -187,7 +187,7 @@ public class RentTotalCostOverviewFragment extends Fragment implements CompoundB
     }
 
     private void updateChart(PieChart chart, boolean withUpfrontCosts) {
-        ArrayList<RentCostEntry> rentCosts = RentTotalCostPreprocessor.getRentTotalCostEntries(this.currentPriceDetails, withUpfrontCosts);
+        ArrayList<RentCostEntry> rentCosts = RentTotalCostPreprocessor.getRentTotalCostEntries(this.currentPriceDetails, withUpfrontCosts, this.getContext());
 
         styleChartDataset(chart, rentCosts);
         styleMarker(chart, rentCosts);
