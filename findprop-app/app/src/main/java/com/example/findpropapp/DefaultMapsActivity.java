@@ -16,6 +16,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -133,6 +135,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Turn on the My Location layer and the related control on the map.
         updateLocationUI();
         getDeviceLocation();
+
         // Add a single map click handler for setting new markers
         mMap.setOnMapClickListener(this);
 
@@ -147,6 +150,9 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
         // Prepare bedroom count filter
         updateBedroomCountFilterUI();
+
+        // Init reset button
+        updateResetButtonUI();
     }
 
     @Override
@@ -238,6 +244,23 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    private void updateResetButtonUI() {
+        ImageButton resetButton = (ImageButton) findViewById(R.id.resetButton);
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // remove markers from map
+                mMap.clear();
+
+                // remove marker details
+                priceDetailsMap.clear();
+
+                // reset camera to current location
+                getDeviceLocation();
             }
         });
     }
@@ -492,6 +515,14 @@ public class DefaultMapsActivity extends FragmentActivity implements
     @Override
     public boolean onQueryTextChange(String newText) {
         return false;
+    }
+
+    private void showMessage(String text) {
+        Toast toast = Toast.makeText(getApplicationContext(),
+                text,
+                Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+        toast.show();
     }
 
 }

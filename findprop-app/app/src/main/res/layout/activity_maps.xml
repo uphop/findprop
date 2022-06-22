@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     s
@@ -14,25 +15,51 @@
         android:background="@color/black"
         tools:context=".DefaultMapsActivity" />
 
-    <!--search view to search our location-->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/idSearchView"
+    <LinearLayout
+        android:id="@+id/RelativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:alpha="0.65"
-        android:background="@drawable/custom_round_rectangle"
-        android:elevation="5dp"
-        android:minHeight="48dp"
-        app:iconifiedByDefault="false"
-        app:queryHint="@string/search_location" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <!--search view to search our location-->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/idSearchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="3"
+            android:alpha="0.65"
+            android:background="@drawable/custom_round_rectangle"
+            android:elevation="5dp"
+            android:minHeight="48dp"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/search_location" />
+
+        <ImageButton
+            android:id="@+id/resetButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:alpha="0.65"
+            android:background="@drawable/custom_round_rectangle"
+            android:elevation="5dp"
+            android:minHeight="48dp"
+            android:src="@android:drawable/ic_menu_revert"
+            />
+    </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/RelativeLayout1"
+        android:id="@+id/RelativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
