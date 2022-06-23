@@ -15,6 +15,8 @@ import com.example.findpropapp.network.RequestQueueSingleton;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.Date;
+
 public class FIndPropApiAdapter {
     private static final String TAG = FIndPropApiAdapter.class.getSimpleName();
     private static final String FINDPROP_API_BASE_URL = "http://localhost:8081/findprop/api/v1";
@@ -30,8 +32,6 @@ public class FIndPropApiAdapter {
         String url = String.format(FINDPROP_API_BASE_URL + "/rent/price?longitude=%f&latitude=%f&maxRange=%f&propertyType=%s&bedrooms=%d",
                 longitude, latitude, maxRange, propertyType, bedrooms);
 
-        Log.i(TAG, url);
-
         call(url, Request.Method.GET, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -39,8 +39,6 @@ public class FIndPropApiAdapter {
                     // parse response and check status
                     ObjectMapper objectMapper = new ObjectMapper();
                     RentPriceResponse parsedResponse = objectMapper.readValue(response.toString(), RentPriceResponse.class);
-
-                    Log.i(TAG,parsedResponse.toString());
 
                     if (parsedResponse.getStatus() != RentPriceResponse.StatusEnum.OK) {
                         callback.onFailure(new Exception("Rent price retrieval failed."));
@@ -54,14 +52,11 @@ public class FIndPropApiAdapter {
                 }
             }
         });
-
     }
 
     private void call(String url, int method, JSONObject jsonRequest, Response.Listener<JSONObject> listener) {
-        Log.d(TAG, "Calling URL: " + url);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (method, url, jsonRequest, response -> {
-                    Log.d(TAG, "Response is: " + response.toString());
                     listener.onResponse(response);
                 }, error -> Log.e(TAG, "That didn't work! > " + error.toString()));
         RequestQueueSingleton.getInstance(this.ctx).addToRequestQueue(jsonObjectRequest);
