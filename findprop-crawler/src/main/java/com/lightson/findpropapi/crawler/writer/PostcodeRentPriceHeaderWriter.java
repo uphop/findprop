@@ -6,7 +6,7 @@ import java.io.Writer;
 import org.springframework.batch.item.file.FlatFileHeaderCallback;
 
 public class PostcodeRentPriceHeaderWriter implements FlatFileHeaderCallback {
-    private final String header = "postcode,longitude,latitude,property_type,bedrooms,price_count,price_mean,price_low,price_median,price_high,currency,period,source,published,recorded_from,recorded_to";
+    private final String header = "postcode,longitude,latitude,bedroomCategory,countOfRents,mean,lowerQuartile,median,upperQuartile,currency,period,source,published,recordedFrom,recordedTo";
 
     @Override
     public void writeHeader(Writer writer) throws IOException {

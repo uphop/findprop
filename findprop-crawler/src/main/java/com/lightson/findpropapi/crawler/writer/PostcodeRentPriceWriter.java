@@ -25,9 +25,9 @@ public class PostcodeRentPriceWriter extends FlatFileItemWriter<TargetRentPrice>
 
     private DelimitedLineAggregator<PostcodeRentPrice> getDefaultLineAggregator() {
         BeanWrapperFieldExtractor<PostcodeRentPrice> fieldExtractor = new BeanWrapperFieldExtractor<>();
-        fieldExtractor.setNames(new String[] { "postcode", "longitude", "latitude", "property_type", "bedrooms", "price_count",
-                "price_mean", "price_low", "price_median", "price_high",
-                "currency", "period", "source", "published", "recorded_from", "recorded_to" });
+        fieldExtractor.setNames(new String[] { "postcode", "longitude", "latitude", "bedroomCategory", "countOfRents",
+                "mean", "lowerQuartile", "median", "upperQuartile",
+                "currency", "period", "source", "published", "recordedFrom", "recordedTo" });
         fieldExtractor.afterPropertiesSet();
 
         DelimitedLineAggregator<PostcodeRentPrice> lineAggregator = new DelimitedLineAggregator<>();

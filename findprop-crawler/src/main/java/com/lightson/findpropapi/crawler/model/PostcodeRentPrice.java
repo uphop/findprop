@@ -1,86 +1,78 @@
 package com.lightson.findpropapi.crawler.model;
 
 public class PostcodeRentPrice {
-    private PropertyTypeEnum property_type;
-    private Integer bedrooms;
-    private Integer price_count;
-    private Integer price_mean;
-    private Integer price_low;
-    private Integer price_median;
-    private Integer price_high;
+    private String bedroomCategory;
+    private Integer countOfRents;
+    private Integer mean;
+    private Integer lowerQuartile;
+    private Integer median;
+    private Integer upperQuartile;
     private CurrencyEnum currency;
     private PeriodEnum period;
     private String source;
     private String published;
-    private String recorded_from;
-    private String recorded_to;
+    private String recordedFrom;
+    private String recordedTo;
     private String postcode;
     private Double longitude;
     private Double latitude;
-    public PostcodeRentPrice(PropertyTypeEnum property_type, Integer bedrooms, Integer price_count, Integer price_mean,
-            Integer price_low, Integer price_median, Integer price_high, CurrencyEnum currency, PeriodEnum period,
-            String source, String published, String recorded_from, String recorded_to, String postcode,
-            Double longitude, Double latitude) {
-        this.property_type = property_type;
-        this.bedrooms = bedrooms;
-        this.price_count = price_count;
-        this.price_mean = price_mean;
-        this.price_low = price_low;
-        this.price_median = price_median;
-        this.price_high = price_high;
+    public PostcodeRentPrice(String bedroomCategory, Integer countOfRents, Integer mean, Integer lowerQuartile,
+            Integer median, Integer upperQuartile, CurrencyEnum currency, PeriodEnum period, String source,
+            String published, String recordedFrom, String recordedTo, String postcode, Double longitude,
+            Double latitude) {
+        this.bedroomCategory = bedroomCategory;
+        this.countOfRents = countOfRents;
+        this.mean = mean;
+        this.lowerQuartile = lowerQuartile;
+        this.median = median;
+        this.upperQuartile = upperQuartile;
         this.currency = currency;
         this.period = period;
         this.source = source;
         this.published = published;
-        this.recorded_from = recorded_from;
-        this.recorded_to = recorded_to;
+        this.recordedFrom = recordedFrom;
+        this.recordedTo = recordedTo;
         this.postcode = postcode;
         this.longitude = longitude;
         this.latitude = latitude;
     }
     public PostcodeRentPrice() {
     }
-    public PropertyTypeEnum getProperty_type() {
-        return property_type;
+    public String getBedroomCategory() {
+        return bedroomCategory;
     }
-    public void setProperty_type(PropertyTypeEnum property_type) {
-        this.property_type = property_type;
+    public void setBedroomCategory(String bedroomCategory) {
+        this.bedroomCategory = bedroomCategory;
     }
-    public Integer getBedrooms() {
-        return bedrooms;
+    public Integer getCountOfRents() {
+        return countOfRents;
     }
-    public void setBedrooms(Integer bedrooms) {
-        this.bedrooms = bedrooms;
+    public void setCountOfRents(Integer countOfRents) {
+        this.countOfRents = countOfRents;
     }
-    public Integer getPrice_count() {
-        return price_count;
+    public Integer getMean() {
+        return mean;
     }
-    public void setPrice_count(Integer price_count) {
-        this.price_count = price_count;
+    public void setMean(Integer mean) {
+        this.mean = mean;
     }
-    public Integer getPrice_mean() {
-        return price_mean;
+    public Integer getLowerQuartile() {
+        return lowerQuartile;
     }
-    public void setPrice_mean(Integer price_mean) {
-        this.price_mean = price_mean;
+    public void setLowerQuartile(Integer lowerQuartile) {
+        this.lowerQuartile = lowerQuartile;
     }
-    public Integer getPrice_low() {
-        return price_low;
+    public Integer getMedian() {
+        return median;
     }
-    public void setPrice_low(Integer price_low) {
-        this.price_low = price_low;
+    public void setMedian(Integer median) {
+        this.median = median;
     }
-    public Integer getPrice_median() {
-        return price_median;
+    public Integer getUpperQuartile() {
+        return upperQuartile;
     }
-    public void setPrice_median(Integer price_median) {
-        this.price_median = price_median;
-    }
-    public Integer getPrice_high() {
-        return price_high;
-    }
-    public void setPrice_high(Integer price_high) {
-        this.price_high = price_high;
+    public void setUpperQuartile(Integer upperQuartile) {
+        this.upperQuartile = upperQuartile;
     }
     public CurrencyEnum getCurrency() {
         return currency;
@@ -106,17 +98,17 @@ public class PostcodeRentPrice {
     public void setPublished(String published) {
         this.published = published;
     }
-    public String getRecorded_from() {
-        return recorded_from;
+    public String getRecordedFrom() {
+        return recordedFrom;
     }
-    public void setRecorded_from(String recorded_from) {
-        this.recorded_from = recorded_from;
+    public void setRecordedFrom(String recordedFrom) {
+        this.recordedFrom = recordedFrom;
     }
-    public String getRecorded_to() {
-        return recorded_to;
+    public String getRecordedTo() {
+        return recordedTo;
     }
-    public void setRecorded_to(String recorded_to) {
-        this.recorded_to = recorded_to;
+    public void setRecordedTo(String recordedTo) {
+        this.recordedTo = recordedTo;
     }
     public String getPostcode() {
         return postcode;
@@ -138,11 +130,12 @@ public class PostcodeRentPrice {
     }
     @Override
     public String toString() {
-        return "PostcodeRentPrice [bedrooms=" + bedrooms + ", currency=" + currency + ", latitude=" + latitude
-                + ", longitude=" + longitude + ", period=" + period + ", postcode=" + postcode + ", price_count="
-                + price_count + ", price_high=" + price_high + ", price_low=" + price_low + ", price_mean=" + price_mean
-                + ", price_median=" + price_median + ", property_type=" + property_type + ", published=" + published
-                + ", recorded_from=" + recorded_from + ", recorded_to=" + recorded_to + ", source=" + source + "]";
+        return "PostcodeRentPrice [bedroomCategory=" + bedroomCategory + ", countOfRents=" + countOfRents
+                + ", currency=" + currency + ", latitude=" + latitude + ", longitude=" + longitude + ", lowerQuartile="
+                + lowerQuartile + ", mean=" + mean + ", median=" + median + ", period=" + period + ", postcode="
+                + postcode + ", published=" + published + ", recordedFrom=" + recordedFrom + ", recordedTo="
+                + recordedTo + ", source=" + source + ", upperQuartile=" + upperQuartile + "]";
     }
+   
 }
    

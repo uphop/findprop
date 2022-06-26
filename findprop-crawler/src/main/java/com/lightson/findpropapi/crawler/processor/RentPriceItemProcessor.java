@@ -63,20 +63,19 @@ public class RentPriceItemProcessor
 
         // map postcode area rent price
         PostcodeAreaRentPrice paRentPrice = new PostcodeAreaRentPrice();
-        paRentPrice.setPostcode_area(source.getPostcodeArea());
-        paRentPrice.setProperty_type(propertyType);
-        paRentPrice.setBedrooms(bedrooms);
-        paRentPrice.setPrice_count(pdResponse.getRaw_data().length);
-        paRentPrice.setPrice_mean(pdResponse.getAverage());
-        paRentPrice.setPrice_low(pdResponse.get100pc_range()[0]);
-        paRentPrice.setPrice_median(pdResponse.getAverage());
-        paRentPrice.setPrice_high(pdResponse.get100pc_range()[1]);
+        paRentPrice.setPostcodeArea(source.getPostcodeArea());
+        paRentPrice.setBedroomCategory(source.getBedroomCategory());
+        paRentPrice.setCountOfRents(pdResponse.getRaw_data().length);
+        paRentPrice.setMean(pdResponse.getAverage());
+        paRentPrice.setLowerQuartile(pdResponse.get100pc_range()[0]);
+        paRentPrice.setMedian(pdResponse.getAverage());
+        paRentPrice.setUpperQuartile(pdResponse.get100pc_range()[1]);
         paRentPrice.setCurrency(UnitTypeHelper.getCurrency(pdResponse.getUnit()));
         paRentPrice.setPeriod(UnitTypeHelper.getPeriod(pdResponse.getUnit()));
         paRentPrice.setSource(SOURCE);
         paRentPrice.setPublished(dateStr);
-        paRentPrice.setRecorded_from(dateStr);
-        paRentPrice.setRecorded_to(dateStr);
+        paRentPrice.setRecordedFrom(dateStr);
+        paRentPrice.setRecordedTo(dateStr);
         // add postcode area rent price to wrapper
         target.setPostcodeAreaRentPrice(paRentPrice);
 
@@ -105,19 +104,18 @@ public class RentPriceItemProcessor
             targetDataPoint.setPostcode(postcode.getCode());
             targetDataPoint.setLongitude(sourceDataPoint.getLng());
             targetDataPoint.setLatitude(sourceDataPoint.getLat());
-            targetDataPoint.setProperty_type(propertyType);
-            targetDataPoint.setPrice_count(1);
-            targetDataPoint.setPrice_mean(sourceDataPoint.getPrice());
-            targetDataPoint.setPrice_low(sourceDataPoint.getPrice());
-            targetDataPoint.setPrice_median(sourceDataPoint.getPrice());
-            targetDataPoint.setPrice_high(sourceDataPoint.getPrice());
-            targetDataPoint.setBedrooms(sourceDataPoint.getBedrooms());
+            targetDataPoint.setBedroomCategory(source.getBedroomCategory());
+            targetDataPoint.setCountOfRents(1);
+            targetDataPoint.setMean(sourceDataPoint.getPrice());
+            targetDataPoint.setLowerQuartile(sourceDataPoint.getPrice());
+            targetDataPoint.setMedian(sourceDataPoint.getPrice());
+            targetDataPoint.setUpperQuartile(sourceDataPoint.getPrice());
             targetDataPoint.setCurrency(UnitTypeHelper.getCurrency(pdResponse.getUnit()));
             targetDataPoint.setPeriod(UnitTypeHelper.getPeriod(pdResponse.getUnit()));
             targetDataPoint.setSource(SOURCE);
             targetDataPoint.setPublished(dateStr);
-            targetDataPoint.setRecorded_from(dateStr);
-            targetDataPoint.setRecorded_to(dateStr);
+            targetDataPoint.setRecordedFrom(dateStr);
+            targetDataPoint.setRecordedTo(dateStr);
             psRentPrices.add(targetDataPoint);
         }
         // add postcode rent prices to wrapper
