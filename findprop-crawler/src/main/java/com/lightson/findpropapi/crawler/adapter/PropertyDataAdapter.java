@@ -2,6 +2,8 @@ package com.lightson.findpropapi.crawler.adapter;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,6 +69,9 @@ public class PropertyDataAdapter {
         params.put("type", propertyType);
 
         try {
+            // make a delay not to hir rate limits
+            TimeUnit.MILLISECONDS.sleep(config.getWith_delay());
+
             // call Property Data API
             ResponseEntity<String> response = restTemplate.exchange(urlTemplate, HttpMethod.GET, entity, String.class,
                     params);
@@ -100,6 +105,11 @@ public class PropertyDataAdapter {
             return null;
         } catch (JsonProcessingException e) {
             log.error("JSON processing Property Data API response failed: " + postcodeArea + ", propertyType: "
+                    + propertyType + ", bedrooms: " + String.valueOf(bedrooms)
+                    + ", error: " + e.toString());
+            return null;
+        } catch (InterruptedException e) {
+            log.error("Call Property Data API response failed: " + postcodeArea + ", propertyType: "
                     + propertyType + ", bedrooms: " + String.valueOf(bedrooms)
                     + ", error: " + e.toString());
             return null;

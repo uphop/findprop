@@ -9,6 +9,14 @@ public class PropertyDataProperties {
     private String base_url;
     private String key;
     private Integer connect_timeout;
+    private Integer with_delay; 
+    
+    public Integer getWith_delay() {
+        return with_delay;
+    }
+    public void setWith_delay(Integer with_delay) {
+        this.with_delay = with_delay;
+    }
     public String getBase_url() {
         return base_url;
     }

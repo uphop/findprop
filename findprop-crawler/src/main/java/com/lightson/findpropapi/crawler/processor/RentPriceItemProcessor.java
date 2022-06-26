@@ -31,7 +31,6 @@ public class RentPriceItemProcessor
 
     private final String SOURCE = "property_data";
     private final Double MAX_RANGE = 250.0;
-    private final Integer PD_API_CALL_DELAY = 500;
 
     @Autowired
     PropertyDataAdapter pdAdapter;
@@ -46,10 +45,8 @@ public class RentPriceItemProcessor
         // convert filters
         PropertyTypeEnum propertyType = PropertyTypeHelper.PROPERTY_TYPE_MAP.get(source.getBedroomCategory());
         Integer bedrooms = BedroomCountHelper.BEDROOM_COUNT_MAP.get(source.getBedroomCategory());
-        
 
         // call PD API
-        TimeUnit.MILLISECONDS.sleep(PD_API_CALL_DELAY);
         PropertyDataRentResponse pdResponse = pdAdapter.getRentPrices(source.getPostcodeArea(), propertyType.toString(),
                 bedrooms);
 
@@ -100,7 +97,7 @@ public class RentPriceItemProcessor
                 continue;
             }
 
-            if(!postcode.getCode().startsWith(source.getPostcodeArea())) {
+            if (!postcode.getCode().startsWith(source.getPostcodeArea())) {
                 // skip postcode price for postcodes which seem not to be in this area
                 continue;
             }

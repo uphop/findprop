@@ -10,3 +10,4 @@ spring.batch.job.enabled=true
 propertydata.api.base_url=https://api.propertydata.co.uk
 propertydata.api.key=VYEFHMYM9I
 propertydata.api.connect_timeout=5000
+propertydata.api.with_delay=500

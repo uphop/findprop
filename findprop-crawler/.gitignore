@@ -33,4 +33,5 @@ build/
 .vscode/
 data/*.csv
 
-resources/application.properties
+*.properties
+!**/src/main/resources/*.properties
