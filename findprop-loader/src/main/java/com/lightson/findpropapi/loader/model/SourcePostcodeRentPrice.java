@@ -1,22 +1,22 @@
-package com.lightson.findpropapi.crawler.model;
+package com.lightson.findpropapi.loader.model;
 
-public class PostcodeRentPrice {
+public class SourcePostcodeRentPrice {
     private String bedroomCategory;
     private Integer countOfRents;
     private Integer mean;
     private Integer lowerQuartile;
     private Integer median;
     private Integer upperQuartile;
-    private CurrencyEnum currency;
-    private PeriodEnum period;
+    private String currency;
+    private String period;
     private String source;
     private String published;
     private String recordedFrom;
     private String recordedTo;
     private String postcode;
 
-    public PostcodeRentPrice(String bedroomCategory, Integer countOfRents, Integer mean, Integer lowerQuartile,
-            Integer median, Integer upperQuartile, CurrencyEnum currency, PeriodEnum period, String source,
+    public SourcePostcodeRentPrice(String bedroomCategory, Integer countOfRents, Integer mean, Integer lowerQuartile,
+            Integer median, Integer upperQuartile, String currency, String period, String source,
             String published, String recordedFrom, String recordedTo, String postcode) {
         this.bedroomCategory = bedroomCategory;
         this.countOfRents = countOfRents;
@@ -32,114 +32,87 @@ public class PostcodeRentPrice {
         this.recordedTo = recordedTo;
         this.postcode = postcode;
     }
-
-    public PostcodeRentPrice() {
+    public SourcePostcodeRentPrice() {
     }
-
     public String getBedroomCategory() {
         return bedroomCategory;
     }
-
     public void setBedroomCategory(String bedroomCategory) {
         this.bedroomCategory = bedroomCategory;
     }
-
     public Integer getCountOfRents() {
         return countOfRents;
     }
-
     public void setCountOfRents(Integer countOfRents) {
         this.countOfRents = countOfRents;
     }
-
     public Integer getMean() {
         return mean;
     }
-
     public void setMean(Integer mean) {
         this.mean = mean;
     }
-
     public Integer getLowerQuartile() {
         return lowerQuartile;
     }
-
     public void setLowerQuartile(Integer lowerQuartile) {
         this.lowerQuartile = lowerQuartile;
     }
-
     public Integer getMedian() {
         return median;
     }
-
     public void setMedian(Integer median) {
         this.median = median;
     }
-
     public Integer getUpperQuartile() {
         return upperQuartile;
     }
-
     public void setUpperQuartile(Integer upperQuartile) {
         this.upperQuartile = upperQuartile;
     }
-
-    public CurrencyEnum getCurrency() {
+    public String getCurrency() {
         return currency;
     }
-
-    public void setCurrency(CurrencyEnum currency) {
+    public void setCurrency(String currency) {
         this.currency = currency;
     }
-
-    public PeriodEnum getPeriod() {
+    public String getPeriod() {
         return period;
     }
-
-    public void setPeriod(PeriodEnum period) {
+    public void setPeriod(String period) {
         this.period = period;
     }
-
     public String getSource() {
         return source;
     }
-
     public void setSource(String source) {
         this.source = source;
     }
-
     public String getPublished() {
         return published;
     }
-
     public void setPublished(String published) {
         this.published = published;
     }
-
     public String getRecordedFrom() {
         return recordedFrom;
     }
-
     public void setRecordedFrom(String recordedFrom) {
         this.recordedFrom = recordedFrom;
     }
-
     public String getRecordedTo() {
         return recordedTo;
     }
-
     public void setRecordedTo(String recordedTo) {
         this.recordedTo = recordedTo;
     }
-
     public String getPostcode() {
         return postcode;
     }
-
     public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
-
+    
     @Override
     public String toString() {
         return "PostcodeRentPrice [bedroomCategory=" + bedroomCategory + ", countOfRents=" + countOfRents
@@ -148,5 +121,6 @@ public class PostcodeRentPrice {
                 + postcode + ", published=" + published + ", recordedFrom=" + recordedFrom + ", recordedTo="
                 + recordedTo + ", source=" + source + ", upperQuartile=" + upperQuartile + "]";
     }
-
+   
 }
+   

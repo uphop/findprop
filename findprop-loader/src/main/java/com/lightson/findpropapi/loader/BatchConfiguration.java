@@ -14,6 +14,7 @@ import com.lightson.findpropapi.loader.model.SourceLocalAuthorityRentPrice;
 import com.lightson.findpropapi.loader.model.SourceLocalAuthorityUtilityPrice;
 import com.lightson.findpropapi.loader.model.SourcePostcode;
 import com.lightson.findpropapi.loader.model.SourcePostcodeAreaRentPrice;
+import com.lightson.findpropapi.loader.model.SourcePostcodeRentPrice;
 import com.lightson.findpropapi.loader.model.SourceRegion;
 import com.lightson.findpropapi.loader.model.SourceRegionRentPrice;
 import com.lightson.findpropapi.loader.model.SourceRelatedLocalAuthority;
@@ -22,6 +23,7 @@ import com.lightson.findpropapi.loader.model.TargetLocalAuthorityRentPrice;
 import com.lightson.findpropapi.loader.model.TargetLocalAuthorityUtilityPrice;
 import com.lightson.findpropapi.loader.model.TargetPostcode;
 import com.lightson.findpropapi.loader.model.TargetPostcodeAreaRentPrice;
+import com.lightson.findpropapi.loader.model.TargetPostcodeRentPrice;
 import com.lightson.findpropapi.loader.model.TargetRegion;
 import com.lightson.findpropapi.loader.model.TargetRegionRentPrice;
 import com.lightson.findpropapi.loader.model.TargetRelatedLocalAuthority;
@@ -30,6 +32,7 @@ import com.lightson.findpropapi.loader.processor.LocalAuthorityRentPriceItemProc
 import com.lightson.findpropapi.loader.processor.LocalAuthorityUtilityPriceItemProcessor;
 import com.lightson.findpropapi.loader.processor.PostcodeAreaRentPriceItemProcessor;
 import com.lightson.findpropapi.loader.processor.PostcodeItemProcessor;
+import com.lightson.findpropapi.loader.processor.PostcodeRentPriceItemProcessor;
 import com.lightson.findpropapi.loader.processor.RegionItemProcessor;
 import com.lightson.findpropapi.loader.processor.RegionRentPriceItemProcessor;
 import com.lightson.findpropapi.loader.processor.RelatedLocalAuthorityItemProcessor;
@@ -38,6 +41,7 @@ import com.lightson.findpropapi.loader.reader.LocalAuthorityRentPriceReader;
 import com.lightson.findpropapi.loader.reader.LocalAuthorityUtilityPriceReader;
 import com.lightson.findpropapi.loader.reader.PostcodeAreaRentPriceReader;
 import com.lightson.findpropapi.loader.reader.PostcodeReader;
+import com.lightson.findpropapi.loader.reader.PostcodeRentPriceReader;
 import com.lightson.findpropapi.loader.reader.RegionReader;
 import com.lightson.findpropapi.loader.reader.RegionRentPriceReader;
 import com.lightson.findpropapi.loader.reader.RelatedLocalAuthorityReader;
@@ -45,6 +49,7 @@ import com.lightson.findpropapi.loader.writer.LocalAuthorityRentPriceWriter;
 import com.lightson.findpropapi.loader.writer.LocalAuthorityUtilityPriceWriter;
 import com.lightson.findpropapi.loader.writer.LocalAuthorityWriter;
 import com.lightson.findpropapi.loader.writer.PostcodeAreaRentPriceWriter;
+import com.lightson.findpropapi.loader.writer.PostcodeRentPriceWriter;
 import com.lightson.findpropapi.loader.writer.PostcodeWriter;
 import com.lightson.findpropapi.loader.writer.RegionRentPriceWriter;
 import com.lightson.findpropapi.loader.writer.RegionWriter;
@@ -68,7 +73,8 @@ public class BatchConfiguration {
                         @Qualifier("regionRentPriceImportStep") Step regionRentPriceImportStep,
                         @Qualifier("localAuthorityRentPriceImportStep") Step localAuthorityRentPriceImportStep,
                         @Qualifier("localAuthorityUtilityPriceImportStep") Step localAuthorityUtilityPriceImportStep,
-                        @Qualifier("postcodeAreaRentPriceImportStep") Step postcodeAreaRentPriceImportStep) {
+                        @Qualifier("postcodeAreaRentPriceImportStep") Step postcodeAreaRentPriceImportStep,
+                        @Qualifier("postcodeRentPriceImportStep") Step postcodeRentPriceImportStep) {
                 return jobs
                                 .get("findPropImportJob")
                                 .start(regionImportStep)
@@ -79,6 +85,7 @@ public class BatchConfiguration {
                                 .next(localAuthorityRentPriceImportStep)
                                 .next(localAuthorityUtilityPriceImportStep)
                                 .next(postcodeAreaRentPriceImportStep)
+                                .next(postcodeRentPriceImportStep)
                                 .build();
         }
 
@@ -175,6 +182,19 @@ public class BatchConfiguration {
                         PostcodeAreaRentPriceWriter writer) {
                 return steps.get("postcodeAreaRentPriceImportStep")
                                 .<SourcePostcodeAreaRentPrice, TargetPostcodeAreaRentPrice>chunk(10)
+                                .reader(reader)
+                                .processor(processor)
+                                .writer(writer)
+                                .allowStartIfComplete(true)
+                                .build();
+        }
+
+        @Bean
+        protected Step postcodeRentPriceImportStep(PostcodeRentPriceReader reader,
+                        PostcodeRentPriceItemProcessor processor,
+                        PostcodeRentPriceWriter writer) {
+                return steps.get("postcodeRentPriceImportStep")
+                                .<SourcePostcodeRentPrice, TargetPostcodeRentPrice>chunk(10)
                                 .reader(reader)
                                 .processor(processor)
                                 .writer(writer)

@@ -102,8 +102,6 @@ public class RentPriceItemProcessor
             }
 
             targetDataPoint.setPostcode(postcode.getCode());
-            targetDataPoint.setLongitude(sourceDataPoint.getLng());
-            targetDataPoint.setLatitude(sourceDataPoint.getLat());
             targetDataPoint.setBedroomCategory(source.getBedroomCategory());
             targetDataPoint.setCountOfRents(1);
             targetDataPoint.setMean(sourceDataPoint.getPrice());
