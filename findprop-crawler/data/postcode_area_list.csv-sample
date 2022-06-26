@@ -1,0 +1,1085 @@
+postcodeArea,bedroomCategory
+BR1,Studio
+BR1,One Bedroom
+BR1,Two Bedrooms
+BR1,Three Bedrooms
+BR1,Four or More Bedrooms
+BR2,One Bedroom
+BR2,Two Bedrooms
+BR2,Three Bedrooms
+BR2,Four or More Bedrooms
+BR3,Studio
+BR3,One Bedroom
+BR3,Two Bedrooms
+BR3,Three Bedrooms
+BR3,Four or More Bedrooms
+BR4,Studio
+BR4,One Bedroom
+BR4,Two Bedrooms
+BR4,Three Bedrooms
+BR4,Four or More Bedrooms
+BR5,One Bedroom
+BR5,Two Bedrooms
+BR5,Three Bedrooms
+BR5,Four or More Bedrooms
+BR6,One Bedroom
+BR6,Two Bedrooms
+BR6,Three Bedrooms
+BR6,Four or More Bedrooms
+BR7,One Bedroom
+BR7,Two Bedrooms
+BR7,Three Bedrooms
+BR7,Four or More Bedrooms
+CR0,Room
+CR0,Studio
+CR0,One Bedroom
+CR0,Two Bedrooms
+CR0,Three Bedrooms
+CR0,Four or More Bedrooms
+CR2,Studio
+CR2,One Bedroom
+CR2,Two Bedrooms
+CR2,Three Bedrooms
+CR2,Four or More Bedrooms
+CR4,Studio
+CR4,One Bedroom
+CR4,Two Bedrooms
+CR4,Three Bedrooms
+CR4,Four or More Bedrooms
+CR5,One Bedroom
+CR5,Two Bedrooms
+CR5,Three Bedrooms
+CR5,Four or More Bedrooms
+CR7,Room
+CR7,One Bedroom
+CR7,Two Bedrooms
+CR7,Three Bedrooms
+CR7,Four or More Bedrooms
+CR8,Studio
+CR8,One Bedroom
+CR8,Two Bedrooms
+CR8,Three Bedrooms
+CR8,Four or More Bedrooms
+DA1,One Bedroom
+DA1,Two Bedrooms
+DA1,Three Bedrooms
+DA1,Four or More Bedrooms
+DA14,Room
+DA14,One Bedroom
+DA14,Two Bedrooms
+DA14,Three Bedrooms
+DA14,Four or More Bedrooms
+DA15,One Bedroom
+DA15,Two Bedrooms
+DA15,Three Bedrooms
+DA15,Four or More Bedrooms
+DA16,One Bedroom
+DA16,Two Bedrooms
+DA16,Three Bedrooms
+DA16,Four or More Bedrooms
+DA17,One Bedroom
+DA17,Two Bedrooms
+DA17,Three Bedrooms
+DA5,One Bedroom
+DA5,Two Bedrooms
+DA5,Three Bedrooms
+DA5,Four or More Bedrooms
+DA6,Room
+DA6,Studio
+DA6,One Bedroom
+DA6,Two Bedrooms
+DA6,Three Bedrooms
+DA7,One Bedroom
+DA7,Two Bedrooms
+DA7,Three Bedrooms
+DA7,Four or More Bedrooms
+DA8,One Bedroom
+DA8,Two Bedrooms
+DA8,Three Bedrooms
+DA8,Four or More Bedrooms
+E1,Room
+E1,Studio
+E1,One Bedroom
+E1,Two Bedrooms
+E1,Three Bedrooms
+E1,Four or More Bedrooms
+E10,Studio
+E10,One Bedroom
+E10,Two Bedrooms
+E10,Three Bedrooms
+E10,Four or More Bedrooms
+E11,Room
+E11,Studio
+E11,One Bedroom
+E11,Two Bedrooms
+E11,Three Bedrooms
+E11,Four or More Bedrooms
+E12,One Bedroom
+E12,Two Bedrooms
+E12,Three Bedrooms
+E12,Four or More Bedrooms
+E13,Studio
+E13,One Bedroom
+E13,Two Bedrooms
+E13,Three Bedrooms
+E13,Four or More Bedrooms
+E14,Room
+E14,Studio
+E14,One Bedroom
+E14,Two Bedrooms
+E14,Three Bedrooms
+E14,Four or More Bedrooms
+E15,Studio
+E15,One Bedroom
+E15,Two Bedrooms
+E15,Three Bedrooms
+E15,Four or More Bedrooms
+E16,Studio
+E16,One Bedroom
+E16,Two Bedrooms
+E16,Three Bedrooms
+E16,Four or More Bedrooms
+E17,Room
+E17,Studio
+E17,One Bedroom
+E17,Two Bedrooms
+E17,Three Bedrooms
+E17,Four or More Bedrooms
+E18,One Bedroom
+E18,Two Bedrooms
+E18,Three Bedrooms
+E18,Four or More Bedrooms
+E1W,Studio
+E1W,One Bedroom
+E1W,Two Bedrooms
+E1W,Three Bedrooms
+E2,Room
+E2,Studio
+E2,One Bedroom
+E2,Two Bedrooms
+E2,Three Bedrooms
+E2,Four or More Bedrooms
+E20,One Bedroom
+E20,Two Bedrooms
+E3,Room
+E3,Studio
+E3,One Bedroom
+E3,Two Bedrooms
+E3,Three Bedrooms
+E3,Four or More Bedrooms
+E4,One Bedroom
+E4,Two Bedrooms
+E4,Three Bedrooms
+E4,Four or More Bedrooms
+E5,Studio
+E5,One Bedroom
+E5,Two Bedrooms
+E5,Three Bedrooms
+E5,Four or More Bedrooms
+E6,One Bedroom
+E6,Two Bedrooms
+E6,Three Bedrooms
+E6,Four or More Bedrooms
+E7,Room
+E7,Studio
+E7,One Bedroom
+E7,Two Bedrooms
+E7,Three Bedrooms
+E7,Four or More Bedrooms
+E8,Room
+E8,Studio
+E8,One Bedroom
+E8,Two Bedrooms
+E8,Three Bedrooms
+E8,Four or More Bedrooms
+E9,One Bedroom
+E9,Two Bedrooms
+E9,Three Bedrooms
+E9,Four or More Bedrooms
+EC1A,Studio
+EC1A,One Bedroom
+EC1A,Two Bedrooms
+EC1M,Studio
+EC1M,One Bedroom
+EC1R,One Bedroom
+EC1R,Two Bedrooms
+EC1V,One Bedroom
+EC1V,Two Bedrooms
+EC1V,Three Bedrooms
+EC1V,Four or More Bedrooms
+EC1Y,Studio
+EC1Y,One Bedroom
+EC1Y,Two Bedrooms
+EC2A,Studio
+EC2A,One Bedroom
+EC2A,Two Bedrooms
+EC2Y,Studio
+EC2Y,One Bedroom
+EC2Y,Two Bedrooms
+EC3R,One Bedroom
+EC4A,Studio
+EC4A,One Bedroom
+EC4A,Two Bedrooms
+EC4V,One Bedroom
+EC4V,Two Bedrooms
+EN1,Studio
+EN1,One Bedroom
+EN1,Two Bedrooms
+EN1,Three Bedrooms
+EN1,Four or More Bedrooms
+EN2,Studio
+EN2,One Bedroom
+EN2,Two Bedrooms
+EN2,Three Bedrooms
+EN2,Four or More Bedrooms
+EN3,Room
+EN3,One Bedroom
+EN3,Two Bedrooms
+EN3,Three Bedrooms
+EN3,Four or More Bedrooms
+EN4,Studio
+EN4,One Bedroom
+EN4,Two Bedrooms
+EN4,Three Bedrooms
+EN4,Four or More Bedrooms
+EN5,Studio
+EN5,One Bedroom
+EN5,Two Bedrooms
+EN5,Three Bedrooms
+EN5,Four or More Bedrooms
+HA0,Studio
+HA0,One Bedroom
+HA0,Two Bedrooms
+HA0,Three Bedrooms
+HA0,Four or More Bedrooms
+HA1,Room
+HA1,Studio
+HA1,One Bedroom
+HA1,Two Bedrooms
+HA1,Three Bedrooms
+HA1,Four or More Bedrooms
+HA2,Room
+HA2,Studio
+HA2,One Bedroom
+HA2,Two Bedrooms
+HA2,Three Bedrooms
+HA2,Four or More Bedrooms
+HA3,Room
+HA3,Studio
+HA3,One Bedroom
+HA3,Two Bedrooms
+HA3,Three Bedrooms
+HA3,Four or More Bedrooms
+HA4,Room
+HA4,One Bedroom
+HA4,Two Bedrooms
+HA4,Three Bedrooms
+HA4,Four or More Bedrooms
+HA5,Studio
+HA5,One Bedroom
+HA5,Two Bedrooms
+HA5,Three Bedrooms
+HA5,Four or More Bedrooms
+HA6,One Bedroom
+HA6,Two Bedrooms
+HA6,Three Bedrooms
+HA6,Four or More Bedrooms
+HA7,One Bedroom
+HA7,Two Bedrooms
+HA7,Three Bedrooms
+HA7,Four or More Bedrooms
+HA8,Studio
+HA8,One Bedroom
+HA8,Two Bedrooms
+HA8,Three Bedrooms
+HA8,Four or More Bedrooms
+HA9,Room
+HA9,Studio
+HA9,One Bedroom
+HA9,Two Bedrooms
+HA9,Three Bedrooms
+HA9,Four or More Bedrooms
+IG1,Room
+IG1,Studio
+IG1,One Bedroom
+IG1,Two Bedrooms
+IG1,Three Bedrooms
+IG1,Four or More Bedrooms
+IG11,Room
+IG11,Studio
+IG11,One Bedroom
+IG11,Two Bedrooms
+IG11,Three Bedrooms
+IG11,Four or More Bedrooms
+IG2,Studio
+IG2,One Bedroom
+IG2,Two Bedrooms
+IG2,Three Bedrooms
+IG2,Four or More Bedrooms
+IG3,Room
+IG3,Studio
+IG3,One Bedroom
+IG3,Two Bedrooms
+IG3,Three Bedrooms
+IG3,Four or More Bedrooms
+IG4,Room
+IG5,Room
+IG5,Studio
+IG5,One Bedroom
+IG5,Two Bedrooms
+IG5,Three Bedrooms
+IG5,Four or More Bedrooms
+IG6,Room
+IG6,One Bedroom
+IG6,Two Bedrooms
+IG6,Three Bedrooms
+IG6,Four or More Bedrooms
+IG7,One Bedroom
+IG7,Two Bedrooms
+IG7,Three Bedrooms
+IG8,One Bedroom
+IG8,Two Bedrooms
+IG8,Three Bedrooms
+IG8,Four or More Bedrooms
+KT1,Studio
+KT1,One Bedroom
+KT1,Two Bedrooms
+KT1,Three Bedrooms
+KT1,Four or More Bedrooms
+KT2,One Bedroom
+KT2,Two Bedrooms
+KT2,Three Bedrooms
+KT2,Four or More Bedrooms
+KT3,Studio
+KT3,One Bedroom
+KT3,Two Bedrooms
+KT3,Three Bedrooms
+KT3,Four or More Bedrooms
+KT4,One Bedroom
+KT4,Two Bedrooms
+KT4,Three Bedrooms
+KT4,Four or More Bedrooms
+KT5,Studio
+KT5,One Bedroom
+KT5,Two Bedrooms
+KT5,Three Bedrooms
+KT5,Four or More Bedrooms
+KT6,Studio
+KT6,One Bedroom
+KT6,Two Bedrooms
+KT6,Three Bedrooms
+KT6,Four or More Bedrooms
+KT9,One Bedroom
+KT9,Two Bedrooms
+KT9,Three Bedrooms
+N1,Room
+N1,Studio
+N1,One Bedroom
+N1,Two Bedrooms
+N1,Three Bedrooms
+N1,Four or More Bedrooms
+N10,Room
+N10,Studio
+N10,One Bedroom
+N10,Two Bedrooms
+N10,Three Bedrooms
+N10,Four or More Bedrooms
+N11,Studio
+N11,One Bedroom
+N11,Two Bedrooms
+N11,Three Bedrooms
+N11,Four or More Bedrooms
+N12,Studio
+N12,One Bedroom
+N12,Two Bedrooms
+N12,Three Bedrooms
+N12,Four or More Bedrooms
+N13,Studio
+N13,One Bedroom
+N13,Two Bedrooms
+N13,Three Bedrooms
+N13,Four or More Bedrooms
+N14,Room
+N14,One Bedroom
+N14,Two Bedrooms
+N14,Three Bedrooms
+N14,Four or More Bedrooms
+N15,Room
+N15,Studio
+N15,One Bedroom
+N15,Two Bedrooms
+N15,Three Bedrooms
+N15,Four or More Bedrooms
+N16,Studio
+N16,One Bedroom
+N16,Two Bedrooms
+N16,Three Bedrooms
+N16,Four or More Bedrooms
+N17,Room
+N17,Studio
+N17,One Bedroom
+N17,Two Bedrooms
+N17,Three Bedrooms
+N17,Four or More Bedrooms
+N18,One Bedroom
+N18,Two Bedrooms
+N18,Three Bedrooms
+N19,Room
+N19,Studio
+N19,One Bedroom
+N19,Two Bedrooms
+N19,Three Bedrooms
+N19,Four or More Bedrooms
+N1C,Three Bedrooms
+N2,Studio
+N2,One Bedroom
+N2,Two Bedrooms
+N2,Three Bedrooms
+N2,Four or More Bedrooms
+N20,One Bedroom
+N20,Two Bedrooms
+N20,Three Bedrooms
+N20,Four or More Bedrooms
+N21,One Bedroom
+N21,Two Bedrooms
+N21,Three Bedrooms
+N21,Four or More Bedrooms
+N22,Room
+N22,Studio
+N22,One Bedroom
+N22,Two Bedrooms
+N22,Three Bedrooms
+N22,Four or More Bedrooms
+N3,One Bedroom
+N3,Two Bedrooms
+N3,Three Bedrooms
+N3,Four or More Bedrooms
+N4,Room
+N4,Studio
+N4,One Bedroom
+N4,Two Bedrooms
+N4,Three Bedrooms
+N4,Four or More Bedrooms
+N5,Studio
+N5,One Bedroom
+N5,Two Bedrooms
+N5,Three Bedrooms
+N5,Four or More Bedrooms
+N6,Studio
+N6,One Bedroom
+N6,Two Bedrooms
+N6,Three Bedrooms
+N6,Four or More Bedrooms
+N7,Room
+N7,Studio
+N7,One Bedroom
+N7,Two Bedrooms
+N7,Three Bedrooms
+N7,Four or More Bedrooms
+N8,Room
+N8,Studio
+N8,One Bedroom
+N8,Two Bedrooms
+N8,Three Bedrooms
+N8,Four or More Bedrooms
+N9,Studio
+N9,One Bedroom
+N9,Two Bedrooms
+N9,Three Bedrooms
+NW1,Studio
+NW1,One Bedroom
+NW1,Two Bedrooms
+NW1,Three Bedrooms
+NW1,Four or More Bedrooms
+NW10,Room
+NW10,Studio
+NW10,One Bedroom
+NW10,Two Bedrooms
+NW10,Three Bedrooms
+NW10,Four or More Bedrooms
+NW11,One Bedroom
+NW11,Two Bedrooms
+NW11,Three Bedrooms
+NW11,Four or More Bedrooms
+NW2,Studio
+NW2,One Bedroom
+NW2,Two Bedrooms
+NW2,Three Bedrooms
+NW2,Four or More Bedrooms
+NW3,Studio
+NW3,One Bedroom
+NW3,Two Bedrooms
+NW3,Three Bedrooms
+NW3,Four or More Bedrooms
+NW4,Room
+NW4,Studio
+NW4,One Bedroom
+NW4,Two Bedrooms
+NW4,Three Bedrooms
+NW4,Four or More Bedrooms
+NW5,Studio
+NW5,One Bedroom
+NW5,Two Bedrooms
+NW5,Three Bedrooms
+NW5,Four or More Bedrooms
+NW6,Studio
+NW6,One Bedroom
+NW6,Two Bedrooms
+NW6,Three Bedrooms
+NW6,Four or More Bedrooms
+NW7,One Bedroom
+NW7,Two Bedrooms
+NW7,Three Bedrooms
+NW7,Four or More Bedrooms
+NW8,Studio
+NW8,One Bedroom
+NW8,Two Bedrooms
+NW8,Three Bedrooms
+NW8,Four or More Bedrooms
+NW9,Studio
+NW9,One Bedroom
+NW9,Two Bedrooms
+NW9,Three Bedrooms
+NW9,Four or More Bedrooms
+RM1,Studio
+RM1,One Bedroom
+RM1,Two Bedrooms
+RM1,Three Bedrooms
+RM1,Four or More Bedrooms
+RM10,Room
+RM10,One Bedroom
+RM10,Two Bedrooms
+RM10,Three Bedrooms
+RM10,Four or More Bedrooms
+RM11,One Bedroom
+RM11,Two Bedrooms
+RM11,Three Bedrooms
+RM11,Four or More Bedrooms
+RM12,Room
+RM12,One Bedroom
+RM12,Two Bedrooms
+RM12,Three Bedrooms
+RM12,Four or More Bedrooms
+RM13,One Bedroom
+RM13,Two Bedrooms
+RM13,Three Bedrooms
+RM13,Four or More Bedrooms
+RM14,Two Bedrooms
+RM14,Three Bedrooms
+RM14,Four or More Bedrooms
+RM2,Room
+RM2,One Bedroom
+RM2,Two Bedrooms
+RM2,Three Bedrooms
+RM2,Four or More Bedrooms
+RM3,One Bedroom
+RM3,Two Bedrooms
+RM3,Three Bedrooms
+RM3,Four or More Bedrooms
+RM5,One Bedroom
+RM5,Two Bedrooms
+RM5,Three Bedrooms
+RM6,Studio
+RM6,One Bedroom
+RM6,Two Bedrooms
+RM6,Three Bedrooms
+RM6,Four or More Bedrooms
+RM7,One Bedroom
+RM7,Two Bedrooms
+RM7,Three Bedrooms
+RM7,Four or More Bedrooms
+RM8,One Bedroom
+RM8,Two Bedrooms
+RM8,Three Bedrooms
+RM9,One Bedroom
+RM9,Two Bedrooms
+RM9,Three Bedrooms
+SE1,Studio
+SE1,One Bedroom
+SE1,Two Bedrooms
+SE1,Three Bedrooms
+SE1,Four or More Bedrooms
+SE10,Room
+SE10,Studio
+SE10,One Bedroom
+SE10,Two Bedrooms
+SE10,Three Bedrooms
+SE10,Four or More Bedrooms
+SE11,Studio
+SE11,One Bedroom
+SE11,Two Bedrooms
+SE11,Three Bedrooms
+SE11,Four or More Bedrooms
+SE12,Studio
+SE12,One Bedroom
+SE12,Two Bedrooms
+SE12,Three Bedrooms
+SE12,Four or More Bedrooms
+SE13,Room
+SE13,Studio
+SE13,One Bedroom
+SE13,Two Bedrooms
+SE13,Three Bedrooms
+SE13,Four or More Bedrooms
+SE14,Studio
+SE14,One Bedroom
+SE14,Two Bedrooms
+SE14,Three Bedrooms
+SE14,Four or More Bedrooms
+SE15,Studio
+SE15,One Bedroom
+SE15,Two Bedrooms
+SE15,Three Bedrooms
+SE15,Four or More Bedrooms
+SE16,Room
+SE16,Studio
+SE16,One Bedroom
+SE16,Two Bedrooms
+SE16,Three Bedrooms
+SE16,Four or More Bedrooms
+SE17,Studio
+SE17,One Bedroom
+SE17,Two Bedrooms
+SE17,Three Bedrooms
+SE17,Four or More Bedrooms
+SE18,Room
+SE18,Studio
+SE18,One Bedroom
+SE18,Two Bedrooms
+SE18,Three Bedrooms
+SE18,Four or More Bedrooms
+SE19,One Bedroom
+SE19,Two Bedrooms
+SE19,Three Bedrooms
+SE19,Four or More Bedrooms
+SE2,Room
+SE2,One Bedroom
+SE2,Two Bedrooms
+SE2,Three Bedrooms
+SE2,Four or More Bedrooms
+SE20,Studio
+SE20,One Bedroom
+SE20,Two Bedrooms
+SE20,Three Bedrooms
+SE21,One Bedroom
+SE21,Two Bedrooms
+SE21,Three Bedrooms
+SE21,Four or More Bedrooms
+SE22,Studio
+SE22,One Bedroom
+SE22,Two Bedrooms
+SE22,Three Bedrooms
+SE22,Four or More Bedrooms
+SE23,Studio
+SE23,One Bedroom
+SE23,Two Bedrooms
+SE23,Three Bedrooms
+SE23,Four or More Bedrooms
+SE24,One Bedroom
+SE24,Two Bedrooms
+SE24,Three Bedrooms
+SE24,Four or More Bedrooms
+SE25,Studio
+SE25,One Bedroom
+SE25,Two Bedrooms
+SE25,Three Bedrooms
+SE25,Four or More Bedrooms
+SE26,Studio
+SE26,One Bedroom
+SE26,Two Bedrooms
+SE26,Three Bedrooms
+SE26,Four or More Bedrooms
+SE27,One Bedroom
+SE27,Two Bedrooms
+SE27,Three Bedrooms
+SE27,Four or More Bedrooms
+SE28,One Bedroom
+SE28,Two Bedrooms
+SE28,Three Bedrooms
+SE28,Four or More Bedrooms
+SE3,Studio
+SE3,One Bedroom
+SE3,Two Bedrooms
+SE3,Three Bedrooms
+SE3,Four or More Bedrooms
+SE4,One Bedroom
+SE4,Two Bedrooms
+SE4,Three Bedrooms
+SE4,Four or More Bedrooms
+SE5,One Bedroom
+SE5,Two Bedrooms
+SE5,Three Bedrooms
+SE5,Four or More Bedrooms
+SE6,Room
+SE6,Studio
+SE6,One Bedroom
+SE6,Two Bedrooms
+SE6,Three Bedrooms
+SE6,Four or More Bedrooms
+SE7,One Bedroom
+SE7,Two Bedrooms
+SE7,Three Bedrooms
+SE7,Four or More Bedrooms
+SE8,Room
+SE8,Studio
+SE8,One Bedroom
+SE8,Two Bedrooms
+SE8,Three Bedrooms
+SE8,Four or More Bedrooms
+SE9,Studio
+SE9,One Bedroom
+SE9,Two Bedrooms
+SE9,Three Bedrooms
+SE9,Four or More Bedrooms
+SM1,Room
+SM1,Studio
+SM1,One Bedroom
+SM1,Two Bedrooms
+SM1,Three Bedrooms
+SM1,Four or More Bedrooms
+SM2,Studio
+SM2,One Bedroom
+SM2,Two Bedrooms
+SM2,Three Bedrooms
+SM2,Four or More Bedrooms
+SM3,Studio
+SM3,One Bedroom
+SM3,Two Bedrooms
+SM3,Three Bedrooms
+SM4,One Bedroom
+SM4,Two Bedrooms
+SM4,Three Bedrooms
+SM4,Four or More Bedrooms
+SM5,One Bedroom
+SM5,Two Bedrooms
+SM5,Three Bedrooms
+SM5,Four or More Bedrooms
+SM6,One Bedroom
+SM6,Two Bedrooms
+SM6,Three Bedrooms
+SM6,Four or More Bedrooms
+SW10,Studio
+SW10,One Bedroom
+SW10,Two Bedrooms
+SW10,Three Bedrooms
+SW10,Four or More Bedrooms
+SW11,Studio
+SW11,One Bedroom
+SW11,Two Bedrooms
+SW11,Three Bedrooms
+SW11,Four or More Bedrooms
+SW12,Studio
+SW12,One Bedroom
+SW12,Two Bedrooms
+SW12,Three Bedrooms
+SW12,Four or More Bedrooms
+SW13,Studio
+SW13,One Bedroom
+SW13,Two Bedrooms
+SW13,Three Bedrooms
+SW13,Four or More Bedrooms
+SW14,Studio
+SW14,One Bedroom
+SW14,Two Bedrooms
+SW14,Three Bedrooms
+SW14,Four or More Bedrooms
+SW15,Studio
+SW15,One Bedroom
+SW15,Two Bedrooms
+SW15,Three Bedrooms
+SW15,Four or More Bedrooms
+SW16,One Bedroom
+SW16,Two Bedrooms
+SW16,Three Bedrooms
+SW16,Four or More Bedrooms
+SW17,Studio
+SW17,One Bedroom
+SW17,Two Bedrooms
+SW17,Three Bedrooms
+SW17,Four or More Bedrooms
+SW18,Studio
+SW18,One Bedroom
+SW18,Two Bedrooms
+SW18,Three Bedrooms
+SW18,Four or More Bedrooms
+SW19,Room
+SW19,Studio
+SW19,One Bedroom
+SW19,Two Bedrooms
+SW19,Three Bedrooms
+SW19,Four or More Bedrooms
+SW1E,Two Bedrooms
+SW1P,Studio
+SW1P,One Bedroom
+SW1P,Two Bedrooms
+SW1P,Three Bedrooms
+SW1V,Studio
+SW1V,One Bedroom
+SW1V,Two Bedrooms
+SW1V,Three Bedrooms
+SW1V,Four or More Bedrooms
+SW1W,Studio
+SW1W,One Bedroom
+SW1W,Two Bedrooms
+SW1W,Three Bedrooms
+SW1W,Four or More Bedrooms
+SW1X,Studio
+SW1X,One Bedroom
+SW1X,Two Bedrooms
+SW1X,Three Bedrooms
+SW1X,Four or More Bedrooms
+SW1Y,One Bedroom
+SW2,Room
+SW2,Studio
+SW2,One Bedroom
+SW2,Two Bedrooms
+SW2,Three Bedrooms
+SW2,Four or More Bedrooms
+SW20,Studio
+SW20,One Bedroom
+SW20,Two Bedrooms
+SW20,Three Bedrooms
+SW20,Four or More Bedrooms
+SW3,Studio
+SW3,One Bedroom
+SW3,Two Bedrooms
+SW3,Three Bedrooms
+SW3,Four or More Bedrooms
+SW4,Studio
+SW4,One Bedroom
+SW4,Two Bedrooms
+SW4,Three Bedrooms
+SW4,Four or More Bedrooms
+SW5,Studio
+SW5,One Bedroom
+SW5,Two Bedrooms
+SW5,Three Bedrooms
+SW5,Four or More Bedrooms
+SW6,Studio
+SW6,One Bedroom
+SW6,Two Bedrooms
+SW6,Three Bedrooms
+SW6,Four or More Bedrooms
+SW7,Studio
+SW7,One Bedroom
+SW7,Two Bedrooms
+SW7,Three Bedrooms
+SW7,Four or More Bedrooms
+SW8,Studio
+SW8,One Bedroom
+SW8,Two Bedrooms
+SW8,Three Bedrooms
+SW8,Four or More Bedrooms
+SW9,One Bedroom
+SW9,Two Bedrooms
+SW9,Three Bedrooms
+SW9,Four or More Bedrooms
+TN16,Two Bedrooms
+TN16,Three Bedrooms
+TN16,Four or More Bedrooms
+TW1,Studio
+TW1,One Bedroom
+TW1,Two Bedrooms
+TW1,Three Bedrooms
+TW1,Four or More Bedrooms
+TW10,Studio
+TW10,One Bedroom
+TW10,Two Bedrooms
+TW10,Three Bedrooms
+TW10,Four or More Bedrooms
+TW11,Studio
+TW11,One Bedroom
+TW11,Two Bedrooms
+TW11,Three Bedrooms
+TW11,Four or More Bedrooms
+TW12,Room
+TW12,One Bedroom
+TW12,Two Bedrooms
+TW12,Three Bedrooms
+TW12,Four or More Bedrooms
+TW13,One Bedroom
+TW13,Two Bedrooms
+TW13,Three Bedrooms
+TW13,Four or More Bedrooms
+TW14,Studio
+TW14,One Bedroom
+TW14,Two Bedrooms
+TW14,Three Bedrooms
+TW14,Four or More Bedrooms
+TW2,One Bedroom
+TW2,Two Bedrooms
+TW2,Three Bedrooms
+TW2,Four or More Bedrooms
+TW3,Room
+TW3,Studio
+TW3,One Bedroom
+TW3,Two Bedrooms
+TW3,Three Bedrooms
+TW3,Four or More Bedrooms
+TW4,Room
+TW4,Studio
+TW4,One Bedroom
+TW4,Two Bedrooms
+TW4,Three Bedrooms
+TW4,Four or More Bedrooms
+TW5,Studio
+TW5,One Bedroom
+TW5,Two Bedrooms
+TW5,Three Bedrooms
+TW5,Four or More Bedrooms
+TW7,Studio
+TW7,One Bedroom
+TW7,Two Bedrooms
+TW7,Three Bedrooms
+TW7,Four or More Bedrooms
+TW8,Studio
+TW8,One Bedroom
+TW8,Two Bedrooms
+TW8,Three Bedrooms
+TW9,Room
+TW9,Studio
+TW9,One Bedroom
+TW9,Two Bedrooms
+TW9,Three Bedrooms
+TW9,Four or More Bedrooms
+UB1,One Bedroom
+UB1,Two Bedrooms
+UB1,Three Bedrooms
+UB10,Studio
+UB10,One Bedroom
+UB10,Two Bedrooms
+UB10,Three Bedrooms
+UB10,Four or More Bedrooms
+UB2,Room
+UB2,One Bedroom
+UB2,Two Bedrooms
+UB2,Three Bedrooms
+UB2,Four or More Bedrooms
+UB3,Studio
+UB3,One Bedroom
+UB3,Two Bedrooms
+UB3,Three Bedrooms
+UB3,Four or More Bedrooms
+UB4,Studio
+UB4,One Bedroom
+UB4,Two Bedrooms
+UB4,Three Bedrooms
+UB4,Four or More Bedrooms
+UB5,One Bedroom
+UB5,Two Bedrooms
+UB5,Three Bedrooms
+UB6,Studio
+UB6,One Bedroom
+UB6,Two Bedrooms
+UB6,Three Bedrooms
+UB6,Four or More Bedrooms
+UB7,Room
+UB7,Studio
+UB7,One Bedroom
+UB7,Two Bedrooms
+UB7,Three Bedrooms
+UB8,Room
+UB8,Studio
+UB8,One Bedroom
+UB8,Two Bedrooms
+UB8,Three Bedrooms
+UB8,Four or More Bedrooms
+W10,Studio
+W10,One Bedroom
+W10,Two Bedrooms
+W10,Three Bedrooms
+W11,Studio
+W11,One Bedroom
+W11,Two Bedrooms
+W11,Three Bedrooms
+W11,Four or More Bedrooms
+W12,Studio
+W12,One Bedroom
+W12,Two Bedrooms
+W12,Three Bedrooms
+W12,Four or More Bedrooms
+W13,Studio
+W13,One Bedroom
+W13,Two Bedrooms
+W13,Three Bedrooms
+W13,Four or More Bedrooms
+W14,Studio
+W14,One Bedroom
+W14,Two Bedrooms
+W14,Three Bedrooms
+W14,Four or More Bedrooms
+W1G,One Bedroom
+W1G,Two Bedrooms
+W1G,Three Bedrooms
+W1H,Room
+W1H,Studio
+W1H,One Bedroom
+W1H,Two Bedrooms
+W1H,Three Bedrooms
+W1T,One Bedroom
+W1U,Studio
+W1U,One Bedroom
+W1U,Two Bedrooms
+W1U,Three Bedrooms
+W1U,Four or More Bedrooms
+W1W,One Bedroom
+W1W,Two Bedrooms
+W2,Room
+W2,Studio
+W2,One Bedroom
+W2,Two Bedrooms
+W2,Three Bedrooms
+W2,Four or More Bedrooms
+W3,Room
+W3,Studio
+W3,One Bedroom
+W3,Two Bedrooms
+W3,Three Bedrooms
+W3,Four or More Bedrooms
+W4,Studio
+W4,One Bedroom
+W4,Two Bedrooms
+W4,Three Bedrooms
+W4,Four or More Bedrooms
+W5,Room
+W5,Studio
+W5,One Bedroom
+W5,Two Bedrooms
+W5,Three Bedrooms
+W5,Four or More Bedrooms
+W6,Studio
+W6,One Bedroom
+W6,Two Bedrooms
+W6,Three Bedrooms
+W6,Four or More Bedrooms
+W7,One Bedroom
+W7,Two Bedrooms
+W7,Three Bedrooms
+W7,Four or More Bedrooms
+W8,Studio
+W8,One Bedroom
+W8,Two Bedrooms
+W8,Three Bedrooms
+W8,Four or More Bedrooms
+W9,Studio
+W9,One Bedroom
+W9,Two Bedrooms
+W9,Three Bedrooms
+WC1A,One Bedroom
+WC1A,Two Bedrooms
+WC1B,One Bedroom
+WC1B,Two Bedrooms
+WC1B,Three Bedrooms
+WC1E,One Bedroom
+WC1E,Two Bedrooms
+WC1E,Three Bedrooms
+WC1N,Two Bedrooms
+WC1R,Two Bedrooms
+WC1X,One Bedroom
+WC1X,Two Bedrooms
+WC1X,Three Bedrooms
+WC2A,One Bedroom
+WC2A,Two Bedrooms
+WC2B,One Bedroom
+WC2E,One Bedroom
+WC2H,Two Bedrooms
