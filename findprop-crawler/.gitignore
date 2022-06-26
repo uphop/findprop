@@ -34,4 +34,4 @@ build/
 data/*.csv
 
 *.properties
-!**/src/main/resources/*.properties
+
