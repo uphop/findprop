@@ -85,9 +85,9 @@ public class RentPriceItemProcessor
             PostcodeRentPrice targetDataPoint = new PostcodeRentPrice();
 
             // find nearest postcode
-            Postcode postcode = this.postcodeRepository.findByDistance(sourceDataPoint.getLng(),
+            List<Postcode> postcodes = this.postcodeRepository.findByDistance(sourceDataPoint.getLng(),
                     sourceDataPoint.getLat(), MAX_RANGE);
-            if (postcode == null) {
+            if (postcodes == null || postcodes.size() == 0) {
                 // skip postcode prices if not able to determine postcode by location
                 log.error(String.format(
                         "Cannot find nearest postcode for longitude %f, latitude %f, maxRange %f",
@@ -96,8 +96,15 @@ public class RentPriceItemProcessor
                 continue;
             }
 
+            // get closest postcode
+            Postcode postcode = postcodes.get(0);
+            
             if (!postcode.getCode().startsWith(source.getPostcodeArea())) {
                 // skip postcode price for postcodes which seem not to be in this area
+                log.error(String.format(
+                        "Skipping postcode %s, not in the target postcode area",
+                        postcode.getCode()));
+
                 continue;
             }
 

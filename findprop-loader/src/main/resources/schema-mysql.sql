@@ -154,7 +154,7 @@ create table postcode_rent_price (
     price_high int,
     currency enum('gbp', 'usd', 'eur') not null,
     period enum('one_off', 'year', 'month', 'week', 'day') not null,
-    source enum('propertydata', 'ons') not null,
+    source enum('property_data', 'ons') not null,
     published date not null,
     recorded_from date,
     recorded_to date,
@@ -164,9 +164,9 @@ create table postcode_rent_price (
     index local_authority_rent_price_per_period_idx (property_type, bedrooms, recorded_from, recorded_to)
 )^;
 
-create procedure get_nearest_postcodes(in center_lon decimal(8, 6), in center_lat decimal(8, 6), in max_range decimal(5, 2))
+create procedure get_nearest_postcodes(in center_lon decimal(8, 6), in center_lat decimal(8, 6), in max_range decimal(8, 2))
 begin
-	declare max_range_km decimal(5, 2);
+	declare max_range_km decimal(8, 2);
     declare srid int;
 	declare lat_degree_km decimal(6, 3);
     declare min_lat decimal(8, 6);
@@ -196,7 +196,7 @@ begin
 	where ST_Contains(search_area, location)
 	and ST_Distance_Sphere(center_point, location) < max_range
 	order by ST_Distance_Sphere(center_point, location) asc
-    limit 1;
+    limit 100;
 end^;
 
 create procedure get_similar_local_authority_rent_prices(in la_id int, in p_type varchar(50), in b_count int)

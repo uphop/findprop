@@ -2,6 +2,9 @@ package com.lightson.findpropapi.model;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpfrontPriceDetails implements Serializable {
     private Integer priceMean;
     private UpfrontFeeEnum upfrontFeeType;

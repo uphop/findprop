@@ -3,21 +3,17 @@ package com.lightson.findpropapi.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lightson.findpropapi.entity.LocalAuthorityUtilityPrice;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UtilityPriceLocalAuthorityDetails implements Serializable {
     private String localAuthority;
     private List<UtilityPriceDetails> price;
 
-    public UtilityPriceLocalAuthorityDetails(String localAuthority, List<UtilityPriceDetails> price) {
-        this.localAuthority = localAuthority;
-        this.price = price;
-    }
-
     public UtilityPriceLocalAuthorityDetails(String localAuthority,
-            Set<LocalAuthorityUtilityPrice> localAuthorityUtilityPrices) {
+            List<LocalAuthorityUtilityPrice> localAuthorityUtilityPrices) {
         this.localAuthority = localAuthority;
 
         for (LocalAuthorityUtilityPrice localAuthorityUtilityPrice : localAuthorityUtilityPrices) {

@@ -2,8 +2,10 @@ package com.lightson.findpropapi.model;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lightson.findpropapi.entity.LocalAuthorityUtilityPrice;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UtilityPriceDetails implements Serializable {
     private Integer priceMean;
     private UtilityFeeEnum utilityType;

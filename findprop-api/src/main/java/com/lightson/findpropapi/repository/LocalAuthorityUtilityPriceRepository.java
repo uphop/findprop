@@ -1,6 +1,6 @@
 package com.lightson.findpropapi.repository;
 
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,7 +11,7 @@ import com.lightson.findpropapi.entity.LocalAuthorityUtilityPrice;
 
 @Repository
 public interface LocalAuthorityUtilityPriceRepository extends JpaRepository<LocalAuthorityUtilityPrice, Long> {
-    @Cacheable("local_authority_utility__prices")
-    Set<LocalAuthorityUtilityPrice> findByLocalAuthorityAndPropertyTypeAndBedrooms(LocalAuthority localAuthority,
+    @Cacheable("local_authority_utility_prices")
+    public List<LocalAuthorityUtilityPrice> findByLocalAuthorityAndPropertyTypeAndBedrooms(LocalAuthority localAuthority,
             String propertyType, Integer bedrooms);
 }

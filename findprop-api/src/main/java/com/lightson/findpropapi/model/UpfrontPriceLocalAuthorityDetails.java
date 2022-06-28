@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lightson.findpropapi.entity.LocalAuthorityRentPrice;
 import com.lightson.findpropapi.entity.PostcodeAreaRentPrice;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpfrontPriceLocalAuthorityDetails implements Serializable {
     private String localAuthority;
     private String postcodeArea;
@@ -21,37 +23,43 @@ public class UpfrontPriceLocalAuthorityDetails implements Serializable {
     }
 
     public UpfrontPriceLocalAuthorityDetails(LocalAuthorityRentPrice localAuthorityDetails) {
-        this.localAuthority = localAuthorityDetails.getLocalAuthority().getName();
-        RentPriceDetails rentPriceDetails = RentPriceDetails.fromLocalAuthorityRentPrice(localAuthorityDetails);
-        initPrice(rentPriceDetails);
+        if (localAuthorityDetails != null) {
+            this.localAuthority = localAuthorityDetails.getLocalAuthority().getName();
+            RentPriceDetails rentPriceDetails = RentPriceDetails.fromLocalAuthorityRentPrice(localAuthorityDetails);
+            initPrice(rentPriceDetails);
+        }
     }
 
     public UpfrontPriceLocalAuthorityDetails(PostcodeAreaRentPrice postcodeAreaRentPrice) {
-        this.postcodeArea = postcodeAreaRentPrice.getPostcodeArea();
-        RentPriceDetails rentPriceDetails = RentPriceDetails.fromPostcodeAreaRentPrice(postcodeAreaRentPrice);
-        initPrice(rentPriceDetails);
+        if (postcodeAreaRentPrice != null) {
+            this.postcodeArea = postcodeAreaRentPrice.getPostcodeArea();
+            RentPriceDetails rentPriceDetails = RentPriceDetails.fromPostcodeAreaRentPrice(postcodeAreaRentPrice);
+            initPrice(rentPriceDetails);
+        }
     }
 
     private void initPrice(RentPriceDetails rentPriceDetails) {
-        price = new ArrayList<UpfrontPriceDetails>();
+        if (rentPriceDetails != null) {
+            price = new ArrayList<UpfrontPriceDetails>();
 
-        // add holding deposit
-        UpfrontPriceDetails holdingDeposit = new UpfrontPriceDetails();
-        holdingDeposit.setCurrency(rentPriceDetails.getCurrency());
-        holdingDeposit.setPeriod(RentPricePeriodEnum.one_off);
-        holdingDeposit.setUpfrontFeeType(UpfrontFeeEnum.holding_deposit);
-        holdingDeposit.setPriceMean(UpfrontPriceLocalAuthorityDetails
-                .getHoldingDeposit(rentPriceDetails));
-        price.add(holdingDeposit);
+            // add holding deposit
+            UpfrontPriceDetails holdingDeposit = new UpfrontPriceDetails();
+            holdingDeposit.setCurrency(rentPriceDetails.getCurrency());
+            holdingDeposit.setPeriod(RentPricePeriodEnum.one_off);
+            holdingDeposit.setUpfrontFeeType(UpfrontFeeEnum.holding_deposit);
+            holdingDeposit.setPriceMean(UpfrontPriceLocalAuthorityDetails
+                    .getHoldingDeposit(rentPriceDetails));
+            price.add(holdingDeposit);
 
-        // add rental deposit excludinf holding deposit
-        UpfrontPriceDetails rentalDeposit = new UpfrontPriceDetails();
-        rentalDeposit.setCurrency(rentPriceDetails.getCurrency());
-        rentalDeposit.setPeriod(RentPricePeriodEnum.one_off);
-        rentalDeposit.setUpfrontFeeType(UpfrontFeeEnum.tenancy_deposit);
-        rentalDeposit.setPriceMean(UpfrontPriceLocalAuthorityDetails
-                .getRentalDeposit(rentPriceDetails));
-        price.add(rentalDeposit);
+            // add rental deposit excludinf holding deposit
+            UpfrontPriceDetails rentalDeposit = new UpfrontPriceDetails();
+            rentalDeposit.setCurrency(rentPriceDetails.getCurrency());
+            rentalDeposit.setPeriod(RentPricePeriodEnum.one_off);
+            rentalDeposit.setUpfrontFeeType(UpfrontFeeEnum.tenancy_deposit);
+            rentalDeposit.setPriceMean(UpfrontPriceLocalAuthorityDetails
+                    .getRentalDeposit(rentPriceDetails));
+            price.add(rentalDeposit);
+        }
     }
 
     public UpfrontPriceLocalAuthorityDetails() {

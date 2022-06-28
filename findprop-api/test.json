@@ -1,349 +1,223 @@
 {
-    "status": "success",
-    "postcode": "SE8",
-    "postcode_type": "district",
-    "url": "https:\/\/propertydata.co.uk\/draw?input=SE8",
+    "timestamp": "2022-06-28T06:55:12.073+0000",
+    "duration": 109,
+    "status": "OK",
+    "code": 200,
+    "longitude": -0.02714,
+    "latitude": 51.478717,
+    "maxRange": 1000.0,
+    "propertyType": "flat",
     "bedrooms": 2,
-    "type": "flat",
-    "data": {
-        "long_let": {
-            "points_analysed": 45,
-            "unit": "gbp_per_week",
-            "average": 439,
-            "70pc_range": [
-                358,
-                520
-            ],
-            "80pc_range": [
-                358,
-                531
-            ],
-            "90pc_range": [
-                335,
-                550
-            ],
-            "100pc_range": [
-                323,
-                669
-            ],
-            "raw_data": [
-                {
-                    "price": 323,
-                    "lat": "51.48979900",
-                    "lng": "-0.03666500",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 496,
-                    "lat": "51.48729100",
-                    "lng": "-0.03283800",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 450,
-                    "lat": "51.48979200",
-                    "lng": "-0.04138400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 450,
-                    "lat": "51.49238600",
-                    "lng": "-0.03988900",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 460,
-                    "lat": "51.49170000",
-                    "lng": "-0.04234600",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 462,
-                    "lat": "51.49135900",
-                    "lng": "-0.03875500",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 462,
-                    "lat": "51.49208000",
-                    "lng": "-0.03976000",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 465,
-                    "lat": "51.48879400",
-                    "lng": "-0.03491500",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 495,
-                    "lat": "51.48449794",
-                    "lng": "-0.02679918",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 496,
-                    "lat": "51.47402100",
-                    "lng": "-0.02331200",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 500,
-                    "lat": "51.49103400",
-                    "lng": "-0.03823300",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 438,
-                    "lat": "51.48093400",
-                    "lng": "-0.01930900",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 508,
-                    "lat": "51.48796400",
-                    "lng": "-0.03426900",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 508,
-                    "lat": "51.48995600",
-                    "lng": "-0.03933100",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 520,
-                    "lat": "51.49233600",
-                    "lng": "-0.03900900",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 531,
-                    "lat": "51.49120700",
-                    "lng": "-0.03453800",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 531,
-                    "lat": "51.49107300",
-                    "lng": "-0.03893700",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 542,
-                    "lat": "51.48982200",
-                    "lng": "-0.04001600",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 550,
-                    "lat": "51.49105800",
-                    "lng": "-0.03822400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 550,
-                    "lat": "51.47818800",
-                    "lng": "-0.02727400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 553,
-                    "lat": "51.49200400",
-                    "lng": "-0.03522500",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 450,
-                    "lat": "51.48093000",
-                    "lng": "-0.02004900",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 438,
-                    "lat": "51.49169900",
-                    "lng": "-0.04090600",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 323,
-                    "lat": "51.47922700",
-                    "lng": "-0.02589400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 375,
-                    "lat": "51.48903000",
-                    "lng": "-0.04335000",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 335,
-                    "lat": "51.47814600",
-                    "lng": "-0.02248400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 346,
-                    "lat": "51.47685400",
-                    "lng": "-0.02972600",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 346,
-                    "lat": "51.48281200",
-                    "lng": "-0.02146100",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 358,
-                    "lat": "51.49079800",
-                    "lng": "-0.04238400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 358,
-                    "lat": "51.49132900",
-                    "lng": "-0.04557000",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 358,
-                    "lat": "51.48848000",
-                    "lng": "-0.04314000",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 369,
-                    "lat": "51.46634300",
-                    "lng": "-0.01491500",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 375,
-                    "lat": "51.48759000",
-                    "lng": "-0.03828000",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 390,
-                    "lat": "51.48153000",
-                    "lng": "-0.01739800",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 438,
-                    "lat": "51.48380700",
-                    "lng": "-0.02136100",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 392,
-                    "lat": "51.49184000",
-                    "lng": "-0.03970000",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 392,
-                    "lat": "51.47871700",
-                    "lng": "-0.02711400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 404,
-                    "lat": "51.47500000",
-                    "lng": "-0.02469400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 404,
-                    "lat": "51.49067300",
-                    "lng": "-0.03172300",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 415,
-                    "lat": "51.48497200",
-                    "lng": "-0.02368700",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 415,
-                    "lat": "51.49067300",
-                    "lng": "-0.03172300",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 427,
-                    "lat": "51.47366300",
-                    "lng": "-0.02335500",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 427,
-                    "lat": "51.48345800",
-                    "lng": "-0.02081400",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 438,
-                    "lat": "51.48908600",
-                    "lng": "-0.03952700",
-                    "bedrooms": 2,
-                    "type": "flat"
-                },
-                {
-                    "price": 669,
-                    "lat": "51.47848500",
-                    "lng": "-0.02578200",
-                    "bedrooms": 2,
-                    "type": "flat"
-                }
-            ]
+    "postcodeDetails": {
+        "postcode": "SE8 4BZ",
+        "longitude": -0.02714,
+        "latitude": 51.478717,
+        "price": {
+            "priceCount": 1,
+            "priceMean": 392,
+            "priceLow": 392,
+            "priceMedian": 392,
+            "priceHigh": 392,
+            "currency": "gbp",
+            "period": "week"
         }
     },
-    "process_time": "0.21"
+    "relatedPostcodeDetails": [
+        {
+            "postcode": "SE8 4LW",
+            "longitude": -0.027205,
+            "latitude": 51.478215,
+            "price": {
+                "priceCount": 1,
+                "priceMean": 550,
+                "priceLow": 550,
+                "priceMedian": 550,
+                "priceHigh": 550,
+                "currency": "gbp",
+                "period": "week"
+            }
+        },
+        {
+            "postcode": "SE8 4BW",
+            "longitude": -0.025782,
+            "latitude": 51.478487,
+            "price": {
+                "priceCount": 1,
+                "priceMean": 669,
+                "priceLow": 669,
+                "priceMedian": 669,
+                "priceHigh": 669,
+                "currency": "gbp",
+                "period": "week"
+            }
+        },
+        {
+            "postcode": "SE8 3PQ",
+            "longitude": -0.025894,
+            "latitude": 51.479227,
+            "price": {
+                "priceCount": 1,
+                "priceMean": 323,
+                "priceLow": 323,
+                "priceMedian": 323,
+                "priceHigh": 323,
+                "currency": "gbp",
+                "period": "week"
+            }
+        },
+        {
+            "postcode": "SE8 4BJ",
+            "longitude": -0.029726,
+            "latitude": 51.476854,
+            "price": {
+                "priceCount": 1,
+                "priceMean": 346,
+                "priceLow": 346,
+                "priceMedian": 346,
+                "priceHigh": 346,
+                "currency": "gbp",
+                "period": "week"
+            }
+        }
+    ],
+    "regionDetails": {
+        "region": "London",
+        "price": {
+            "priceCount": 23700,
+            "priceMean": 1605,
+            "priceLow": 1275,
+            "priceMedian": 1450,
+            "priceHigh": 1750,
+            "currency": "gbp",
+            "period": "month"
+        }
+    },
+    "localAuthorityDetails": {
+        "localAuthority": "Lewisham",
+        "price": {
+            "priceCount": 920,
+            "priceMean": 1388,
+            "priceLow": 1250,
+            "priceMedian": 1350,
+            "priceHigh": 1500,
+            "currency": "gbp",
+            "period": "month"
+        }
+    },
+    "utilityDetails": {
+        "localAuthority": "Lewisham",
+        "price": [
+            {
+                "priceMean": 159,
+                "utilityType": "tv_license",
+                "currency": "gbp",
+                "period": "year"
+            },
+            {
+                "priceMean": 1744,
+                "utilityType": "council_tax",
+                "currency": "gbp",
+                "period": "year"
+            },
+            {
+                "priceMean": 30,
+                "utilityType": "internet",
+                "currency": "gbp",
+                "period": "month"
+            },
+            {
+                "priceMean": 97,
+                "utilityType": "energy",
+                "currency": "gbp",
+                "period": "month"
+            },
+            {
+                "priceMean": 33,
+                "utilityType": "water",
+                "currency": "gbp",
+                "period": "month"
+            }
+        ]
+    },
+    "upfrontDetails": {
+        "postcodeArea": "SE8",
+        "price": [
+            {
+                "priceMean": 333,
+                "upfrontFeeType": "holding_deposit",
+                "currency": "gbp",
+                "period": "one_off"
+            },
+            {
+                "priceMean": 1332,
+                "upfrontFeeType": "tenancy_deposit",
+                "currency": "gbp",
+                "period": "one_off"
+            }
+        ]
+    },
+    "relatedLocalAuthorityDetails": [
+        {
+            "localAuthority": "Southwark",
+            "price": {
+                "priceCount": 1080,
+                "priceMean": 1726,
+                "priceLow": 1450,
+                "priceMedian": 1650,
+                "priceHigh": 1970,
+                "currency": "gbp",
+                "period": "month"
+            }
+        },
+        {
+            "localAuthority": "Tower Hamlets",
+            "price": {
+                "priceCount": 740,
+                "priceMean": 1708,
+                "priceLow": 1500,
+                "priceMedian": 1650,
+                "priceHigh": 1875,
+                "currency": "gbp",
+                "period": "month"
+            }
+        }
+    ],
+    "similarLocalAuthorityDetails": [
+        {
+            "localAuthority": "Kingston upon Thames",
+            "price": {
+                "priceCount": 600,
+                "priceMean": 1398,
+                "priceLow": 1250,
+                "priceMedian": 1350,
+                "priceHigh": 1500,
+                "currency": "gbp",
+                "period": "month"
+            }
+        },
+        {
+            "localAuthority": "Waltham Forest",
+            "price": {
+                "priceCount": 630,
+                "priceMean": 1382,
+                "priceLow": 1230,
+                "priceMedian": 1350,
+                "priceHigh": 1500,
+                "currency": "gbp",
+                "period": "month"
+            }
+        }
+    ],
+    "postcodeAreaDetails": {
+        "postcodeArea": "SE8",
+        "price": {
+            "priceCount": 140,
+            "priceMean": 1447,
+            "priceLow": 1300,
+            "priceMedian": 1400,
+            "priceHigh": 1625,
+            "currency": "gbp",
+            "period": "month"
+        }
+    }
 }

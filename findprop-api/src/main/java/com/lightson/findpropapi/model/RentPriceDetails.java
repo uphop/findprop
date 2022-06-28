@@ -2,10 +2,13 @@ package com.lightson.findpropapi.model;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lightson.findpropapi.entity.LocalAuthorityRentPrice;
 import com.lightson.findpropapi.entity.PostcodeAreaRentPrice;
+import com.lightson.findpropapi.entity.PostcodeRentPrice;
 import com.lightson.findpropapi.entity.RegionRentPrice;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RentPriceDetails implements Serializable {
     private Integer priceCount;
     private Integer priceMean;
@@ -101,6 +104,18 @@ public class RentPriceDetails implements Serializable {
     }
 
     public static RentPriceDetails fromPostcodeAreaRentPrice(PostcodeAreaRentPrice inputRentPrice) {
+        RentPriceDetails outputRentPrice = new RentPriceDetails();
+        outputRentPrice.setCurrency(RentPriceCurrencyEnum.valueOf(inputRentPrice.getCurrency()));
+        outputRentPrice.setPeriod(RentPricePeriodEnum.valueOf(inputRentPrice.getPeriod()));
+        outputRentPrice.setPriceCount(inputRentPrice.getPriceCount());
+        outputRentPrice.setPriceHigh(inputRentPrice.getPriceHigh());
+        outputRentPrice.setPriceLow(inputRentPrice.getPriceLow());
+        outputRentPrice.setPriceMean(inputRentPrice.getPriceMean());
+        outputRentPrice.setPriceMedian(inputRentPrice.getPriceMedian());
+        return outputRentPrice;
+    }
+
+    public static RentPriceDetails fromPostcodeRentPrice(PostcodeRentPrice inputRentPrice) {
         RentPriceDetails outputRentPrice = new RentPriceDetails();
         outputRentPrice.setCurrency(RentPriceCurrencyEnum.valueOf(inputRentPrice.getCurrency()));
         outputRentPrice.setPeriod(RentPricePeriodEnum.valueOf(inputRentPrice.getPeriod()));

@@ -10,7 +10,7 @@ import com.lightson.findpropapi.entity.Region;
 public interface RegionRepository extends JpaRepository<Region, Long> {
 
     @Cacheable("regions")
-    Region findByName(String name);
+    public Region findByName(String name);
 
     @Cacheable("regions")
     public Region getById(Long id);

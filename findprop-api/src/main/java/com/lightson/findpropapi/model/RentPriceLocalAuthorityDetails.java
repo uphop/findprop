@@ -2,8 +2,10 @@ package com.lightson.findpropapi.model;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lightson.findpropapi.entity.LocalAuthorityRentPrice;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RentPriceLocalAuthorityDetails implements Serializable {
     private String localAuthority;
     private RentPriceDetails price;

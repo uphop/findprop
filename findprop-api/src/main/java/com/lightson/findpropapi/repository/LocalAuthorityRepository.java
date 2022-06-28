@@ -11,5 +11,5 @@ public interface LocalAuthorityRepository extends JpaRepository<LocalAuthority, 
 
     @Cacheable("local_authorities")
     public LocalAuthority getById(Long id);
-   
+
 }

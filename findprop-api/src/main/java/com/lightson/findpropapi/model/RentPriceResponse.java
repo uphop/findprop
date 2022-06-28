@@ -5,11 +5,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lightson.findpropapi.entity.LocalAuthorityRentPrice;
+import com.lightson.findpropapi.entity.PostcodeRentPrice;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RentPriceResponse implements Serializable {
 
     private Date timestamp;
+    private Long duration;
 
     public enum StatusEnum {
         OK,
@@ -25,6 +29,7 @@ public class RentPriceResponse implements Serializable {
     private int bedrooms;
 
     private RentPricePostcodeDetails postcodeDetails;
+    private List<RentPricePostcodeDetails> relatedPostcodeDetails;
     private RentPriceRegionDetails regionDetails;
     private RentPriceLocalAuthorityDetails localAuthorityDetails;
     private UtilityPriceLocalAuthorityDetails utilityDetails;
@@ -162,6 +167,13 @@ public class RentPriceResponse implements Serializable {
         this.postcodeDetails = postcodeDetails;
     }
 
+    public void addRelatedPostcodeDetails(String postcode, double longitude, double latitude, PostcodeRentPrice inputPrice) {
+        if (this.relatedPostcodeDetails == null) {
+            this.relatedPostcodeDetails = new ArrayList<RentPricePostcodeDetails>();
+        }
+        this.relatedPostcodeDetails.add(new RentPricePostcodeDetails(postcode, longitude, latitude, inputPrice));
+    }
+
     public UtilityPriceLocalAuthorityDetails getUtilityDetails() {
         return utilityDetails;
     }
@@ -176,5 +188,21 @@ public class RentPriceResponse implements Serializable {
 
     public void setUpfrontDetails(UpfrontPriceLocalAuthorityDetails upfrontDetails) {
         this.upfrontDetails = upfrontDetails;
+    }
+
+    public List<RentPricePostcodeDetails> getRelatedPostcodeDetails() {
+        return relatedPostcodeDetails;
+    }
+
+    public void setRelatedPostcodeDetails(List<RentPricePostcodeDetails> relatedPostcodeDetails) {
+        this.relatedPostcodeDetails = relatedPostcodeDetails;
+    }
+
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
     }
 }
