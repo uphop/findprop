@@ -1,8 +1,6 @@
 package com.lightson.findpropapi.model;
 
-import java.io.Serializable;
-
-public enum UtilityFeeEnum implements Serializable {
+public enum UtilityFeeEnum {
     tv_license("TV license"),
     council_tax("Council tax"),
     internet("Internet"),

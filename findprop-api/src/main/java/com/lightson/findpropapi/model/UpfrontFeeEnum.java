@@ -1,8 +1,6 @@
 package com.lightson.findpropapi.model;
 
-import java.io.Serializable;
-
-public enum UpfrontFeeEnum implements Serializable {
+public enum UpfrontFeeEnum {
     holding_deposit("Holding deposit"),
     tenancy_deposit("Tenancy deposit");
 

@@ -1,8 +1,6 @@
 package com.lightson.findpropapi.model;
 
-import java.io.Serializable;
-
-public enum RentPricePropertyTypeEnum implements Serializable {
+public enum RentPricePropertyTypeEnum {
     room("Room"),
     studio("Studio"),
     flat("Flat");

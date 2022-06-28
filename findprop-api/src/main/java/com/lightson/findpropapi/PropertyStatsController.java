@@ -11,7 +11,6 @@ import com.lightson.findpropapi.service.PriceService;
 
 @RestController
 public class PropertyStatsController {
-        private static final Logger log = LoggerFactory.getLogger(PropertyStatsController.class);
         private PriceService priceService;
 
         public PropertyStatsController(PriceService priceService) {
@@ -25,8 +24,6 @@ public class PropertyStatsController {
                         @RequestParam(value = "maxRange") double maxRange,
                         @RequestParam(value = "propertyType", defaultValue = "flat") String propertyType,
                         @RequestParam(value = "bedrooms", defaultValue = "1") int bedrooms) {
-
-                // TODO: validate input params
 
                 RentPriceResponse response = this.priceService.getRentPrice(longitude, latitude, maxRange,
                                 propertyType, bedrooms);

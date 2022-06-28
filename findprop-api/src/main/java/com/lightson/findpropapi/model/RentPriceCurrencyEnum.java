@@ -1,8 +1,6 @@
 package com.lightson.findpropapi.model;
 
-import java.io.Serializable;
-
-public enum RentPriceCurrencyEnum implements Serializable {
+public enum RentPriceCurrencyEnum {
     gbp("£"),
     usd("$"),
     eur("€");
