@@ -8,6 +8,7 @@ import java.util.List;
 public class RentPriceResponse implements Serializable {
 
     private Date timestamp;
+    private Long duration;
 
     public enum StatusEnum {
         OK,
@@ -23,6 +24,7 @@ public class RentPriceResponse implements Serializable {
     private int bedrooms;
 
     private RentPricePostcodeDetails postcodeDetails;
+    private List<RentPricePostcodeDetails> relatedPostcodeDetails;
     private RentPriceRegionDetails regionDetails;
     private RentPriceLocalAuthorityDetails localAuthorityDetails;
     private UtilityPriceLocalAuthorityDetails utilityDetails;
@@ -160,5 +162,20 @@ public class RentPriceResponse implements Serializable {
 
     public void setUpfrontDetails(UpfrontPriceLocalAuthorityDetails upfrontDetails) {
         this.upfrontDetails = upfrontDetails;
+    }
+    public List<RentPricePostcodeDetails> getRelatedPostcodeDetails() {
+        return relatedPostcodeDetails;
+    }
+
+    public void setRelatedPostcodeDetails(List<RentPricePostcodeDetails> relatedPostcodeDetails) {
+        this.relatedPostcodeDetails = relatedPostcodeDetails;
+    }
+
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
     }
 }

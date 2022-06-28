@@ -49,6 +49,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -83,7 +84,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private Map<String, Integer> bedroomCountMap;
     private int currentBedroomCount = 2;
 
-    private static final double DEFAULT_MAX_RANGE = 250.0;
+    private static final double DEFAULT_MAX_RANGE = 1000.0;
 
     private GoogleMap mMap;
     private SupportMapFragment mFragment;
@@ -465,6 +466,22 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
         // Save new marker and its associated rent price details
         priceDetailsMap.put(marker, rentPrices);
+
+        List<RentPricePostcodeDetails> referencePostcodes = rentPrices.getRelatedPostcodeDetails();
+        if(referencePostcodes != null){
+            for(RentPricePostcodeDetails referencePostcode : referencePostcodes) {
+                // Configure marker position and title
+                LatLng referenceMarkerPosition = new LatLng(referencePostcode.getLatitude(), referencePostcode.getLongitude());
+                String referenceTitle = String.format("%s, %s", referencePostcode.getPostcode(), localAuthorityDetails.getLocalAuthority());
+                MarkerOptions referenceMarkerOptions = new MarkerOptions()
+                        .position(referenceMarkerPosition)
+                        .title(referenceTitle)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+
+                Marker referenceMarker = mMap.addMarker(referenceMarkerOptions);
+            }
+        }
+
     }
 
     @Override
