@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import com.example.findpropapp.R;
+import com.example.findpropapp.model.RentPriceDetails;
 import com.example.findpropapp.model.RentPriceLocalAuthorityDetails;
 import com.example.findpropapp.model.RentPricePostcodeAreaDetails;
 import com.example.findpropapp.model.RentPriceRegionDetails;
@@ -29,9 +30,10 @@ public class RentPriceOverviewPreprocessor {
             postcodeAreaDetailsDescription.append(" ");
             postcodeAreaDetailsDescription.append(postcodeAreaDetails.getPostcodeArea());
 
-            rentPrices.add(new RentPriceEntry(postcodeAreaDetails.getPrice().getPriceMean(),
-                    postcodeAreaDetails.getPrice().getPriceLow(),
-                    postcodeAreaDetails.getPrice().getPriceHigh(),
+            RentPriceDetails postcodeAreaPriceDetails = RentPriceValueFormatter.getPriceDetailsPCM(postcodeAreaDetails.getPrice());
+            rentPrices.add(new RentPriceEntry(postcodeAreaPriceDetails.getPriceMean(),
+                    postcodeAreaPriceDetails.getPriceLow(),
+                    postcodeAreaPriceDetails.getPriceHigh(),
                     postcodeAreaDetails.getPostcodeArea(),
                     RentPriceEntryType.postcode_area,
                     postcodeAreaDetailsDescription.toString()));
@@ -47,9 +49,10 @@ public class RentPriceOverviewPreprocessor {
             localAuthorityDetailsDescription.append(" ");
             localAuthorityDetailsDescription.append(localAuthorityDetails.getLocalAuthority());
 
-            rentPrices.add(new RentPriceEntry(localAuthorityDetails.getPrice().getPriceMean(),
-                    localAuthorityDetails.getPrice().getPriceLow(),
-                    localAuthorityDetails.getPrice().getPriceHigh(),
+            RentPriceDetails localAuthorityPriceDetails = RentPriceValueFormatter.getPriceDetailsPCM(localAuthorityDetails.getPrice());
+            rentPrices.add(new RentPriceEntry(localAuthorityPriceDetails.getPriceMean(),
+                    localAuthorityPriceDetails.getPriceLow(),
+                    localAuthorityPriceDetails.getPriceHigh(),
                     localAuthorityDetails.getLocalAuthority(),
                     RentPriceEntryType.local_authority,
                     localAuthorityDetailsDescription.toString()));
@@ -87,9 +90,10 @@ public class RentPriceOverviewPreprocessor {
                     localAuthorityDetailsDescription.append(" ");
                     localAuthorityDetailsDescription.append(similarLocalAuthorityPrice.getLocalAuthority());
 
-                    rentPrices.add(new RentPriceEntry(similarLocalAuthorityPrice.getPrice().getPriceMean(),
-                            similarLocalAuthorityPrice.getPrice().getPriceLow(),
-                            similarLocalAuthorityPrice.getPrice().getPriceHigh(),
+                    RentPriceDetails similarLocalAuthorityPriceDetails = RentPriceValueFormatter.getPriceDetailsPCM(similarLocalAuthorityPrice.getPrice());
+                    rentPrices.add(new RentPriceEntry(similarLocalAuthorityPriceDetails.getPriceMean(),
+                            similarLocalAuthorityPriceDetails.getPriceLow(),
+                            similarLocalAuthorityPriceDetails.getPriceHigh(),
                             similarLocalAuthorityPrice.getLocalAuthority(),
                             RentPriceEntryType.similar_local_authority,
                             localAuthorityDetailsDescription.toString()));
@@ -107,9 +111,10 @@ public class RentPriceOverviewPreprocessor {
             regionDetailsDescription.append(" ");
             regionDetailsDescription.append(resources.getString(R.string.region));
 
-            rentPrices.add(new RentPriceEntry(regionDetails.getPrice().getPriceMean(),
-                    regionDetails.getPrice().getPriceLow(),
-                    regionDetails.getPrice().getPriceHigh(),
+            RentPriceDetails regionPriceDetails = RentPriceValueFormatter.getPriceDetailsPCM(regionDetails.getPrice());
+            rentPrices.add(new RentPriceEntry(regionPriceDetails.getPriceMean(),
+                    regionPriceDetails.getPriceLow(),
+                    regionPriceDetails.getPriceHigh(),
                     regionDetails.getRegion(),
                     RentPriceEntryType.region,
                     regionDetailsDescription.toString()));

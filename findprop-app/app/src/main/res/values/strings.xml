@@ -29,6 +29,9 @@
     <string name="total_rent_cost_for">Total rent cost for a</string>
     <string name="your_expected_utility_costs">"Your expected monthly utility costs:</string>
     <string name="typical_rent_is">Typical rent is</string>
+    <string name="recent_rent_is">Recent rent is</string>
+    <string name="between">between</string>
+    <string name="and">and</string>
     <string name="your_expected_upfront_costs">Your expected one-off upfront costs:</string>
     <string name="room">Room</string>
     <string name="studio">Studio</string>

@@ -116,4 +116,32 @@ public class RentPriceValueFormatter {
     public static int getUpfrontCostPCM(UpfrontPriceDetails price) {
         return getPricePCM(price.getPriceMean(), price.getPeriod());
     }
+
+    public static RentPriceDetails getPriceDetailsPCW(RentPriceDetails inputPrice) {
+        RentPriceDetails outputPrice = new RentPriceDetails();
+        outputPrice.setPriceLow(getPricePCW(inputPrice.getPriceLow(), inputPrice.getPeriod()));
+        outputPrice.setPriceHigh(getPricePCW(inputPrice.getPriceHigh(), inputPrice.getPeriod()));
+        outputPrice.setPriceMean(getPricePCW(inputPrice.getPriceMean(), inputPrice.getPeriod()));
+        outputPrice.setPriceMedian(getPricePCW(inputPrice.getPriceMedian(), inputPrice.getPeriod()));
+
+        outputPrice.setPriceCount(inputPrice.getPriceCount());
+        outputPrice.setCurrency(inputPrice.getCurrency());
+        outputPrice.setPeriod(RentPricePeriodEnum.week);
+
+        return outputPrice;
+    }
+
+    public static RentPriceDetails getPriceDetailsPCM(RentPriceDetails inputPrice) {
+        RentPriceDetails outputPrice = new RentPriceDetails();
+        outputPrice.setPriceLow(getPricePCM(inputPrice.getPriceLow(), inputPrice.getPeriod()));
+        outputPrice.setPriceHigh(getPricePCM(inputPrice.getPriceHigh(), inputPrice.getPeriod()));
+        outputPrice.setPriceMean(getPricePCM(inputPrice.getPriceMean(), inputPrice.getPeriod()));
+        outputPrice.setPriceMedian(getPricePCM(inputPrice.getPriceMedian(), inputPrice.getPeriod()));
+
+        outputPrice.setPriceCount(inputPrice.getPriceCount());
+        outputPrice.setCurrency(inputPrice.getCurrency());
+        outputPrice.setPeriod(RentPricePeriodEnum.month);
+
+        return outputPrice;
+    }
 }

@@ -251,7 +251,8 @@ public class RentPriceOverviewFragment extends Fragment {
             public String getBarStackedLabel(float value, BarEntry stackedEntry) {
                 float[] barEntryVals = stackedEntry.getYVals();
                 float adjustedBarEntryValue = value == barEntryVals[0] ? barEntryVals[0] : barEntryVals[0] + barEntryVals[1];
-                return RentPriceValueFormatter.getPriceWithPeriodAsString((int) adjustedBarEntryValue, currentPriceDetails.getLocalAuthorityDetails().getPrice().getPeriod());
+                return RentPriceValueFormatter.getPriceWithPeriodAsString((int) adjustedBarEntryValue,
+                        currentPriceDetails.getLocalAuthorityDetails().getPrice().getPeriod());
             }
         });
         BarData barData = new BarData(barDataSet);
@@ -271,7 +272,8 @@ public class RentPriceOverviewFragment extends Fragment {
         lineDataSet.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
-                return RentPriceValueFormatter.getPriceWithPeriodAsString((int) value, currentPriceDetails.getLocalAuthorityDetails().getPrice().getPeriod());
+                return RentPriceValueFormatter.getPriceWithPeriodAsString((int) value,
+                        currentPriceDetails.getLocalAuthorityDetails().getPrice().getPeriod());
             }
         });
         lineDataSet.setDrawHighlightIndicators(false);

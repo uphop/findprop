@@ -30,13 +30,15 @@ public class RentPriceItemProcessor
         implements ItemProcessor<SourceRentPrice, TargetRentPrice> {
 
     private final String SOURCE = "property_data";
-    private final Double MAX_RANGE = 250.0;
 
     @Autowired
     PropertyDataAdapter pdAdapter;
 
     @Autowired
     private PostcodeRepository postcodeRepository;
+
+    @Autowired
+    private RentPriceItemProcessorProperties config;
 
     private final Logger log = LoggerFactory.getLogger(RentPriceItemProcessor.class);
 
@@ -86,12 +88,12 @@ public class RentPriceItemProcessor
 
             // find nearest postcode
             List<Postcode> postcodes = this.postcodeRepository.findByDistance(sourceDataPoint.getLng(),
-                    sourceDataPoint.getLat(), MAX_RANGE);
+                    sourceDataPoint.getLat(), config.getMax_range());
             if (postcodes == null || postcodes.size() == 0) {
                 // skip postcode prices if not able to determine postcode by location
                 log.error(String.format(
                         "Cannot find nearest postcode for longitude %f, latitude %f, maxRange %f",
-                        sourceDataPoint.getLng(), sourceDataPoint.getLat(), MAX_RANGE));
+                        sourceDataPoint.getLng(), sourceDataPoint.getLat(), config.getMax_range()));
 
                 continue;
             }
@@ -99,7 +101,7 @@ public class RentPriceItemProcessor
             // get closest postcode
             Postcode postcode = postcodes.get(0);
             
-            if (!postcode.getCode().startsWith(source.getPostcodeArea())) {
+            if (!postcode.getCode().startsWith(source.getPostcodeArea()) && config.getSkip_non_target_postcode_area()) {
                 // skip postcode price for postcodes which seem not to be in this area
                 log.error(String.format(
                         "Skipping postcode %s, not in the target postcode area",

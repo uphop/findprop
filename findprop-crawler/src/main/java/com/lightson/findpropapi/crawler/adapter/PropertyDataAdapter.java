@@ -19,6 +19,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -113,6 +114,12 @@ public class PropertyDataAdapter {
                     + propertyType + ", bedrooms: " + String.valueOf(bedrooms)
                     + ", error: " + e.toString());
             return null;
+        } catch (ResourceAccessException e) {
+            log.error("Call Property Data API response failed: " + postcodeArea + ", propertyType: "
+                    + propertyType + ", bedrooms: " + String.valueOf(bedrooms)
+                    + ", error: " + e.toString());
+            return null;
         }
+
     }
 }

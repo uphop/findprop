@@ -154,7 +154,7 @@ public class PriceService {
                         int bedrooms) {
                 // get region rent prices
                 List<RegionRentPrice> regionRentPrices = regionRentPriceRepository
-                                .findByRegionAndPropertyTypeAndBedrooms(region, propertyType, bedrooms);
+                                .findRegionRentPrices(region.getId(), propertyType, bedrooms);
 
                 // take top price
                 RegionRentPrice price = (regionRentPrices != null && regionRentPrices.size() > 0)
@@ -172,7 +172,7 @@ public class PriceService {
 
                 // get local authority rent prices
                 List<LocalAuthorityRentPrice> localAuthorityRentPrices = localAuthorityRentPriceRepository
-                                .findByLocalAuthorityAndPropertyTypeAndBedrooms(localAuthority, propertyType,
+                                .findLocalAuthorityRentPrices(localAuthority.getId(), propertyType,
                                                 bedrooms);
 
                 // take top price
@@ -196,7 +196,7 @@ public class PriceService {
 
                 // get postcode area rent prices
                 List<PostcodeAreaRentPrice> postcodeAreaRentPrices = postcodeAreaRentPriceRepository
-                                .findByPostcodeAreaAndPropertyTypeAndBedrooms(postcodeArea, propertyType, bedrooms);
+                                .findPostcodeAreaRentPrices(postcodeArea, propertyType, bedrooms);
 
                 // take top price
                 PostcodeAreaRentPrice price = (postcodeAreaRentPrices != null && postcodeAreaRentPrices.size() > 0)
@@ -216,7 +216,7 @@ public class PriceService {
                         int bedrooms) {
                 // get postcode rent prices
                 List<PostcodeRentPrice> postcodeRentPrices = postcodeRentPriceRepository
-                                .findByPostcodeAndPropertyTypeAndBedrooms(postcode, propertyType, bedrooms);
+                                .findPostcodeRentPrices(postcode.getId(), propertyType, bedrooms);
                 // take top price
                 PostcodeRentPrice price = (postcodeRentPrices != null && postcodeRentPrices.size() > 0)
                                 ? postcodeRentPrices.get(0)
@@ -239,7 +239,7 @@ public class PriceService {
 
                                 // get rent prices of nearby postcode
                                 List<PostcodeRentPrice> nearbyPostcodeRentPrices = postcodeRentPriceRepository
-                                                .findByPostcodeAndPropertyTypeAndBedrooms(nearbyPostcode, propertyType,
+                                                .findPostcodeRentPrices(nearbyPostcode.getId(), propertyType,
                                                                 bedrooms);
 
                                 // take top price
@@ -262,8 +262,8 @@ public class PriceService {
                         for (LocalAuthority relatedLocalAuthority : relatedLocalAuthorities) {
                                 // get rent prices of related local authority
                                 List<LocalAuthorityRentPrice> relatedLocalAuthorityRentPrices = localAuthorityRentPriceRepository
-                                                .findByLocalAuthorityAndPropertyTypeAndBedrooms(
-                                                                relatedLocalAuthority,
+                                                .findLocalAuthorityRentPrices(
+                                                                relatedLocalAuthority.getId(),
                                                                 propertyType, bedrooms);
                                 // take top price
                                 if (relatedLocalAuthorityRentPrices != null
@@ -300,7 +300,7 @@ public class PriceService {
 
                 // get utility prices
                 List<LocalAuthorityUtilityPrice> localAuthorityUtilityPrices = localAuthorityUtilityPriceRepository
-                                .findByLocalAuthorityAndPropertyTypeAndBedrooms(localAuthority, propertyType,
+                                .findLocalAuthorityUtilityPrices(localAuthority.getId(), propertyType,
                                                 bedrooms);
 
                 // take top price

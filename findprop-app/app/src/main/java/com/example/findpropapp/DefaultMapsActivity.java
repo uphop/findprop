@@ -16,7 +16,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -35,12 +34,14 @@ import com.example.findpropapp.adapter.RentPriceCallback;
 import com.example.findpropapp.databinding.ActivityMapsBinding;
 import com.example.findpropapp.model.RentPriceDetails;
 import com.example.findpropapp.model.RentPriceLocalAuthorityDetails;
+import com.example.findpropapp.model.RentPricePeriodEnum;
 import com.example.findpropapp.model.RentPricePostcodeAreaDetails;
 import com.example.findpropapp.model.RentPricePostcodeDetails;
 import com.example.findpropapp.model.RentPricePropertyTypeEnum;
 import com.example.findpropapp.model.RentPriceResponse;
+import com.example.findpropapp.ui.main.MapDistanceHelper;
+import com.example.findpropapp.ui.main.RentMarkerDetails;
 import com.example.findpropapp.ui.main.RentPriceDetailsActivity;
-import com.example.findpropapp.ui.main.RentPriceEntryType;
 import com.example.findpropapp.ui.main.RentPriceValueFormatter;
 import com.example.findpropapp.ui.main.StreetViewMapActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -50,6 +51,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -68,23 +71,27 @@ public class DefaultMapsActivity extends FragmentActivity implements
         GoogleMap.OnMapClickListener,
         GoogleMap.OnInfoWindowClickListener,
         GoogleMap.OnInfoWindowLongClickListener,
-        SearchView.OnQueryTextListener {
+        SearchView.OnQueryTextListener,
+        GoogleMap.OnMarkerClickListener {
 
     private static final String TAG = DefaultMapsActivity.class.getSimpleName();
     // Default map params
-    private static final int MAP_DEFAULT_ZOOM_LEVEL = 15;
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    private static final String ARG_CURRENT_PRICE_DETAILS = "CURRENT_PRICE_DETAILS";
-    private static final String ARG_CURRENT_LAT = "ARG_CURRENT_LAT";
-    private static final String ARG_CURRENT_LON = "ARG_CURRENT_LON";
+    private final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    private final int MAP_DEFAULT_ZOOM_LEVEL = 15;
+    private final float DEFAULT_REFERENCE_MARKER_COLOR = BitmapDescriptorFactory.HUE_AZURE;
+    private final int DEFAULT_CIRCLE_COLOR = android.graphics.Color.argb(50, 204, 204, 204);
+    private final float DEFAULT_CIRCLE_BORDER_WIDTH = 1f;
+    private final double DEFAULT_CIRCLE_RADIUS_OFFSET = 50.0;
 
+    private final String ARG_CURRENT_PRICE_DETAILS = "CURRENT_PRICE_DETAILS";
+    private final String ARG_CURRENT_LAT = "ARG_CURRENT_LAT";
+    private final String ARG_CURRENT_LON = "ARG_CURRENT_LON";
+
+    private final double DEFAULT_MAX_RANGE = 1000.0;
     private Map<String, RentPricePropertyTypeEnum> propertyTypeMap;
     private RentPricePropertyTypeEnum currentPropertyType = RentPricePropertyTypeEnum.flat;
-
     private Map<String, Integer> bedroomCountMap;
     private int currentBedroomCount = 2;
-
-    private static final double DEFAULT_MAX_RANGE = 1000.0;
 
     private GoogleMap mMap;
     private SupportMapFragment mFragment;
@@ -96,7 +103,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private Location lastKnownLocation;
 
     // Marker map
-    private Map<Marker, RentPriceResponse> priceDetailsMap = new HashMap<Marker, RentPriceResponse>();
+    private Map<Marker, RentMarkerDetails> priceDetailsMap = new HashMap<Marker, RentMarkerDetails>();
 
     // Adapters
     private FusedLocationProviderClient fusedLocationClient;
@@ -140,6 +147,9 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Add a single map click handler for setting new markers
         mMap.setOnMapClickListener(this);
 
+        // Add a single marker click for showing reference markers and radius
+        mMap.setOnMarkerClickListener(this);
+
         // Set tooltip view for markers
         updateInfoWindowUI();
 
@@ -161,9 +171,9 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // check if marker is in the marker map already
         if (priceDetailsMap.containsKey(marker)) {
             // Start new activity with property details
-            RentPriceResponse currentPriceDetails = priceDetailsMap.get(marker);
+            RentMarkerDetails rentMarkerDetails = priceDetailsMap.get(marker);
             Intent intent = new Intent(this, RentPriceDetailsActivity.class);
-            intent.putExtra(ARG_CURRENT_PRICE_DETAILS, currentPriceDetails);
+            intent.putExtra(ARG_CURRENT_PRICE_DETAILS, rentMarkerDetails.getRentPrices());
             startActivity(intent);
         }
     }
@@ -219,7 +229,6 @@ public class DefaultMapsActivity extends FragmentActivity implements
                     put(getString(R.string.two_bedroom), 2);
                     put(getString(R.string.three_bedroom), 3);
                     put(getString(R.string.four_and_more_bedroom), 4);
-
                 }
             }
         };
@@ -418,7 +427,6 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private void captureCurrentAnchor(LatLng latLng) {
         // Got current location. In some rare situations this can be null.
         if (latLng != null) {
-            Log.i(TAG, "Capturing new anchor: " + latLng.toString());
             // Get rent prices around that anchor postcode
             findPropApiClient.getRentPrices(latLng.longitude, latLng.latitude, DEFAULT_MAX_RANGE, currentPropertyType, currentBedroomCount,
                     new RentPriceCallback() {
@@ -442,6 +450,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         RentPricePostcodeDetails postcodeDetails = rentPrices.getPostcodeDetails();
         RentPricePostcodeAreaDetails postcodeAreaDetails = rentPrices.getPostcodeAreaDetails();
         RentPriceLocalAuthorityDetails localAuthorityDetails = rentPrices.getLocalAuthorityDetails();
+        RentMarkerDetails markerDetails = new RentMarkerDetails();
 
         // Configure marker position and title
         LatLng markerPosition = new LatLng(postcodeDetails.getLatitude(), postcodeDetails.getLongitude());
@@ -455,33 +464,118 @@ public class DefaultMapsActivity extends FragmentActivity implements
         mMap.animateCamera(CameraUpdateFactory.newLatLng(markerPosition));
 
         // Update marker snippet text and show snippet
-        StringBuilder snippetText = new StringBuilder();
-        snippetText.append(getString(R.string.typical_rent_is));
-        snippetText.append(" ");
         // Set rent price - take postcode area rent, if available; otherwise, local authority rent
         RentPriceDetails price = (postcodeAreaDetails != null) ? postcodeAreaDetails.getPrice() : localAuthorityDetails.getPrice();
-        snippetText.append(RentPriceValueFormatter.getPriceWithPeriodAsString(price));
-        marker.setSnippet(snippetText.toString());
+        marker.setSnippet(getAnchorSnippetText(price));
         marker.showInfoWindow();
 
         // Save new marker and its associated rent price details
-        priceDetailsMap.put(marker, rentPrices);
+        markerDetails.setAnchorMarker(marker);
+        markerDetails.setRentPrices(rentPrices);
 
+        // Create reference markers
+        double maxDistance = 0.0;
         List<RentPricePostcodeDetails> referencePostcodes = rentPrices.getRelatedPostcodeDetails();
-        if(referencePostcodes != null){
-            for(RentPricePostcodeDetails referencePostcode : referencePostcodes) {
+        if (referencePostcodes != null) {
+            for (RentPricePostcodeDetails referencePostcode : referencePostcodes) {
                 // Configure marker position and title
                 LatLng referenceMarkerPosition = new LatLng(referencePostcode.getLatitude(), referencePostcode.getLongitude());
                 String referenceTitle = String.format("%s, %s", referencePostcode.getPostcode(), localAuthorityDetails.getLocalAuthority());
                 MarkerOptions referenceMarkerOptions = new MarkerOptions()
                         .position(referenceMarkerPosition)
                         .title(referenceTitle)
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+                        .icon(BitmapDescriptorFactory.defaultMarker(DEFAULT_REFERENCE_MARKER_COLOR));
 
+                // Add reference marker details
                 Marker referenceMarker = mMap.addMarker(referenceMarkerOptions);
+                markerDetails.addReferenceMarker(referenceMarker);
+
+                // Update reference marker snippet text
+                referenceMarker.setSnippet(getReferenceSnippetText(referencePostcode.getPrice()));
+
+                // calculate distance between anchor and reference
+                double distance = MapDistanceHelper.getDistance(postcodeDetails.getLatitude(), referencePostcode.getLatitude(),
+                        postcodeDetails.getLongitude(), referencePostcode.getLongitude(), 0, 0);
+                maxDistance = (distance > maxDistance) ? distance : maxDistance;
             }
+
+            // Create new circle around reference markers
+            Circle circle = mMap.addCircle(new CircleOptions()
+                    .center(marker.getPosition())
+                    .radius(maxDistance + DEFAULT_CIRCLE_RADIUS_OFFSET)
+                    .strokeWidth(DEFAULT_CIRCLE_BORDER_WIDTH)
+                    .strokeColor(DEFAULT_CIRCLE_COLOR)
+                    .fillColor(DEFAULT_CIRCLE_COLOR)
+            );
+            markerDetails.setCircle(circle);
         }
 
+        // Save new marker details in the marker map
+        priceDetailsMap.put(marker, markerDetails);
+
+        // update reference markers
+        updateReferences(marker);
+    }
+
+    private String getAnchorSnippetText(RentPriceDetails price) {
+        StringBuilder snippetText = new StringBuilder();
+        snippetText.append(getString(R.string.typical_rent_is));
+        snippetText.append(" ");
+        snippetText.append(getString(R.string.between));
+        snippetText.append(" ");
+        // Set rent price - take postcode area rent, if available; otherwise, local authority rent
+        RentPriceDetails pricePCM = RentPriceValueFormatter.getPriceDetailsPCM(price);
+        snippetText.append(
+                RentPriceValueFormatter.getPriceWithPeriodAsString(
+                        pricePCM.getPriceLow(),
+                        RentPricePeriodEnum.month));
+        snippetText.append(" ");
+        snippetText.append(getString(R.string.and));
+        snippetText.append(" ");
+        snippetText.append(
+                RentPriceValueFormatter.getPriceWithPeriodAsString(
+                        pricePCM.getPriceHigh(),
+                        RentPricePeriodEnum.month));
+
+        return snippetText.toString();
+    }
+
+    private String getReferenceSnippetText(RentPriceDetails price) {
+        StringBuilder referenceSnippetText = new StringBuilder();
+        referenceSnippetText.append(getString(R.string.recent_rent_is));
+        referenceSnippetText.append(" ");
+        // Set rent price - take postcode area rent, if available; otherwise, local authority rent
+        referenceSnippetText.append(
+                RentPriceValueFormatter.getPriceWithPeriodAsString(
+                        RentPriceValueFormatter.getRentPricePCM(price),
+                        RentPricePeriodEnum.month));
+    }
+
+    private void updateReferences(Marker selectedMarker) {
+        // check if this is an anchor marker; if not - no updates needed
+        if (!priceDetailsMap.containsKey(selectedMarker)) return;
+
+        // go through all anchor markers
+        for (Marker anchorMarker : priceDetailsMap.keySet()) {
+            // get reference markers
+            RentMarkerDetails anchorMarkerDetails = priceDetailsMap.get(anchorMarker);
+            if (anchorMarkerDetails != null) {
+                // check if this is selected anchor marker
+                boolean isAnchor = anchorMarker.equals(selectedMarker);
+
+                // show reference markers for the selected anchor; hide reference markers for all other anchors
+                List<Marker> referenceMarkers = anchorMarkerDetails.getReferenceMarkers();
+                if (referenceMarkers != null) {
+                    for (Marker referenceMarker : referenceMarkers) {
+                        referenceMarker.setVisible(isAnchor);
+                    }
+                }
+
+                // show circle around reference markers for the selected anchor; hide circle for all other anchors
+                Circle circle = anchorMarkerDetails.getCircle();
+                if (circle != null) circle.setVisible(isAnchor);
+            }
+        }
     }
 
     @Override
@@ -541,5 +635,15 @@ public class DefaultMapsActivity extends FragmentActivity implements
         toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
     }
+
+    @Override
+    public boolean onMarkerClick(@NonNull Marker marker) {
+        // show details of current marker / hide details of other anchors
+        updateReferences(marker);
+
+        // trigger default behavior
+        return false;
+    }
+
 
 }
