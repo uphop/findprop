@@ -14,17 +14,12 @@ public class PostcodeAreaRentPriceWriter extends JdbcBatchItemWriter<TargetPostc
         setDataSource(dataSource);
         setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
 
-        String sql = """
-            INSERT INTO postcode_area_rent_price 
-                (property_type, bedrooms, price_count, price_mean, 
-                price_low, price_median, price_high, currency, period, source, published, 
-                recorded_from, recorded_to, postcode_area) 
-            VALUES( 
-                :property_type, :bedrooms, :price_count, :price_mean, 
-                :price_low, :price_median, :price_high, :currency, :period, :source, :published, 
-                :recorded_from, :recorded_to, :postcode_area)
-                """;
+        StringBuilder sql = new StringBuilder();
+        sql.append(
+                "INSERT INTO postcode_area_rent_price (property_type, bedrooms, price_count, price_mean, price_low, price_median, price_high, currency, period, source, published, recorded_from, recorded_to, postcode_area) ");
+        sql.append(
+                "VALUES(:property_type, :bedrooms, :price_count, :price_mean, :price_low, :price_median, :price_high, :currency, :period, :source, :published, :recorded_from, :recorded_to, :postcode_area) ");
 
-        setSql(sql);
+        setSql(sql.toString());
     }
 }

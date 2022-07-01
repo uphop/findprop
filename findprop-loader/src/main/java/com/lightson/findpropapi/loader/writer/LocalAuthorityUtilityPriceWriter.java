@@ -13,20 +13,13 @@ public class LocalAuthorityUtilityPriceWriter extends JdbcBatchItemWriter<Target
         setDataSource(dataSource);
         setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
 
-        String sql = """
-                INSERT INTO local_authority_utility_price
-                    (property_type, bedrooms, utility_type, price_mean,
-                    currency, period, source, published,
-                    recorded_from, recorded_to, local_authority_id)
-                SELECT
-                    :property_type, :bedrooms, :utility_type, :price_mean,
-                    :currency, :period, :source, :published,
-                    :recorded_from, :recorded_to, la.id
-                FROM local_authority la
-                WHERE la.name = :local_authority
-                LIMIT 1
-                    """;
+        StringBuilder sql = new StringBuilder();
+        sql.append(
+                "INSERT INTO local_authority_utility_price (property_type, bedrooms, utility_type, price_mean, currency, period, source, published, recorded_from, recorded_to, local_authority_id) ");
+        sql.append(
+                "SELECT :property_type, :bedrooms, :utility_type, :price_mean, :currency, :period, :source, :published, :recorded_from, :recorded_to, la.id ");
+        sql.append("FROM local_authority la WHERE la.name = :local_authority LIMIT 1 ");
 
-        setSql(sql);
+        setSql(sql.toString());
     }
 }

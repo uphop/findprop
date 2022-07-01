@@ -10,14 +10,8 @@ import com.lightson.findpropapi.entity.LocalAuthorityUtilityPrice;
 
 @Repository
 public interface LocalAuthorityUtilityPriceRepository extends JpaRepository<LocalAuthorityUtilityPrice, Long> {
-    @Cacheable("local_authority_utility_prices")
-    @Query(value = """
-            select * from local_authority_utility_price
-            where local_authority_id = :localAuthorityId and
-            property_type = :propertyType and
-            bedrooms = :bedrooms
-            order by published desc;
-             """, nativeQuery = true)
-    public List<LocalAuthorityUtilityPrice> findLocalAuthorityUtilityPrices(Long localAuthorityId,
-            String propertyType, Integer bedrooms);
+        @Cacheable("local_authority_utility_prices")
+        @Query(value = "select * from local_authority_utility_price where local_authority_id = :localAuthorityId and property_type = :propertyType and bedrooms = :bedrooms order by published desc;", nativeQuery = true)
+        public List<LocalAuthorityUtilityPrice> findLocalAuthorityUtilityPrices(Long localAuthorityId,
+                        String propertyType, Integer bedrooms);
 }

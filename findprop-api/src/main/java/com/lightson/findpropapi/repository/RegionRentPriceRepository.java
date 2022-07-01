@@ -11,14 +11,7 @@ import com.lightson.findpropapi.entity.RegionRentPrice;
 @Repository
 public interface RegionRentPriceRepository extends JpaRepository<RegionRentPrice, Long> {
         @Cacheable("region_rent_prices")
-        @Query(value = """
-                        select * from region_rent_price
-                        where region_id = :regionId and
-                        property_type = :propertyType and
-                        bedrooms = :bedrooms and 
-                        source = 'ons'
-                        order by published desc;
-                         """, nativeQuery = true)
+        @Query(value = "select * from region_rent_price where region_id = :regionId and property_type = :propertyType and bedrooms = :bedrooms and source = 'ons' order by published desc;", nativeQuery = true)
         public List<RegionRentPrice> findRegionRentPrices(Long regionId,
                         String propertyType, Integer bedrooms);
 }

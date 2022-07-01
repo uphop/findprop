@@ -13,13 +13,12 @@ public class RelatedLocalAuthorityWriter extends JdbcBatchItemWriter<TargetRelat
     public RelatedLocalAuthorityWriter(DataSource dataSource) {
         setDataSource(dataSource);
         setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
-        String sql = """
-                INSERT INTO related_local_authority
-                    (anchor_local_authority_id, related_local_authority_id)
-                SELECT ala.id, rla.id
-                FROM local_authority ala, local_authority rla
-                WHERE ala.name = :localAuthority AND rla.name = :relatedLocalAuthority
-                    """;
-        setSql(sql);
+
+        StringBuilder sql = new StringBuilder();
+        sql.append("INSERT INTO related_local_authority (anchor_local_authority_id, related_local_authority_id) ");
+        sql.append(
+                "SELECT ala.id, rla.id FROM local_authority ala, local_authority rla WHERE ala.name = :localAuthority AND rla.name = :relatedLocalAuthority ");
+
+        setSql(sql.toString());
     }
 }

@@ -80,7 +80,7 @@ create table region_rent_price (
     region_id int not null,
     primary key (id),
     foreign key (region_id) references region (id),
-    index region_rent_price_per_period_idx (property_type, bedrooms, recorded_from, recorded_to)
+    index region_rent_price_per_period_idx (property_type, bedrooms, published)
 )^;
 
 create table local_authority_rent_price (
@@ -101,7 +101,7 @@ create table local_authority_rent_price (
     local_authority_id int not null,
     primary key (id),
     foreign key (local_authority_id) references local_authority (id),
-    index local_authority_rent_price_per_period_idx (property_type, bedrooms, recorded_from, recorded_to)
+    index local_authority_rent_price_per_period_idx (property_type, bedrooms, published)
 )^;
 
 create table local_authority_utility_price (
@@ -119,7 +119,7 @@ create table local_authority_utility_price (
     local_authority_id int not null,
     primary key (id),
     foreign key (local_authority_id) references local_authority (id),
-    index local_authority_utility_price_per_period_idx (property_type, bedrooms, utility_type, recorded_from, recorded_to)
+    index local_authority_utility_price_per_period_idx (property_type, bedrooms, utility_type, published)
 )^;
 
 create table postcode_area_rent_price (
@@ -140,7 +140,7 @@ create table postcode_area_rent_price (
     postcode_area varchar(6) not null,
     primary key (id),
     index postcode_area_rent_price_idx (postcode_area),
-    index postcode_area_rent_price_per_period_idx (property_type, bedrooms, recorded_from, recorded_to)
+    index postcode_area_rent_price_per_period_idx (property_type, bedrooms, published)
 )^;
 
 create table postcode_rent_price (
@@ -161,7 +161,7 @@ create table postcode_rent_price (
     postcode_id int not null,
     primary key (id),
     foreign key (postcode_id) references postcode (id),
-    index local_authority_rent_price_per_period_idx (property_type, bedrooms, recorded_from, recorded_to)
+    index local_authority_rent_price_per_period_idx (property_type, bedrooms, published)
 )^;
 
 create procedure get_nearest_postcodes(in center_lon decimal(8, 6), in center_lat decimal(8, 6), in max_range decimal(8, 2))
