@@ -29,7 +29,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import com.example.findpropapp.adapter.FIndPropApiAdapter;
+import com.example.findpropapp.adapter.FindPropApiAdapter;
 import com.example.findpropapp.adapter.RentPriceCallback;
 import com.example.findpropapp.databinding.ActivityMapsBinding;
 import com.example.findpropapp.model.RentPriceDetails;
@@ -107,7 +107,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
     // Adapters
     private FusedLocationProviderClient fusedLocationClient;
-    private FIndPropApiAdapter findPropApiClient;
+    private FindPropApiAdapter findPropApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +120,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         // Prepare FindProp API adapter
-        findPropApiClient = new FIndPropApiAdapter(this);
+        findPropApiClient = new FindPropApiAdapter(this);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -549,6 +549,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 RentPriceValueFormatter.getPriceWithPeriodAsString(
                         RentPriceValueFormatter.getRentPricePCM(price),
                         RentPricePeriodEnum.month));
+
+        return referenceSnippetText.toString();
     }
 
     private void updateReferences(Marker selectedMarker) {

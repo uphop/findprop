@@ -17,13 +17,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Date;
 
-public class FIndPropApiAdapter {
-    private static final String TAG = FIndPropApiAdapter.class.getSimpleName();
-    private static final String FINDPROP_API_BASE_URL = "http://localhost:8081/findprop/api/v1";
+public class FindPropApiAdapter {
+    private static final String TAG = FindPropApiAdapter.class.getSimpleName();
+    // private static final String FINDPROP_API_BASE_URL = "http://localhost:8081/findprop/api/v1";
+    private static final String FINDPROP_API_BASE_URL = "http://findprop-api-dev.eba-cekbuq5k.eu-west-1.elasticbeanstalk.com/findprop/api/v1";
 
     private final Context ctx;
 
-    public FIndPropApiAdapter(Context ctx) {
+    public FindPropApiAdapter(Context ctx) {
         this.ctx = ctx;
     }
 
