@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -69,6 +70,7 @@ public class RentPriceOverviewFragment extends Fragment {
     };
     private static final int DEFAULT_TEXT_COLOR = Color.WHITE;
     private static final int DEFAULT_TEXT_SIZE = 10;
+    private static final float DEFAULT_LEGEND_LINE_WIDTH = 2f;
     private static final float DEFAULT_PRICE_OFFSET = 250f;
     private static final float DEFAULT_SPACE_OFFSET = 0.85f;
     private static final float DEFAULT_LABEL_ROTATION = -30f;
@@ -159,20 +161,14 @@ public class RentPriceOverviewFragment extends Fragment {
         legend.setEnabled(true);
 
         // create list of distinct legend entries
-        Map<String, LegendEntry> legendEntryMap = new HashMap<>();
+        LegendEntry[] legendEntries = new LegendEntry[5];
+        legendEntries[0] = new LegendEntry(RentPriceEntryType.postcode.getDisplayName(), Legend.LegendForm.DEFAULT, DEFAULT_TEXT_SIZE, DEFAULT_LEGEND_LINE_WIDTH, null, priceEntryColorMap.get(RentPriceEntryType.postcode)[1]);
+        legendEntries[1] = new LegendEntry(RentPriceEntryType.postcode_area.getDisplayName(), Legend.LegendForm.DEFAULT, DEFAULT_TEXT_SIZE, DEFAULT_LEGEND_LINE_WIDTH, null, priceEntryColorMap.get(RentPriceEntryType.postcode_area)[1]);
+        legendEntries[2] = new LegendEntry(RentPriceEntryType.local_authority.getDisplayName(), Legend.LegendForm.DEFAULT, DEFAULT_TEXT_SIZE, DEFAULT_LEGEND_LINE_WIDTH, null, priceEntryColorMap.get(RentPriceEntryType.local_authority)[1]);
+        legendEntries[3] = new LegendEntry(RentPriceEntryType.similar_local_authority.getDisplayName(), Legend.LegendForm.DEFAULT, DEFAULT_TEXT_SIZE, DEFAULT_LEGEND_LINE_WIDTH, null, priceEntryColorMap.get(RentPriceEntryType.similar_local_authority)[1]);
+        legendEntries[4] = new LegendEntry(RentPriceEntryType.region.getDisplayName(), Legend.LegendForm.DEFAULT, DEFAULT_TEXT_SIZE, DEFAULT_LEGEND_LINE_WIDTH, null, priceEntryColorMap.get(RentPriceEntryType.region)[1]);
 
-        rentPrices.forEach((rentPrice) -> {
-            if (!legendEntryMap.containsKey(rentPrice.getType().getDisplayName())) {
-                legendEntryMap.put(rentPrice.getType().getDisplayName(),
-                        new LegendEntry(rentPrice.getType().getDisplayName(),
-                                Legend.LegendForm.DEFAULT, DEFAULT_TEXT_SIZE,
-                                2f,
-                                null,
-                                priceEntryColorMap.get(rentPrice.getType())[1]));
-            }
-        });
-
-        legend.setCustom(legendEntryMap.values().toArray(new LegendEntry[0]));
+        legend.setCustom(legendEntries);
     }
 
     private void styleXAxis(CombinedChart chart, ArrayList<RentPriceEntry> rentPrices) {
