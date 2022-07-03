@@ -23,7 +23,6 @@ public class FindPropApiAdapter {
     // private static final String FINDPROP_API_BASE_URL = "http://ec2-34-244-237-138.eu-west-1.compute.amazonaws.com:5000/findprop/api/v1";
     private final Context ctx;
 
-
     public FindPropApiAdapter(Context ctx) {
         this.ctx = ctx;
     }

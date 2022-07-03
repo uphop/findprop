@@ -18,11 +18,30 @@ public class RentPriceOverviewPreprocessor {
         if (currentPriceDetails == null) {
             return rentPrices;
         }
-        Resources resources = context.getResources();
 
         // set average postcode area price
+        updatePostcodeAreaPrice(currentPriceDetails, context, rentPrices);
+
+        // set average anchor local authority price
+        updateLocalAuthorityPrice(currentPriceDetails, context, rentPrices);
+
+        // set average related local authority prices
+        // updateRelatedLocalAuthorityPrice(currentPriceDetails, context, rentPrices);
+
+        // set average similar local authority prices
+        updateSimilarLocalAuthorityPrice(currentPriceDetails, context, rentPrices);
+
+        // set average region price
+        updateRegionPrice(currentPriceDetails, context, rentPrices);
+
+        return rentPrices;
+    }
+
+    private static void updatePostcodeAreaPrice(RentPriceResponse currentPriceDetails, Context context, ArrayList<RentPriceEntry> rentPrices) {
         RentPricePostcodeAreaDetails postcodeAreaDetails = currentPriceDetails.getPostcodeAreaDetails();
         if (postcodeAreaDetails != null) {
+            Resources resources = context.getResources();
+
             StringBuilder postcodeAreaDetailsDescription = new StringBuilder();
             postcodeAreaDetailsDescription.append(resources.getString(R.string.average_price_for));
             postcodeAreaDetailsDescription.append(" ");
@@ -38,10 +57,13 @@ public class RentPriceOverviewPreprocessor {
                     RentPriceEntryType.postcode_area,
                     postcodeAreaDetailsDescription.toString()));
         }
+    }
 
-        // set average anchor local authority price
+    private static void updateLocalAuthorityPrice(RentPriceResponse currentPriceDetails, Context context, ArrayList<RentPriceEntry> rentPrices) {
         RentPriceLocalAuthorityDetails localAuthorityDetails = currentPriceDetails.getLocalAuthorityDetails();
         if (localAuthorityDetails != null) {
+            Resources resources = context.getResources();
+
             StringBuilder localAuthorityDetailsDescription = new StringBuilder();
             localAuthorityDetailsDescription.append(resources.getString(R.string.average_price_for));
             localAuthorityDetailsDescription.append(" ");
@@ -57,9 +79,12 @@ public class RentPriceOverviewPreprocessor {
                     RentPriceEntryType.local_authority,
                     localAuthorityDetailsDescription.toString()));
         }
+    }
 
-        /* // set average related local authority prices
+    private static void updateRelatedLocalAuthorityPrice(RentPriceResponse currentPriceDetails, Context context, ArrayList<RentPriceEntry> rentPrices) {
         if (currentPriceDetails.getRelatedLocalAuthorityDetails() != null) {
+            Resources resources = context.getResources();
+
             for (RentPriceLocalAuthorityDetails relatedLocalAuthorityPrice : currentPriceDetails.getRelatedLocalAuthorityDetails()) {
                 if (relatedLocalAuthorityPrice != null) {
                     StringBuilder localAuthorityDetailsDescription = new StringBuilder();
@@ -77,10 +102,12 @@ public class RentPriceOverviewPreprocessor {
                             localAuthorityDetailsDescription.toString()));
                 }
             }
-        }*/
+        }
+    }
 
-        // set average similar local authority prices
+    private static void updateSimilarLocalAuthorityPrice(RentPriceResponse currentPriceDetails, Context context, ArrayList<RentPriceEntry> rentPrices) {
         if (currentPriceDetails.getSimilarLocalAuthorityDetails() != null) {
+            Resources resources = context.getResources();
             for (RentPriceLocalAuthorityDetails similarLocalAuthorityPrice : currentPriceDetails.getSimilarLocalAuthorityDetails()) {
                 if (similarLocalAuthorityPrice != null) {
                     StringBuilder localAuthorityDetailsDescription = new StringBuilder();
@@ -100,10 +127,13 @@ public class RentPriceOverviewPreprocessor {
                 }
             }
         }
+    }
 
-        // set average region price
+    private static void updateRegionPrice(RentPriceResponse currentPriceDetails, Context context, ArrayList<RentPriceEntry> rentPrices) {
         RentPriceRegionDetails regionDetails = currentPriceDetails.getRegionDetails();
         if (regionDetails != null) {
+            Resources resources = context.getResources();
+
             StringBuilder regionDetailsDescription = new StringBuilder();
             regionDetailsDescription.append(resources.getString(R.string.average_price_for));
             regionDetailsDescription.append(" ");
@@ -119,7 +149,5 @@ public class RentPriceOverviewPreprocessor {
                     RentPriceEntryType.region,
                     regionDetailsDescription.toString()));
         }
-
-        return rentPrices;
     }
 }
