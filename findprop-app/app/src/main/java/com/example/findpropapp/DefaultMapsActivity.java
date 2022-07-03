@@ -51,6 +51,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -76,8 +77,6 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
     private static final String TAG = DefaultMapsActivity.class.getSimpleName();
     // Default map params
-    private final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    private final int MAP_DEFAULT_ZOOM_LEVEL = 15;
     private final float DEFAULT_REFERENCE_MARKER_COLOR = BitmapDescriptorFactory.HUE_AZURE;
     private final int DEFAULT_CIRCLE_COLOR = android.graphics.Color.argb(50, 204, 204, 204);
     private final float DEFAULT_CIRCLE_BORDER_WIDTH = 1f;
@@ -100,7 +99,13 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
     // Location-related attributes
     private boolean locationPermissionGranted;
+    private final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    private final int MAP_DEFAULT_ZOOM_LEVEL = 15;
     private Location lastKnownLocation;
+    private CameraPosition cameraPosition;
+    private final LatLng defaultLocation = new LatLng(-33.8523341, 151.2106085);
+    private static final String KEY_CAMERA_POSITION = "camera_position";
+    private static final String KEY_LOCATION = "location";
 
     // Marker map
     private Map<Marker, RentMarkerDetails> priceDetailsMap = new HashMap<Marker, RentMarkerDetails>();
@@ -112,6 +117,12 @@ public class DefaultMapsActivity extends FragmentActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Retrieve location and camera position from saved instance state.
+        if (savedInstanceState != null) {
+            lastKnownLocation = savedInstanceState.getParcelable(KEY_LOCATION);
+            cameraPosition = savedInstanceState.getParcelable(KEY_CAMERA_POSITION);
+        }
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -130,10 +141,20 @@ public class DefaultMapsActivity extends FragmentActivity implements
         mapFragment.getMapAsync(this);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        if (mMap != null) {
+            outState.putParcelable(KEY_CAMERA_POSITION, mMap.getCameraPosition());
+            outState.putParcelable(KEY_LOCATION, lastKnownLocation);
+        }
+        super.onSaveInstanceState(outState);
+    }
+
     // Init after map is loaded
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
         // Enable dark mode
         updateMapUI();
 
@@ -141,14 +162,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
         getLocationPermission();
 
         // Turn on the My Location layer and the related control on the map.
-        updateLocationUI();
         getDeviceLocation();
-
-        // Add a single map click handler for setting new markers
-        mMap.setOnMapClickListener(this);
-
-        // Add a single marker click for showing reference markers and radius
-        mMap.setOnMarkerClickListener(this);
+        updateLocationUI();
 
         // Set tooltip view for markers
         updateInfoWindowUI();
@@ -156,14 +171,17 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Prepare search box
         updateSearchUI();
 
-        // Prepare property type filter
-        updatePropertyTypeFilterUI();
-
         // Prepare bedroom count filter
         updateBedroomCountFilterUI();
 
         // Init reset button
         updateResetButtonUI();
+
+        // Add a single map click handler for setting new markers
+        mMap.setOnMapClickListener(this);
+
+        // Add a single marker click for showing reference markers and radius
+        mMap.setOnMarkerClickListener(this);
     }
 
     @Override
@@ -181,43 +199,6 @@ public class DefaultMapsActivity extends FragmentActivity implements
     private void updateSearchUI() {
         searchView = findViewById(R.id.idSearchView);
         searchView.setOnQueryTextListener(this);
-    }
-
-    private void updatePropertyTypeFilterUI() {
-        // Set values for property type list
-        Spinner spinner = (Spinner) findViewById(R.id.propertyTypeSpinner);
-        propertyTypeMap = new LinkedHashMap<String, RentPricePropertyTypeEnum>() {
-            {
-                {
-                    put(getString(R.string.room), RentPricePropertyTypeEnum.room);
-                    put(getString(R.string.studio), RentPricePropertyTypeEnum.studio);
-                    put(getString(R.string.flat), RentPricePropertyTypeEnum.flat);
-                }
-            }
-        };
-
-        String[] propertyTypes = propertyTypeMap.keySet().stream().toArray(String[]::new);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(DefaultMapsActivity.this,
-                android.R.layout.simple_spinner_item, propertyTypes);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        // Set default property type
-        int spinnerPosition = adapter.getPosition(getString(R.string.flat));
-        spinner.setSelection(spinnerPosition);
-
-        spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                currentPropertyType = propertyTypeMap.get(propertyTypes[position]);
-                Log.e(TAG, "currentPropertyType: " + currentPropertyType);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
     }
 
     private void updateBedroomCountFilterUI() {
@@ -249,7 +230,6 @@ public class DefaultMapsActivity extends FragmentActivity implements
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 currentBedroomCount = bedroomCountMap.get(bedroomCounts[position]);
-                Log.e(TAG, "currentBedroomCount: " + String.valueOf(currentBedroomCount));
             }
 
             @Override
@@ -263,16 +243,20 @@ public class DefaultMapsActivity extends FragmentActivity implements
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // remove markers from map
-                mMap.clear();
-
-                // remove marker details
-                priceDetailsMap.clear();
-
-                // reset camera to current location
-                getDeviceLocation();
+                resetUI();
             }
         });
+    }
+
+    private void resetUI() {
+        // remove markers from map
+        mMap.clear();
+
+        // remove marker details
+        priceDetailsMap.clear();
+
+        // reset camera to current location
+        getDeviceLocation();
     }
 
     private void updateMapUI() {
@@ -352,6 +336,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+        
         updateLocationUI();
     }
 
@@ -406,8 +391,10 @@ public class DefaultMapsActivity extends FragmentActivity implements
                                                 lastKnownLocation.getLongitude()), MAP_DEFAULT_ZOOM_LEVEL));
                             }
                         } else {
-                            Log.d(TAG, "Current location is null. Using defaults.");
+                            Log.e(TAG, "Current location is null. Using defaults.");
                             Log.e(TAG, "Exception: %s", task.getException());
+                            mMap.moveCamera(CameraUpdateFactory
+                                    .newLatLngZoom(defaultLocation, MAP_DEFAULT_ZOOM_LEVEL));
                             mMap.getUiSettings().setMyLocationButtonEnabled(false);
                         }
                     }

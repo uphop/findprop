@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:weightSum="4">
+        android:weightSum="1">
 
         <!--search view to search our location-->
         <androidx.appcompat.widget.SearchView
@@ -31,7 +31,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:alpha="0.65"
             android:background="@drawable/custom_round_rectangle"
             android:elevation="5dp"
@@ -39,22 +39,6 @@
             app:iconifiedByDefault="false"
             app:queryHint="@string/search_location" />
 
-        <ImageButton
-            android:id="@+id/resetButton"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:alpha="0.65"
-            android:background="@drawable/custom_round_rectangle"
-            android:elevation="5dp"
-            android:minHeight="48dp"
-            android:src="@android:drawable/ic_menu_revert"
-            />
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -63,22 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:weightSum="2">
-
-        <Spinner
-            android:id="@+id/propertyTypeSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="65dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:alpha="0.65"
-            android:background="@drawable/custom_round_rectangle"
-            android:contentDescription="@string/property_type"
-            android:elevation="5dp"
-            android:minHeight="48dp" />
+        android:weightSum="3">
 
         <Spinner
             android:id="@+id/bedroomCountSpinner"
@@ -88,12 +57,30 @@
             android:layout_marginTop="65dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:alpha="0.65"
             android:background="@drawable/custom_round_rectangle"
             android:contentDescription="@string/bedroom_count"
             android:elevation="5dp"
             android:minHeight="48dp" />
+
+        <ImageButton
+            android:id="@+id/resetButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:alpha="0.65"
+            android:background="@drawable/custom_round_rectangle"
+            android:elevation="5dp"
+            android:minHeight="48dp"
+            android:src="@android:drawable/ic_menu_revert"
+            />
+
 
     </LinearLayout>
 
