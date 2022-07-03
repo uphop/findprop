@@ -37,7 +37,6 @@ public class RentPricePostcodeDetails implements Serializable {
     public RentPriceDetails getPrice() {
         return price;
     }
-
     public void setPrice(RentPriceDetails price) {
         this.price = price;
     }

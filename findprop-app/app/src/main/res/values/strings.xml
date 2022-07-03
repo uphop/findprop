@@ -18,6 +18,7 @@
     <string name="bedrooms">bedrooms</string>
     <string name="bedroom">bedroom</string>
     <string name="average_price_for">Average price for</string>
+    <string name="postcode">postcode</string>
     <string name="postcode_area">postcode area</string>
     <string name="borough">borough</string>
     <string name="nearby_borough">nearby borough</string>

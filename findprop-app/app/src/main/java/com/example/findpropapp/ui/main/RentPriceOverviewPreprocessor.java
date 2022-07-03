@@ -7,10 +7,13 @@ import com.example.findpropapp.R;
 import com.example.findpropapp.model.RentPriceDetails;
 import com.example.findpropapp.model.RentPriceLocalAuthorityDetails;
 import com.example.findpropapp.model.RentPricePostcodeAreaDetails;
+import com.example.findpropapp.model.RentPricePostcodeDetails;
 import com.example.findpropapp.model.RentPriceRegionDetails;
 import com.example.findpropapp.model.RentPriceResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class RentPriceOverviewPreprocessor {
     public static ArrayList<RentPriceEntry> getRentPriceEntries(RentPriceResponse currentPriceDetails, Context context) {
@@ -19,22 +22,69 @@ public class RentPriceOverviewPreprocessor {
             return rentPrices;
         }
 
-        // set average postcode area price
+        // set postcode  price
+        updatePostcodePrice(currentPriceDetails, context, rentPrices);
+
+        // set postcode area price
         updatePostcodeAreaPrice(currentPriceDetails, context, rentPrices);
 
-        // set average anchor local authority price
+        // set anchor local authority price
         updateLocalAuthorityPrice(currentPriceDetails, context, rentPrices);
 
-        // set average related local authority prices
+        // set related local authority prices
         // updateRelatedLocalAuthorityPrice(currentPriceDetails, context, rentPrices);
 
-        // set average similar local authority prices
+        // set similar local authority prices
         updateSimilarLocalAuthorityPrice(currentPriceDetails, context, rentPrices);
 
-        // set average region price
+        // set region price
         updateRegionPrice(currentPriceDetails, context, rentPrices);
 
         return rentPrices;
+    }
+
+    private static void updatePostcodePrice(RentPriceResponse currentPriceDetails, Context context, ArrayList<RentPriceEntry> rentPrices) {
+        RentPricePostcodeDetails postcodeDetails = currentPriceDetails.getPostcodeDetails();
+        ArrayList<RentPricePostcodeDetails> relatedPostcodeDetails = (ArrayList) currentPriceDetails.getRelatedPostcodeDetails();
+        if (postcodeDetails != null && relatedPostcodeDetails != null) {
+            Resources resources = context.getResources();
+
+            // create a copy of reference postcodes
+            ArrayList<RentPricePostcodeDetails> sortedPostcodeDetails = (ArrayList) relatedPostcodeDetails.clone();
+
+            // add anchor to the same list, if that has price
+            if (postcodeDetails.getPrice() != null) sortedPostcodeDetails.add(postcodeDetails);
+
+            // if there are less than 2 elements, let's skip showing postcode prices at all
+            if (sortedPostcodeDetails.size() < 2) return;
+
+            // sort postcodes by mean price, to find low/high prices
+            Collections.sort(sortedPostcodeDetails, new Comparator<RentPricePostcodeDetails>() {
+                @Override
+                public int compare(RentPricePostcodeDetails o1, RentPricePostcodeDetails o2) {
+                    RentPriceDetails price1 = RentPriceValueFormatter.getPriceDetailsPCM(o1.getPrice());
+                    RentPriceDetails price2 = RentPriceValueFormatter.getPriceDetailsPCM(o2.getPrice());
+                    return price1.getPriceMean() - price2.getPriceMean();
+                }
+            });
+            int referencePostcodePriceLow = RentPriceValueFormatter.getPriceDetailsPCM(sortedPostcodeDetails.get(0).getPrice()).getPriceMean();
+            int referencePostcodePriceHigh = RentPriceValueFormatter.getPriceDetailsPCM(sortedPostcodeDetails.get(relatedPostcodeDetails.size() - 1).getPrice()).getPriceMean();
+            int anchorPostcodePriceMean = (referencePostcodePriceHigh + referencePostcodePriceLow) / 2;
+
+            StringBuilder postcodeDetailsDescription = new StringBuilder();
+            postcodeDetailsDescription.append(resources.getString(R.string.average_price_for));
+            postcodeDetailsDescription.append(" ");
+            postcodeDetailsDescription.append(resources.getString(R.string.postcode));
+            postcodeDetailsDescription.append(" ");
+            postcodeDetailsDescription.append(postcodeDetails.getPostcode());
+
+            rentPrices.add(new RentPriceEntry(anchorPostcodePriceMean,
+                    referencePostcodePriceLow,
+                    referencePostcodePriceHigh,
+                    postcodeDetails.getPostcode(),
+                    RentPriceEntryType.postcode,
+                    postcodeDetailsDescription.toString()));
+        }
     }
 
     private static void updatePostcodeAreaPrice(RentPriceResponse currentPriceDetails, Context context, ArrayList<RentPriceEntry> rentPrices) {

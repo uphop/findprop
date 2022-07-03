@@ -1,0 +1,1 @@
+java -jar target/findprop-loader-0.1.jar com.lightson.findpropapi.loader.BatchConfiguration findPropImportJob

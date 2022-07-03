@@ -113,15 +113,6 @@ public class PriceService {
                 // set rent price of local authority
                 setLocalAuthorityDetails(response, localAuthority, propertyType, bedrooms);
 
-                // set rent price of postcode area
-                setPostcodeAreaDetails(response, postcode, propertyType, bedrooms);
-
-                // set rent price of postcode
-                setPostcodeDetails(response, postcode, propertyType, bedrooms);
-
-                // set rent price of near-by postcodes
-                setRelatedByPostcodeDetails(response, postcodes, propertyType, bedrooms);
-
                 // set rent prices of related local authorities
                 setRelatedLocalAuthorityDetails(response, localAuthority, propertyType, bedrooms);
 
@@ -130,6 +121,15 @@ public class PriceService {
 
                 // set utility prices of local authority
                 setLocalAuthorityUtilityDetails(response, localAuthority, propertyType, bedrooms);
+
+                // set rent price of postcode area
+                setPostcodeAreaDetails(response, postcode, propertyType, bedrooms);
+
+                // set rent price of postcode
+                setPostcodeDetails(response, postcode, propertyType, bedrooms);
+
+                // set rent price of near-by postcodes
+                setRelatedPostcodeDetails(response, postcodes, propertyType, bedrooms);
 
                 // set status and processing time
                 response.setDuration(Duration.between(processingStart, Instant.now()).toMillis());
@@ -227,7 +227,7 @@ public class PriceService {
                                                 postcode.getLatitude(), price));
         }
 
-        private void setRelatedByPostcodeDetails(RentPriceResponse response, List<Postcode> postcodes,
+        private void setRelatedPostcodeDetails(RentPriceResponse response, List<Postcode> postcodes,
                         String propertyType,
                         int bedrooms) {
 

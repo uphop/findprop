@@ -19,7 +19,7 @@ import java.util.Date;
 
 public class FindPropApiAdapter {
     private static final String TAG = FindPropApiAdapter.class.getSimpleName();
-    private static final String FINDPROP_API_BASE_URL = "http://localhost:8081/findprop/api/v1";
+    private static final String FINDPROP_API_BASE_URL = "http://localhost:5099/findprop/api/v1";
     // private static final String FINDPROP_API_BASE_URL = "http://ec2-34-244-237-138.eu-west-1.compute.amazonaws.com:5000/findprop/api/v1";
     private final Context ctx;
 
