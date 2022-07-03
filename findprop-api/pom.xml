@@ -12,9 +12,9 @@
 	<version>0.1</version>
 	<packaging>jar</packaging>
 	<name>findprop-api</name>
-	<description>Demo project for Spring Boot</description>
+	<description>FindProp API.</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -91,6 +91,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -1,13 +1,16 @@
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/findprop
 spring.datasource.username=findprop_load_user
-spring.datasource.password=B>a%Cx%It3u91h4C@KJ]
+spring.datasource.password=<pwd>>
 spring.sql.init.platform=mysql
 spring.sql.init.mode=never
 spring.batch.jdbc.initialize-schema=ALWAYS
 spring.batch.job.enabled=true
 
 propertydata.api.base_url=https://api.propertydata.co.uk
-propertydata.api.key=VYEFHMYM9I
+propertydata.api.key=<API key>
 propertydata.api.connect_timeout=5000
 propertydata.api.with_delay=500
+
+rentpriceitemprocessor.skip_non_target_postcode_area=false
+rentpriceitemprocessor.max_range=250

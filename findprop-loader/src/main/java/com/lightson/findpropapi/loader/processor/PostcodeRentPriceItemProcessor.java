@@ -2,9 +2,7 @@ package com.lightson.findpropapi.loader.processor;
 
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
-import com.lightson.findpropapi.loader.model.SourcePostcodeAreaRentPrice;
 import com.lightson.findpropapi.loader.model.SourcePostcodeRentPrice;
-import com.lightson.findpropapi.loader.model.TargetPostcodeAreaRentPrice;
 import com.lightson.findpropapi.loader.model.TargetPostcodeRentPrice;
 
 @Component

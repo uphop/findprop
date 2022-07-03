@@ -432,13 +432,22 @@ public class DefaultMapsActivity extends FragmentActivity implements
                     new RentPriceCallback() {
                         @Override
                         public void onSuccess(RentPriceResponse rentPrices) {
-                            updateCurrentAnchor(rentPrices);
+                            if (rentPrices != null) {
+                                updateCurrentAnchor(rentPrices);
+                            } else {
+                                showMessage(
+                                        "Cannot find rent prices for this location try another one."
+                                );
+                            }
                         }
 
                         @Override
                         public void onFailure(Exception e) {
                             // TODO: handle postcode retrieval failure
                             Log.e(TAG, e.toString());
+                            showMessage(
+                                    "Cannot get rent prices for this location."
+                            );
                         }
                     });
         } else {

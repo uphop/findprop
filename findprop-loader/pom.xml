@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lightson.findpropapi</groupId>
-	<artifactId>loader</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>loader</name>
+	<artifactId>findprop-loader</artifactId>
+	<version>0.1</version>
+	<name>findprop-loader</name>
 	<description>Loader for FindProp data.</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -43,6 +43,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
