@@ -37,6 +37,9 @@ import com.lightson.findpropapi.repository.RegionRentPriceRepository;
 @Service
 public class PriceService {
 
+        private final int DEFAULT_FIND_POSTCODE_MAX_ATTEMPTS = 3;
+        private final double DEFAULT_FIND_POSTCODE_RANGE_INCREASE_FACTOR = 2.0;
+
         @Autowired
         private PostcodeRepository postcodeRepository;
 
@@ -68,7 +71,7 @@ public class PriceService {
                 updateParams(response, longitude, latitude, maxRange, propertyType, bedrooms);
 
                 // find nearest postcodes
-                List<Postcode> postcodes = this.postcodeRepository.findByDistance(longitude, latitude, maxRange);
+                List<Postcode> postcodes = getNearestPostcodes(longitude, latitude, maxRange);
                 if (postcodes == null || postcodes.size() == 0) {
                         log.error(String.format(
                                         "Cannot find nearest postcode for longitude %f, latitude %f, maxRange %f",
@@ -309,5 +312,22 @@ public class PriceService {
                                         new UtilityPriceLocalAuthorityDetails(localAuthority.getName(),
                                                         localAuthorityUtilityPrices));
                 }
+        }
+
+        private List<Postcode> getNearestPostcodes(double longitude, double latitude, double startingMaxRange) {
+                // make up to DEFAULT_FIND_POSTCODE_MAX_ATTEMPTS attempts to find nearest postcodes, gradually increasing range
+                for (int attempt = 0; attempt < DEFAULT_FIND_POSTCODE_MAX_ATTEMPTS; attempt++) {
+                        // calculate max range for the next attempt
+                        double currentMaxRange = startingMaxRange * Math.pow(DEFAULT_FIND_POSTCODE_RANGE_INCREASE_FACTOR, attempt);
+
+                        // try to find postcodes with the current range
+                        List<Postcode> result = this.postcodeRepository.findByDistance(longitude, latitude, currentMaxRange);
+
+                        // if found some postcodes, let's stop here
+                        if(result != null && result.size() > 0) return result;
+                }
+                
+                // nothing is found
+                return null;
         }
 }

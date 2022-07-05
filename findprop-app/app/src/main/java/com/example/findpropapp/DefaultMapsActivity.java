@@ -336,7 +336,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-        
+
         updateLocationUI();
     }
 
