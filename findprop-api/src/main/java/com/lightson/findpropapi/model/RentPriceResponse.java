@@ -33,7 +33,7 @@ public class RentPriceResponse implements Serializable {
     private RentPriceRegionDetails regionDetails;
     private RentPriceLocalAuthorityDetails localAuthorityDetails;
     private UtilityPriceLocalAuthorityDetails utilityDetails;
-    private UpfrontPriceLocalAuthorityDetails upfrontDetails;
+    private UpfrontPriceCompositeDetails upfrontDetails;
     private List<RentPriceLocalAuthorityDetails> relatedLocalAuthorityDetails;
     private List<RentPriceLocalAuthorityDetails> similarLocalAuthorityDetails;
     private RentPricePostcodeAreaDetails postcodeAreaDetails;
@@ -182,11 +182,11 @@ public class RentPriceResponse implements Serializable {
         this.utilityDetails = utilityDetails;
     }
 
-    public UpfrontPriceLocalAuthorityDetails getUpfrontDetails() {
+    public UpfrontPriceCompositeDetails getUpfrontDetails() {
         return upfrontDetails;
     }
 
-    public void setUpfrontDetails(UpfrontPriceLocalAuthorityDetails upfrontDetails) {
+    public void setUpfrontDetails(UpfrontPriceCompositeDetails upfrontDetails) {
         this.upfrontDetails = upfrontDetails;
     }
 

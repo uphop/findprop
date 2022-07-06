@@ -20,7 +20,10 @@ import com.lightson.findpropapi.entity.PostcodeRentPrice;
 import com.lightson.findpropapi.entity.Region;
 import com.lightson.findpropapi.entity.RegionRentPrice;
 import com.lightson.findpropapi.model.RentPriceResponse;
+import com.lightson.findpropapi.model.UpfrontPriceCompositeDetails;
 import com.lightson.findpropapi.model.UpfrontPriceLocalAuthorityDetails;
+import com.lightson.findpropapi.model.UpfrontPricePostcodeAreaDetails;
+import com.lightson.findpropapi.model.UpfrontPricePostcodeDetails;
 import com.lightson.findpropapi.model.UtilityPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeAreaDetails;
@@ -114,7 +117,8 @@ public class PriceService {
                 setRegionDetails(response, region, propertyType, bedrooms);
 
                 // set rent price of local authority
-                setLocalAuthorityDetails(response, localAuthority, propertyType, bedrooms);
+                LocalAuthorityRentPrice localAuthorityRentPrice = setLocalAuthorityDetails(response, localAuthority,
+                                propertyType, bedrooms);
 
                 // set rent prices of related local authorities
                 setRelatedLocalAuthorityDetails(response, localAuthority, propertyType, bedrooms);
@@ -126,13 +130,17 @@ public class PriceService {
                 setLocalAuthorityUtilityDetails(response, localAuthority, propertyType, bedrooms);
 
                 // set rent price of postcode area
-                setPostcodeAreaDetails(response, postcode, propertyType, bedrooms);
+                PostcodeAreaRentPrice postcodeAreaRentPrice = setPostcodeAreaDetails(response, postcode, propertyType,
+                                bedrooms);
 
                 // set rent price of postcode
-                setPostcodeDetails(response, postcode, propertyType, bedrooms);
+                PostcodeRentPrice postcodeRentPrice = setPostcodeDetails(response, postcode, propertyType, bedrooms);
 
                 // set rent price of near-by postcodes
                 setRelatedPostcodeDetails(response, postcodes, propertyType, bedrooms);
+
+                // set rent upfront costs
+                setUpfrontCostDetails(response, localAuthorityRentPrice, postcodeAreaRentPrice, postcodeRentPrice);
 
                 // set status and processing time
                 response.setDuration(Duration.between(processingStart, Instant.now()).toMillis());
@@ -169,7 +177,8 @@ public class PriceService {
                                                 price));
         }
 
-        private void setLocalAuthorityDetails(RentPriceResponse response, LocalAuthority localAuthority,
+        private LocalAuthorityRentPrice setLocalAuthorityDetails(RentPriceResponse response,
+                        LocalAuthority localAuthority,
                         String propertyType,
                         int bedrooms) {
 
@@ -186,13 +195,11 @@ public class PriceService {
                                 new RentPriceLocalAuthorityDetails(localAuthority.getName(),
                                                 price));
 
-                // set upfront prices of postcode area (if available), or local authority (if
-                // postcode area prices are not available)
-                response.setUpfrontDetails(
-                                new UpfrontPriceLocalAuthorityDetails(price));
+                return price;
         }
 
-        private void setPostcodeAreaDetails(RentPriceResponse response, Postcode postcode, String propertyType,
+        private PostcodeAreaRentPrice setPostcodeAreaDetails(RentPriceResponse response, Postcode postcode,
+                        String propertyType,
                         int bedrooms) {
                 // get postcode area
                 String postcodeArea = postcode.getCode().split(" ")[0];
@@ -209,13 +216,10 @@ public class PriceService {
                 response.setPostcodeAreaDetails(
                                 new RentPricePostcodeAreaDetails(postcodeArea, price));
 
-                // set upfront prices of postcode area (if available), or local authority (if
-                // postcode area prices are not available)
-                response.setUpfrontDetails(
-                                new UpfrontPriceLocalAuthorityDetails(price));
+                return price;
         }
 
-        private void setPostcodeDetails(RentPriceResponse response, Postcode postcode, String propertyType,
+        private PostcodeRentPrice setPostcodeDetails(RentPriceResponse response, Postcode postcode, String propertyType,
                         int bedrooms) {
                 // get postcode rent prices
                 List<PostcodeRentPrice> postcodeRentPrices = postcodeRentPriceRepository
@@ -228,6 +232,8 @@ public class PriceService {
                 response.setPostcodeDetails(
                                 new RentPricePostcodeDetails(postcode.getCode(), postcode.getLongitude(),
                                                 postcode.getLatitude(), price));
+
+                return price;
         }
 
         private void setRelatedPostcodeDetails(RentPriceResponse response, List<Postcode> postcodes,
@@ -314,19 +320,39 @@ public class PriceService {
                 }
         }
 
+        private void setUpfrontCostDetails(RentPriceResponse response, LocalAuthorityRentPrice localAuthorityRentPrice,
+                        PostcodeAreaRentPrice postcodeAreaRentPrice, PostcodeRentPrice postcodeRentPrice) {
+                // set upfront prices of postcode area (if available), or local authority (if
+                // postcode area prices are not available)
+                if (postcodeRentPrice != null) {
+                        response.setUpfrontDetails(
+                                        new UpfrontPricePostcodeDetails(postcodeRentPrice));
+                } else if (postcodeAreaRentPrice != null) {
+                        response.setUpfrontDetails(
+                                        new UpfrontPricePostcodeAreaDetails(postcodeAreaRentPrice));
+                } else if (localAuthorityRentPrice != null) {
+                        response.setUpfrontDetails(
+                                        new UpfrontPriceLocalAuthorityDetails(localAuthorityRentPrice));
+                }
+        }
+
         private List<Postcode> getNearestPostcodes(double longitude, double latitude, double startingMaxRange) {
-                // make up to DEFAULT_FIND_POSTCODE_MAX_ATTEMPTS attempts to find nearest postcodes, gradually increasing range
+                // make up to DEFAULT_FIND_POSTCODE_MAX_ATTEMPTS attempts to find nearest
+                // postcodes, gradually increasing range
                 for (int attempt = 0; attempt < DEFAULT_FIND_POSTCODE_MAX_ATTEMPTS; attempt++) {
                         // calculate max range for the next attempt
-                        double currentMaxRange = startingMaxRange * Math.pow(DEFAULT_FIND_POSTCODE_RANGE_INCREASE_FACTOR, attempt);
+                        double currentMaxRange = startingMaxRange
+                                        * Math.pow(DEFAULT_FIND_POSTCODE_RANGE_INCREASE_FACTOR, attempt);
 
                         // try to find postcodes with the current range
-                        List<Postcode> result = this.postcodeRepository.findByDistance(longitude, latitude, currentMaxRange);
+                        List<Postcode> result = this.postcodeRepository.findByDistance(longitude, latitude,
+                                        currentMaxRange);
 
                         // if found some postcodes, let's stop here
-                        if(result != null && result.size() > 0) return result;
+                        if (result != null && result.size() > 0)
+                                return result;
                 }
-                
+
                 // nothing is found
                 return null;
         }

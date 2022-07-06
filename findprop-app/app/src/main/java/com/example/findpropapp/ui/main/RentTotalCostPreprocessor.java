@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import com.example.findpropapp.R;
 import com.example.findpropapp.model.RentPricePeriodEnum;
 import com.example.findpropapp.model.RentPriceResponse;
+import com.example.findpropapp.model.UpfrontPriceCompositeDetails;
 import com.example.findpropapp.model.UpfrontPriceDetails;
 import com.example.findpropapp.model.UpfrontPriceLocalAuthorityDetails;
 import com.example.findpropapp.model.UtilityPriceDetails;
@@ -90,7 +91,7 @@ public class RentTotalCostPreprocessor {
 
     private static void addUpfrontCosts(RentPriceResponse currentPriceDetails, ArrayList<RentCostEntry> rentCosts, Context context) {
         // set upfront costs
-        UpfrontPriceLocalAuthorityDetails upfrontCosts = currentPriceDetails.getUpfrontDetails();
+        UpfrontPriceCompositeDetails upfrontCosts = currentPriceDetails.getUpfrontDetails();
         if (upfrontCosts != null) {
             Resources resources = context.getResources();
             StringBuilder upfrontDescription = new StringBuilder();
