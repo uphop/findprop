@@ -2,6 +2,7 @@ package com.lightson.findpropapi.service;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -24,6 +25,7 @@ import com.lightson.findpropapi.model.UpfrontPriceCompositeDetails;
 import com.lightson.findpropapi.model.UpfrontPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.UpfrontPricePostcodeAreaDetails;
 import com.lightson.findpropapi.model.UpfrontPricePostcodeDetails;
+import com.lightson.findpropapi.model.UpfrontPriceRelatedPostcodeDetails;
 import com.lightson.findpropapi.model.UtilityPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeAreaDetails;
@@ -322,17 +324,24 @@ public class PriceService {
 
         private void setUpfrontCostDetails(RentPriceResponse response, LocalAuthorityRentPrice localAuthorityRentPrice,
                         PostcodeAreaRentPrice postcodeAreaRentPrice, PostcodeRentPrice postcodeRentPrice) {
-                // set upfront prices of postcode area (if available), or local authority (if
-                // postcode area prices are not available)
+                // set upfront costs based on the most granular rent price available
                 if (postcodeRentPrice != null) {
                         response.setUpfrontDetails(
                                         new UpfrontPricePostcodeDetails(postcodeRentPrice));
+                        log.info("Setting upfront costs based on postcode.");
+                } else if (response.getRelatedPostcodeDetails() != null
+                                && response.getRelatedPostcodeDetails().size() > 0) {
+                        response.setUpfrontDetails(
+                                        new UpfrontPriceRelatedPostcodeDetails(response.getRelatedPostcodeDetails()));
+                        log.info("Setting upfront costs based on near-by postcodes.");
                 } else if (postcodeAreaRentPrice != null) {
                         response.setUpfrontDetails(
                                         new UpfrontPricePostcodeAreaDetails(postcodeAreaRentPrice));
+                        log.info("Setting upfront costs based on postcode area.");
                 } else if (localAuthorityRentPrice != null) {
                         response.setUpfrontDetails(
                                         new UpfrontPriceLocalAuthorityDetails(localAuthorityRentPrice));
+                        log.info("Setting upfront costs based on local authority.");
                 }
         }
 
