@@ -167,13 +167,6 @@ public class RentPriceResponse implements Serializable {
         this.postcodeDetails = postcodeDetails;
     }
 
-    public void addRelatedPostcodeDetails(String postcode, double longitude, double latitude, PostcodeRentPrice inputPrice) {
-        if (this.relatedPostcodeDetails == null) {
-            this.relatedPostcodeDetails = new ArrayList<RentPricePostcodeDetails>();
-        }
-        this.relatedPostcodeDetails.add(new RentPricePostcodeDetails(postcode, longitude, latitude, inputPrice));
-    }
-
     public UtilityPriceLocalAuthorityDetails getUtilityDetails() {
         return utilityDetails;
     }
@@ -196,6 +189,14 @@ public class RentPriceResponse implements Serializable {
 
     public void setRelatedPostcodeDetails(List<RentPricePostcodeDetails> relatedPostcodeDetails) {
         this.relatedPostcodeDetails = relatedPostcodeDetails;
+    }
+
+    public void addRelatedPostcodeDetails(String postcode, double longitude, double latitude,
+            PostcodeRentPrice inputPrice) {
+        if (this.relatedPostcodeDetails == null) {
+            this.relatedPostcodeDetails = new ArrayList<RentPricePostcodeDetails>();
+        }
+        this.relatedPostcodeDetails.add(new RentPricePostcodeDetails(postcode, longitude, latitude, inputPrice));
     }
 
     public Long getDuration() {

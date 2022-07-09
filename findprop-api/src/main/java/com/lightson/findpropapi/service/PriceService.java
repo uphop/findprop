@@ -328,20 +328,16 @@ public class PriceService {
                 if (postcodeRentPrice != null) {
                         response.setUpfrontDetails(
                                         new UpfrontPricePostcodeDetails(postcodeRentPrice));
-                        log.info("Setting upfront costs based on postcode.");
                 } else if (response.getRelatedPostcodeDetails() != null
                                 && response.getRelatedPostcodeDetails().size() > 0) {
                         response.setUpfrontDetails(
                                         new UpfrontPriceRelatedPostcodeDetails(response.getRelatedPostcodeDetails()));
-                        log.info("Setting upfront costs based on near-by postcodes.");
                 } else if (postcodeAreaRentPrice != null) {
                         response.setUpfrontDetails(
                                         new UpfrontPricePostcodeAreaDetails(postcodeAreaRentPrice));
-                        log.info("Setting upfront costs based on postcode area.");
                 } else if (localAuthorityRentPrice != null) {
                         response.setUpfrontDetails(
                                         new UpfrontPriceLocalAuthorityDetails(localAuthorityRentPrice));
-                        log.info("Setting upfront costs based on local authority.");
                 }
         }
 

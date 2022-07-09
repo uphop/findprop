@@ -1,0 +1,185 @@
+{
+    "timestamp": "2022-07-07T07:02:17.090+0000",
+    "duration": 7,
+    "status": "OK",
+    "code": 200,
+    "longitude": -0.02714,
+    "latitude": 51.578717,
+    "maxRange": 100.0,
+    "propertyType": "flat",
+    "bedrooms": 2,
+    "postcodeDetails": {
+        "postcode": "E17 7LZ",
+        "longitude": -0.0271,
+        "latitude": 51.57902
+    },
+    "relatedPostcodeDetails": [
+        {
+            "postcode": "E17 7NF",
+            "longitude": -0.028096,
+            "latitude": 51.578344,
+            "price": {
+                "priceCount": 1,
+                "priceMean": 358,
+                "priceLow": 358,
+                "priceMedian": 358,
+                "priceHigh": 358,
+                "currency": "gbp",
+                "period": "week"
+            }
+        },
+        {
+            "postcode": "E17 7NE",
+            "longitude": -0.02766,
+            "latitude": 51.579083,
+            "price": {
+                "priceCount": 1,
+                "priceMean": 368,
+                "priceLow": 368,
+                "priceMedian": 368,
+                "priceHigh": 368,
+                "currency": "gbp",
+                "period": "week"
+            }
+        }
+    ],
+    "regionDetails": {
+        "region": "London",
+        "price": {
+            "priceCount": 23700,
+            "priceMean": 1605,
+            "priceLow": 1275,
+            "priceMedian": 1450,
+            "priceHigh": 1750,
+            "currency": "gbp",
+            "period": "month"
+        }
+    },
+    "localAuthorityDetails": {
+        "localAuthority": "Waltham Forest",
+        "price": {
+            "priceCount": 630,
+            "priceMean": 1382,
+            "priceLow": 1230,
+            "priceMedian": 1350,
+            "priceHigh": 1500,
+            "currency": "gbp",
+            "period": "month"
+        }
+    },
+    "utilityDetails": {
+        "localAuthority": "Waltham Forest",
+        "price": [
+            {
+                "priceMean": 159,
+                "utilityType": "tv_license",
+                "currency": "gbp",
+                "period": "year"
+            },
+            {
+                "priceMean": 1863,
+                "utilityType": "council_tax",
+                "currency": "gbp",
+                "period": "year"
+            },
+            {
+                "priceMean": 30,
+                "utilityType": "internet",
+                "currency": "gbp",
+                "period": "month"
+            },
+            {
+                "priceMean": 97,
+                "utilityType": "energy",
+                "currency": "gbp",
+                "period": "month"
+            },
+            {
+                "priceMean": 33,
+                "utilityType": "water",
+                "currency": "gbp",
+                "period": "month"
+            }
+        ]
+    },
+    "upfrontDetails": {
+        "price": [
+            {
+                "priceMean": 363,
+                "upfrontFeeType": "holding_deposit",
+                "currency": "gbp",
+                "period": "one_off"
+            },
+            {
+                "priceMean": 1452,
+                "upfrontFeeType": "tenancy_deposit",
+                "currency": "gbp",
+                "period": "one_off"
+            }
+        ]
+    },
+    "relatedLocalAuthorityDetails": [
+        {
+            "localAuthority": "Hackney",
+            "price": {
+                "priceCount": 490,
+                "priceMean": 1759,
+                "priceLow": 1500,
+                "priceMedian": 1650,
+                "priceHigh": 1950,
+                "currency": "gbp",
+                "period": "month"
+            }
+        },
+        {
+            "localAuthority": "Islington",
+            "price": {
+                "priceCount": 740,
+                "priceMean": 1923,
+                "priceLow": 1600,
+                "priceMedian": 1860,
+                "priceHigh": 2167,
+                "currency": "gbp",
+                "period": "month"
+            }
+        }
+    ],
+    "similarLocalAuthorityDetails": [
+        {
+            "localAuthority": "Hounslow",
+            "price": {
+                "priceCount": 740,
+                "priceMean": 1371,
+                "priceLow": 1200,
+                "priceMedian": 1300,
+                "priceHigh": 1450,
+                "currency": "gbp",
+                "period": "month"
+            }
+        },
+        {
+            "localAuthority": "Lewisham",
+            "price": {
+                "priceCount": 920,
+                "priceMean": 1388,
+                "priceLow": 1250,
+                "priceMedian": 1350,
+                "priceHigh": 1500,
+                "currency": "gbp",
+                "period": "month"
+            }
+        }
+    ],
+    "postcodeAreaDetails": {
+        "postcodeArea": "E17",
+        "price": {
+            "priceCount": 370,
+            "priceMean": 1444,
+            "priceLow": 1300,
+            "priceMedian": 1400,
+            "priceHigh": 1620,
+            "currency": "gbp",
+            "period": "month"
+        }
+    }
+}
