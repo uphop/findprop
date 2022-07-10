@@ -63,6 +63,8 @@ import com.lightson.findpropapp.ui.main.StreetViewMapActivity;
 import com.lightson.findpropapp.ui.main.UsageEventEnum;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -77,6 +79,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         GoogleMap.OnMarkerClickListener {
 
     private static final String TAG = DefaultMapsActivity.class.getSimpleName();
+    private static final int DEFAULT_LOG_LEVEL = Log.INFO;
     private static final String KEY_CAMERA_POSITION = "camera_position";
     private static final String KEY_LOCATION = "location";
     // Default map params
@@ -112,6 +115,9 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
     // usage tracking
     private FirebaseAnalytics mFirebaseAnalytics;
+
+    private Context context;
+    private Resources resources;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -187,6 +193,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
         // Add a single marker click for showing reference markers and radius
         mMap.setOnMarkerClickListener(this);
+
+        logEvent(UsageEventEnum.map_initialised);
     }
 
     @Override
@@ -198,7 +206,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 put("longitude", String.valueOf(marker.getPosition().longitude));
                 put("latitude", String.valueOf(marker.getPosition().latitude));
 
-                if(priceDetailsMap.containsKey(marker)) {
+                if (priceDetailsMap.containsKey(marker)) {
                     RentMarkerDetails markerDetails = priceDetailsMap.get(marker);
                     put("property_type", markerDetails.getRentPrices().getPropertyType().toString());
                     put("bedrooms", String.valueOf(markerDetails.getRentPrices().getBedrooms()));
@@ -251,7 +259,6 @@ public class DefaultMapsActivity extends FragmentActivity implements
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 currentBedroomCount = bedroomCountMap.get(bedroomCounts[position]);
-
                 logEvent(UsageEventEnum.bedroom_filter_selection_changed, new HashMap<String, String>() {
                     {
                         put("bedrooms", String.valueOf(currentBedroomCount));
@@ -267,12 +274,9 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
     private void updateResetButtonUI() {
         ImageButton resetButton = (ImageButton) findViewById(R.id.resetButton);
-        resetButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logEvent(UsageEventEnum.reset_button_clicked, null);
-                resetUI();
-            }
+        resetButton.setOnClickListener(v -> {
+            resetUI();
+            logEvent(UsageEventEnum.reset_button_clicked);
         });
     }
 
@@ -289,16 +293,22 @@ public class DefaultMapsActivity extends FragmentActivity implements
 
     private void updateMapUI() {
         // Set map style to dark mode
+        Map<String, String> logParams = new HashMap<String, String>() {
+            {
+                put("style", String.valueOf(R.raw.mapstyle_night));
+            }
+        };
+
         try {
             boolean success = mMap.setMapStyle(
                     MapStyleOptions.loadRawResourceStyle(
                             this, R.raw.mapstyle_night));
 
             if (!success) {
-                Log.e(TAG, "Style parsing failed.");
+                logEvent(UsageEventEnum.map_styling_failed, logParams, TAG, "Can't apply map style.", Log.ERROR);
             }
         } catch (Resources.NotFoundException e) {
-            Log.e(TAG, "Can't find style. Error: ", e);
+            logEvent(UsageEventEnum.map_styling_failed, logParams, TAG, "Can't find map style. Error: " + e.toString(), Log.ERROR);
         }
     }
 
@@ -351,9 +361,9 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 == PackageManager.PERMISSION_GRANTED) {
             locationPermissionGranted = true;
 
-            logEvent(UsageEventEnum.location_permission_granted, null);
+            logEvent(UsageEventEnum.location_permission_granted);
         } else {
-            logEvent(UsageEventEnum.location_permission_requested, null);
+            logEvent(UsageEventEnum.location_permission_requested);
 
             ActivityCompat.requestPermissions(this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
@@ -372,9 +382,10 @@ public class DefaultMapsActivity extends FragmentActivity implements
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 locationPermissionGranted = true;
 
-                logEvent(UsageEventEnum.location_permission_granted, null);
+                logEvent(UsageEventEnum.location_permission_granted);
             } else {
-                logEvent(UsageEventEnum.location_permission_rejected, null);
+                logEvent(UsageEventEnum.location_permission_rejected, null, TAG, null, Log.ERROR);
+                showMessage(R.string.cannot_get_location_permission);
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -386,7 +397,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
     @SuppressLint("MissingPermission")
     private void updateLocationUI() {
         if (mMap == null) {
-            Log.e(TAG, "Cannot update location, map is not set.");
+            logEvent(UsageEventEnum.map_setup_failed, null, TAG, "Cannot update location, map is not set.", Log.ERROR);
+            showMessage(R.string.cannot_load_map);
             return;
         }
         try {
@@ -406,7 +418,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
                     layoutParams.setMargins(0, 0, 30, 30);
                 }
 
-                logEvent(UsageEventEnum.my_location_enabled, null);
+                logEvent(UsageEventEnum.my_location_enabled);
             } else {
                 // Otherwise hide My Location elements
                 mMap.setMyLocationEnabled(false);
@@ -414,45 +426,53 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 lastKnownLocation = null;
                 getLocationPermission();
 
-                logEvent(UsageEventEnum.my_location_disabled, null);
-
-                //TODO: add error handling
-                Log.e(TAG, "Cannot set current location, permission not granted.");
+                logEvent(UsageEventEnum.my_location_disabled, null, TAG, "Cannot set current location, permission not granted.", Log.ERROR);
+                showMessage(R.string.cannot_set_current_location);
             }
         } catch (SecurityException e) {
-            //TODO: add error handling
-            Log.e(TAG, "Cannot update location, " + e.getMessage());
+            logEvent(UsageEventEnum.my_location_failed, null, TAG, "Cannot update location, " + e.getMessage(), Log.ERROR);
+            showMessage(R.string.cannot_set_current_location);
         }
     }
 
     private void getDeviceLocation() {
         try {
-            if (locationPermissionGranted) {
-                @SuppressLint("MissingPermission") Task<Location> locationResult = fusedLocationClient.getLastLocation();
-                locationResult.addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        // Set the map's camera position to the current location of the device.
-                        lastKnownLocation = task.getResult();
-                        if (lastKnownLocation != null) {
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                    new LatLng(lastKnownLocation.getLatitude(),
-                                            lastKnownLocation.getLongitude()), MAP_DEFAULT_ZOOM_LEVEL));
-
-                            logEvent(UsageEventEnum.camera_moved_to_current_location, null);
-                        } else {
-                            //TODO: add error handling
-                        }
-                    } else {
-                        Log.e(TAG, "Current location is null. Using defaults.");
-                        Log.e(TAG, "Exception: %s", task.getException());
-                        mMap.moveCamera(CameraUpdateFactory
-                                .newLatLngZoom(defaultLocation, MAP_DEFAULT_ZOOM_LEVEL));
-                        mMap.getUiSettings().setMyLocationButtonEnabled(false);
-                    }
-                });
+            if (!locationPermissionGranted) {
+                logEvent(UsageEventEnum.current_location_permission_failed, null, TAG, null, Log.ERROR);
+                showMessage(R.string.cannot_set_current_location);
+                return;
             }
+
+            @SuppressLint("MissingPermission") Task<Location> locationResult = fusedLocationClient.getLastLocation();
+            locationResult.addOnCompleteListener(this, task -> {
+                if (task.isSuccessful()) {
+                    // Set the map's camera position to the current location of the device.
+                    lastKnownLocation = task.getResult();
+                    if (lastKnownLocation == null) {
+                        logEvent(UsageEventEnum.current_location_undetermined, null, TAG, null, Log.ERROR);
+                        showMessage(R.string.cannot_determine_current_location);
+                        return;
+                    }
+
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                            new LatLng(lastKnownLocation.getLatitude(),
+                                    lastKnownLocation.getLongitude()), MAP_DEFAULT_ZOOM_LEVEL));
+
+                    logEvent(UsageEventEnum.current_location_updated);
+
+                } else {
+                    mMap.moveCamera(CameraUpdateFactory
+                            .newLatLngZoom(defaultLocation, MAP_DEFAULT_ZOOM_LEVEL));
+                    mMap.getUiSettings().setMyLocationButtonEnabled(false);
+
+                    logEvent(UsageEventEnum.current_location_failed, null, TAG, "Current location is null. Using defaults. Error: " + task.getException(), Log.ERROR);
+                    showMessage(R.string.cannot_determine_current_location);
+                }
+            });
+
         } catch (SecurityException e) {
-            Log.e("Exception: %s", e.getMessage(), e);
+            logEvent(UsageEventEnum.current_location_security_failed, null, TAG, "Getting current location failed. Error: " + e.getMessage(), Log.ERROR);
+            showMessage(R.string.cannot_set_current_location);
         }
     }
 
@@ -473,7 +493,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Got current location. In some rare situations this can be null.
         if (latLng != null) {
             // Get rent prices around that anchor postcode
-            logEvent(UsageEventEnum.rent_prices_requested, new HashMap<String, String>() {
+            Map<String, String> logParams = new HashMap<String, String>() {
                 {
                     put("longitude", String.valueOf(latLng.longitude));
                     put("latitude", String.valueOf(latLng.latitude));
@@ -481,44 +501,40 @@ public class DefaultMapsActivity extends FragmentActivity implements
                     put("property_type", currentPropertyType.toString());
                     put("bedrooms", String.valueOf(currentBedroomCount));
                 }
-            });
+            };
+            logEvent(UsageEventEnum.rent_prices_requested, logParams);
 
+            Instant processingStart = Instant.now();
             findPropApiClient.getRentPrices(latLng.longitude, latLng.latitude, DEFAULT_MAX_RANGE, currentPropertyType, currentBedroomCount,
                     new RentPriceCallback() {
                         @Override
                         public void onSuccess(RentPriceResponse rentPrices) {
-                            if (rentPrices != null) {
-                                logEvent(UsageEventEnum.rent_prices_received, new HashMap<String, String>() {
-                                    {
-                                        put("longitude", String.valueOf(latLng.longitude));
-                                        put("latitude", String.valueOf(latLng.latitude));
-                                        put("max_range", String.valueOf(DEFAULT_MAX_RANGE));
-                                        put("property_type", currentPropertyType.toString());
-                                        put("bedrooms", String.valueOf(currentBedroomCount));
-                                        put("postcode", rentPrices.getPostcodeDetails().getPostcode());
-                                    }
-                                });
+                            Instant processingEnd = Instant.now();
+                            logParams.put("app_duration",String.valueOf(Duration.between(processingStart, processingEnd)));
 
+                            if (rentPrices != null) {
+                                logParams.put("status", rentPrices.getStatus().toString());
+                                logParams.put("api_duration", String.valueOf(rentPrices.getDuration()));
+                                logParams.put("postcode", rentPrices.getPostcodeDetails().getPostcode());
+
+                                logEvent(UsageEventEnum.rent_prices_received, logParams);
                                 updateCurrentAnchor(rentPrices);
                             } else {
-                                // TODO: add error handling
-                                showMessage(
-                                        "Cannot find rent prices for this location try another one."
-                                );
+                                logEvent(UsageEventEnum.rent_prices_failed, logParams, TAG, "Cannot find rent prices for this location try another one.", Log.ERROR);
+                                showMessage(R.string.cannot_find_rent_prices);
                             }
                         }
 
                         @Override
                         public void onFailure(Exception e) {
-                            // TODO: handle postcode retrieval failure
-                            Log.e(TAG, e.toString());
-                            showMessage(
-                                    "Cannot get rent prices for this location."
-                            );
+                            Instant processingEnd = Instant.now();
+                            logParams.put("app_duration",String.valueOf(Duration.between(processingStart, processingEnd)));
+                            logEvent(UsageEventEnum.rent_prices_failed, logParams, TAG, "Cannot find rent prices for this location. Error: " + e.getMessage(), Log.ERROR);
+                            showMessage(R.string.cannot_find_rent_prices);
                         }
                     });
         } else {
-            Log.e(TAG, "Cannot capture new anchor, LatLng is null.");
+            logEvent(UsageEventEnum.rent_prices_failed, null, TAG, "Cannot capture new anchor, LatLng is null.", Log.ERROR);
         }
     }
 
@@ -538,6 +554,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Add marker to map and move camera to make that in the center
         Marker marker = mMap.addMarker(markerOptions);
         mMap.animateCamera(CameraUpdateFactory.newLatLng(markerPosition));
+        logEvent(UsageEventEnum.rent_prices_camera_moved_to_anchor);
 
         // Update marker snippet text and show snippet
         // Set rent price - take postcode area rent, if available; otherwise, local authority rent
@@ -548,6 +565,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
         // Save new marker and its associated rent price details
         markerDetails.setAnchorMarker(marker);
         markerDetails.setRentPrices(rentPrices);
+        logEvent(UsageEventEnum.rent_prices_anchor_set);
 
         // Create reference markers
         double maxDistance = 0.0;
@@ -573,6 +591,17 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 double distance = MapDistanceHelper.getDistance(postcodeDetails.getLatitude(), referencePostcode.getLatitude(),
                         postcodeDetails.getLongitude(), referencePostcode.getLongitude(), 0, 0);
                 maxDistance = (distance > maxDistance) ? distance : maxDistance;
+
+                logEvent(UsageEventEnum.rent_prices_references_set, new HashMap<String, String>() {
+                    {
+                        put("longitude", String.valueOf(referencePostcode.getLongitude()));
+                        put("latitude", String.valueOf(referencePostcode.getLatitude()));
+                        put("distance", String.valueOf(distance));
+                        put("property_type", currentPropertyType.toString());
+                        put("bedrooms", String.valueOf(currentBedroomCount));
+                        put("postcode", referencePostcode.getPostcode());
+                    }
+                });
             }
 
             // Create new circle around reference markers
@@ -584,6 +613,12 @@ public class DefaultMapsActivity extends FragmentActivity implements
                     .fillColor(DEFAULT_CIRCLE_COLOR)
             );
             markerDetails.setCircle(circle);
+
+            logEvent(UsageEventEnum.rent_prices_references_radius_set, new HashMap<String, String>() {
+                {
+                    put("radius", String.valueOf(circle.getRadius()));
+                }
+            });
         }
 
         // Save new marker details in the marker map
@@ -654,6 +689,8 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 if (circle != null) circle.setVisible(isAnchor);
             }
         }
+
+        logEvent(UsageEventEnum.rent_prices_references_updated);
     }
 
     @Override
@@ -665,7 +702,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 put("longitude", String.valueOf(marker.getPosition().longitude));
                 put("latitude", String.valueOf(marker.getPosition().latitude));
 
-                if(priceDetailsMap.containsKey(marker)) {
+                if (priceDetailsMap.containsKey(marker)) {
                     RentMarkerDetails markerDetails = priceDetailsMap.get(marker);
                     put("property_type", markerDetails.getRentPrices().getPropertyType().toString());
                     put("bedrooms", String.valueOf(markerDetails.getRentPrices().getBedrooms()));
@@ -687,14 +724,17 @@ public class DefaultMapsActivity extends FragmentActivity implements
         searchView.setQuery("", false);
         searchView.setIconified(true);
 
-        logEvent(UsageEventEnum.location_search_started, new HashMap<String, String>() {
-            {
-                put("location", location);
-            }
-        });
-
         // Get address from location text
+
         if (location != null || location.equals("")) {
+            Instant processingStart = Instant.now();
+            Map<String, String> logParams = new HashMap<String, String>() {
+                {
+                    put("location", location);
+                }
+            };
+            logEvent(UsageEventEnum.location_search_started, logParams);
+
             Geocoder geocoder = new Geocoder(DefaultMapsActivity.this);
             try {
                 List<Address> addressList = geocoder.getFromLocationName(location, 1);
@@ -703,41 +743,25 @@ public class DefaultMapsActivity extends FragmentActivity implements
                     Address address = addressList.get(0);
                     LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
 
-                    logEvent(UsageEventEnum.location_search_completed, new HashMap<String, String>() {
-                        {
-                            put("location", location);
-                            put("longitude", String.valueOf(latLng.longitude));
-                            put("latitude", String.valueOf(latLng.latitude));
-                            put("address", address.toString());
-                        }
-                    });
+                    Instant processingEnd = Instant.now();
+                    logParams.put("app_duration",String.valueOf(Duration.between(processingStart, processingEnd)));
+                    logParams.put("longitude", String.valueOf(latLng.longitude));
+                    logParams.put("latitude", String.valueOf(latLng.latitude));
+                    logParams.put("address", address.toString());
+                    logEvent(UsageEventEnum.location_search_completed, logParams);
 
                     captureCurrentAnchor(latLng);
                 } else {
-                    Log.e(TAG, "Failed to get addresses from location, no results for " + location);
-                    // TODO: use strings
-                    Toast.makeText(getApplicationContext(),
-                            "No results for " + location,
-                            Toast.LENGTH_LONG)
-                            .show();
-
-                    logEvent(UsageEventEnum.location_search_failed, new HashMap<String, String>() {
-                        {
-                            put("location", location);
-                        }
-                    });
+                    logEvent(UsageEventEnum.location_search_failed, logParams, TAG, "Failed to get addresses from location, no results for " + location, Log.ERROR);
+                    showMessage(R.string.cannot_find_location_address);
                 }
             } catch (IOException e) {
-                // TODO: add error handling
-                Log.e(TAG, "Failed to get addresses from location: " + e.toString());
+                logEvent(UsageEventEnum.location_search_failed, logParams, TAG, "Failed to get addresses from location, no results for " + location + ". Error: " + e.getMessage(), Log.ERROR);
+                showMessage(R.string.cannot_find_location_address);
             }
         } else {
-            // TODO: use strings
-            Log.e(TAG, "Failed to get addresses from location, location text is empty.");
-            Toast.makeText(getApplicationContext(),
-                    "Location is empty",
-                    Toast.LENGTH_LONG)
-                    .show();
+            logEvent(UsageEventEnum.location_search_not_specified, null, TAG, "Failed to get addresses from location, location text is empty.", Log.ERROR);
+            showMessage(R.string.cannot_find_location_address_empty);
         }
         return false;
     }
@@ -759,7 +783,7 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 put("longitude", String.valueOf(marker.getPosition().longitude));
                 put("latitude", String.valueOf(marker.getPosition().latitude));
 
-                if(priceDetailsMap.containsKey(marker)) {
+                if (priceDetailsMap.containsKey(marker)) {
                     RentMarkerDetails markerDetails = priceDetailsMap.get(marker);
                     put("property_type", markerDetails.getRentPrices().getPropertyType().toString());
                     put("bedrooms", String.valueOf(markerDetails.getRentPrices().getBedrooms()));
@@ -772,15 +796,23 @@ public class DefaultMapsActivity extends FragmentActivity implements
         return false;
     }
 
-    private void showMessage(String text) {
+    private void showMessage(int stringId) {
         Toast toast = Toast.makeText(getApplicationContext(),
-                text,
+                getApplicationContext().getResources().getString(stringId),
                 Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
     }
 
+    private void logEvent(UsageEventEnum eventName) {
+        logEvent(eventName, null, TAG, null, DEFAULT_LOG_LEVEL);
+    }
+
     private void logEvent(UsageEventEnum eventName, Map<String, String> eventParams) {
+        logEvent(eventName, eventParams, TAG, null, DEFAULT_LOG_LEVEL);
+    }
+
+    private void logEvent(UsageEventEnum eventName, Map<String, String> eventParams, String eventTag, String eventMessage, int eventLevel) {
         if (eventName != null) {
             Bundle eventBundle = new Bundle();
             if (eventParams != null && eventParams.size() > 0) {
@@ -789,8 +821,19 @@ public class DefaultMapsActivity extends FragmentActivity implements
                 }
             }
             mFirebaseAnalytics.logEvent(eventName.toString(), eventBundle);
+
+            StringBuilder eventText = new StringBuilder();
+            eventText.append(eventName);
+            if (eventMessage != null) {
+                eventText.append(", ");
+                eventText.append(eventMessage);
+            }
+            if (eventParams != null) {
+                eventText.append(", [");
+                eventText.append(eventParams.toString());
+                eventText.append("]");
+            }
+            Log.println(eventLevel, eventTag, eventText.toString());
         }
     }
-
-
 }

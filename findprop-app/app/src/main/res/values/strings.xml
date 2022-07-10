@@ -38,4 +38,11 @@
     <string name="two_bedroom">2 bedrooms</string>
     <string name="three_bedroom">3 bedrooms</string>
     <string name="four_and_more_bedroom">4 and more bedrooms</string>
+    <string name="cannot_find_rent_prices">Cannot find rent prices for this location, try another one.</string>
+    <string name="cannot_get_location_permission">Cannot get location permission.</string>
+    <string name="cannot_load_map">Cannot load map, check connectivity.</string>
+    <string name="cannot_set_current_location">Cannot set current location, permission not granted.</string>
+    <string name="cannot_determine_current_location">Cannot determine current location, check GPS.</string>
+    <string name="cannot_find_location_address">Failed to get addresses from location, no results.</string>
+    <string name="cannot_find_location_address_empty">Location not specified..</string>
 </resources>

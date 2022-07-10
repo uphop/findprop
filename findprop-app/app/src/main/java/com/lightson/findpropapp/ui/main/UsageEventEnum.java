@@ -2,6 +2,9 @@ package com.lightson.findpropapp.ui.main;
 
 public enum UsageEventEnum {
     session_start,
+    map_initialised,
+    map_styling_failed,
+    map_setup_failed,
     marker_info_window_clicked,
     marker_info_window_long_clicked,
     marker_clicked,
@@ -13,11 +16,23 @@ public enum UsageEventEnum {
     location_permission_rejected,
     my_location_enabled,
     my_location_disabled,
-    camera_moved_to_current_location,
+    my_location_failed,
+    current_location_updated,
+    current_location_undetermined,
+    current_location_permission_failed,
+    current_location_security_failed,
+    current_location_failed,
+    location_search_not_specified,
     location_search_started,
     location_search_completed,
     location_search_failed,
     map_clicked,
     rent_prices_requested,
-    rent_prices_received
+    rent_prices_received,
+    rent_prices_failed,
+    rent_prices_camera_moved_to_anchor,
+    rent_prices_anchor_set,
+    rent_prices_references_set,
+    rent_prices_references_radius_set,
+    rent_prices_references_updated
 }
