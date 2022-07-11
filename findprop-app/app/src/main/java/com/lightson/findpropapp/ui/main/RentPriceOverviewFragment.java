@@ -23,6 +23,8 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.lightson.findpropapp.R;
 import com.lightson.findpropapp.model.RentPriceResponse;
 
@@ -35,6 +37,8 @@ import java.util.Map;
 
 public class RentPriceOverviewFragment extends Fragment {
     private static final String TAG = RentPriceOverviewFragment.class.getSimpleName();
+    private LogHelper logHelper;
+
     private static final String ARG_CURRENT_PRICE_DETAILS = "CURRENT_PRICE_DETAILS";
     private static final int DEFAULT_LOW_BAR_COLOR = Color.valueOf(0, 0, 0, 0).toArgb();
     private static final Map<RentPriceEntryType, int[]> priceEntryColorMap = new HashMap<RentPriceEntryType, int[]>() {
@@ -93,6 +97,9 @@ public class RentPriceOverviewFragment extends Fragment {
         if (getArguments() != null) {
             currentPriceDetails = (RentPriceResponse) getArguments().getSerializable(ARG_CURRENT_PRICE_DETAILS);
         }
+
+        logHelper = new LogHelper(TAG, this.getContext());
+        logHelper.logEvent(UsageEventEnum.rent_prices_overview_started);
     }
 
     @Override
@@ -287,6 +294,20 @@ public class RentPriceOverviewFragment extends Fragment {
         chart.setData(data);
     }
 
+    private void setListeners(CombinedChart chart, ArrayList<RentPriceEntry> rentPrices) {
+        chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
+    }
+
     private void updateChart(View mView) {
         ArrayList<RentPriceEntry> rentPrices = RentPriceOverviewPreprocessor.getRentPriceEntries(this.currentPriceDetails, this.getContext());
 
@@ -298,6 +319,9 @@ public class RentPriceOverviewFragment extends Fragment {
         styleLegend(chart, rentPrices);
         styleDescription(chart, rentPrices);
         styleChart(chart);
+        setListeners(chart, rentPrices);
         chart.invalidate(); // refresh
+
+
     }
 }

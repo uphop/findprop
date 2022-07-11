@@ -10,9 +10,12 @@ import com.github.mikephil.charting.utils.MPPointF;
 import com.lightson.findpropapp.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RentPriceOverviewMarkerView extends MarkerView {
     private static final String TAG = RentPriceOverviewMarkerView.class.getSimpleName();
+    private LogHelper logHelper;
+
     private TextView markerContent;
     private MPPointF mOffset;
     private ArrayList<RentPriceEntry> rentPrices;
@@ -21,6 +24,7 @@ public class RentPriceOverviewMarkerView extends MarkerView {
         super(context, layoutResource);
         markerContent = (TextView) findViewById(R.id.marker_content);
         this.rentPrices = rentPrices;
+        logHelper = new LogHelper(TAG, context);
     }
 
     @Override
@@ -34,6 +38,13 @@ public class RentPriceOverviewMarkerView extends MarkerView {
     private String getDescription(Entry entry) {
         if (entry != null && this.rentPrices != null) {
             RentPriceEntry priceEntry = rentPrices.get((int) entry.getX());
+
+            logHelper.logEvent(UsageEventEnum.rent_prices_overview_marker_shown, new HashMap<String, String>() {
+                {
+                    put("label", priceEntry.getLabel());
+                }
+            });
+
             return priceEntry.getDescription();
         }
         return "";

@@ -2,7 +2,6 @@ package com.lightson.findpropapi.service;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -21,7 +20,6 @@ import com.lightson.findpropapi.entity.PostcodeRentPrice;
 import com.lightson.findpropapi.entity.Region;
 import com.lightson.findpropapi.entity.RegionRentPrice;
 import com.lightson.findpropapi.model.RentPriceResponse;
-import com.lightson.findpropapi.model.UpfrontPriceCompositeDetails;
 import com.lightson.findpropapi.model.UpfrontPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.UpfrontPricePostcodeAreaDetails;
 import com.lightson.findpropapi.model.UpfrontPricePostcodeDetails;

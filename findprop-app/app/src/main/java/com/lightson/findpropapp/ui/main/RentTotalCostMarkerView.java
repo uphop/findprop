@@ -11,15 +11,19 @@ import com.github.mikephil.charting.utils.MPPointF;
 import com.lightson.findpropapp.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RentTotalCostMarkerView extends MarkerView {
     private static final String TAG = RentTotalCostMarkerView.class.getSimpleName();
+    private LogHelper logHelper;
+
     private MPPointF mOffset;
     private ArrayList<RentCostEntry> rentCosts;
 
     public RentTotalCostMarkerView(Context context, int layoutResource, ArrayList<RentCostEntry> rentCosts) {
         super(context, layoutResource);
         this.rentCosts = rentCosts;
+        logHelper = new LogHelper(TAG, context);
     }
 
     @Override
@@ -33,6 +37,12 @@ public class RentTotalCostMarkerView extends MarkerView {
                 if (markerContent != null) {
                     markerContent.setText(description);
                     super.refreshContent(e, highlight);
+
+                    logHelper.logEvent(UsageEventEnum.rent_total_cost_marker_shown, new HashMap<String, String>() {
+                        {
+                            put("label", pieEntry.getLabel());
+                        }
+                    });
                 }
             }
         }

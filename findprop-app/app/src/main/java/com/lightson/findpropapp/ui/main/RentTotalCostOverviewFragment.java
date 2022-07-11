@@ -28,6 +28,8 @@ import java.util.Map;
 
 public class RentTotalCostOverviewFragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
     private static final String TAG = RentTotalCostOverviewFragment.class.getSimpleName();
+    private LogHelper logHelper;
+
     private static final String ARG_CURRENT_PRICE_DETAILS = "CURRENT_PRICE_DETAILS";
     private static final Map<RentCostEntryType, Integer> costColorMap = new HashMap<RentCostEntryType, Integer>() {
         {
@@ -67,6 +69,9 @@ public class RentTotalCostOverviewFragment extends Fragment implements CompoundB
         if (getArguments() != null) {
             currentPriceDetails = (RentPriceResponse) getArguments().getSerializable(ARG_CURRENT_PRICE_DETAILS);
         }
+
+        logHelper = new LogHelper(TAG, this.getContext());
+        logHelper.logEvent(UsageEventEnum.rent_total_cost_overview_started);
     }
 
     @Override
@@ -206,5 +211,11 @@ public class RentTotalCostOverviewFragment extends Fragment implements CompoundB
 
         // update chart with new upfront cost visibility
         updateChart(this.chart, isChecked);
+
+        logHelper.logEvent(UsageEventEnum.rent_total_cost_fist_month_toggle_switched, new HashMap<String, String>() {
+            {
+                put("is_checked", String.valueOf(isChecked));
+            }
+        });
     }
 }

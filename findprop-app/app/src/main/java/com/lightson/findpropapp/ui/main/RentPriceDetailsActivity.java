@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.lightson.findpropapp.DefaultMapsActivity;
 import com.lightson.findpropapp.R;
 import com.lightson.findpropapp.databinding.ActivityRentPriceDetailsBinding;
 import com.lightson.findpropapp.model.RentPriceResponse;

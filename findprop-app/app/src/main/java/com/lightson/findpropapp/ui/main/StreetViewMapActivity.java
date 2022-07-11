@@ -10,9 +10,13 @@ import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.lightson.findpropapp.DefaultMapsActivity;
 import com.lightson.findpropapp.R;
 
 public class StreetViewMapActivity extends FragmentActivity implements OnMapReadyCallback, OnStreetViewPanoramaReadyCallback {
+
+    private static final String TAG = StreetViewMapActivity.class.getSimpleName();
+    private LogHelper logHelper;
 
     private GoogleMap mMap;
     private static final String ARG_CURRENT_LAT = "ARG_CURRENT_LAT";
@@ -28,6 +32,9 @@ public class StreetViewMapActivity extends FragmentActivity implements OnMapRead
                 (SupportStreetViewPanoramaFragment) getSupportFragmentManager()
                         .findFragmentById(R.id.streetviewpanorama);
         streetViewPanoramaFragment.getStreetViewPanoramaAsync(this);
+
+        logHelper = new LogHelper(TAG, this);
+        logHelper.logEvent(UsageEventEnum.street_view_started, null);
     }
 
     @Override
@@ -39,23 +46,6 @@ public class StreetViewMapActivity extends FragmentActivity implements OnMapRead
     public void onStreetViewPanoramaReady(StreetViewPanorama streetViewPanorama) {
         this.streetViewPanorama = streetViewPanorama;
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            double latitude = extras.getDouble(ARG_CURRENT_LAT);
-            double longitude = extras.getDouble(ARG_CURRENT_LON);
-            LatLng position = new LatLng(latitude, longitude);
-
-            /*MarkerOptions markerOptions = new MarkerOptions()
-                    .position(position)
-                    .title("Hello there!");
-            Marker marker = mMap.addMarker(markerOptions);*/
-
-            this.streetViewPanorama.setPosition(position);
-        }
-
-    }
-
-    private void updatePosition() {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             double latitude = extras.getDouble(ARG_CURRENT_LAT);

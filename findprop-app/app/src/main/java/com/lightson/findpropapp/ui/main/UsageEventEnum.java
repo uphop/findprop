@@ -34,5 +34,11 @@ public enum UsageEventEnum {
     rent_prices_anchor_set,
     rent_prices_references_set,
     rent_prices_references_radius_set,
-    rent_prices_references_updated
+    rent_prices_references_updated,
+    rent_prices_overview_started,
+    rent_prices_overview_marker_shown,
+    rent_total_cost_overview_started,
+    rent_total_cost_fist_month_toggle_switched,
+    rent_total_cost_marker_shown,
+    street_view_started
 }
