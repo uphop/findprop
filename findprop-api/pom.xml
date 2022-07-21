@@ -7,15 +7,39 @@
 		<version>2.6.6</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
+	<profiles>
+        <profile>
+            <id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+            <properties>
+                <spring.profiles.active>local</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
+
 	<groupId>com.lightson</groupId>
 	<artifactId>findprop-api</artifactId>
-	<version>0.1</version>
+	<version>${spring.profiles.active}-0.1</version>
 	<packaging>jar</packaging>
 	<name>findprop-api</name>
 	<description>FindProp API.</description>
+
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

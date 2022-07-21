@@ -37,6 +37,14 @@ Set-up EC2
     1. scp -i ~/Projects/findprop/findprop-api/findprop-api-dev-key-pair.pem target/findprop-api-0.1.jar ubuntu@ec2-34-244-237-138.eu-west-1.compute.amazonaws.com:/home/ubuntu/findprop
 12. Run API:
 
+Configure HTTPS:
+1. Install certbot: https://certbot.eff.org/instructions
+
+
+
+
+
+
 
 
 

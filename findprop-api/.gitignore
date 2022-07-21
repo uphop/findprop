@@ -34,11 +34,14 @@ build/
 .idea
 
 ### Custom application config
-# *.properties
+application-*.properties
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
+# Keys
+!**/src/main/**/keystore/
 *.pem
+*.p12
