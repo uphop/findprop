@@ -1,9 +1,11 @@
-package com.lightson.findpropapi;
+package com.lightson.findpropapi.api;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-public class ServletInitializer extends SpringBootServletInitializer {
+import com.lightson.findpropapi.FindpropApiApplication;
+
+public class FindPropApiServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {

@@ -1,8 +1,5 @@
 package com.lightson.findpropapi.service;
 
-import java.time.Duration;
-import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -11,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lightson.findpropapi.api.FindPropApiException;
 import com.lightson.findpropapi.entity.LocalAuthority;
 import com.lightson.findpropapi.entity.LocalAuthorityRentPrice;
 import com.lightson.findpropapi.entity.LocalAuthorityUtilityPrice;
@@ -28,7 +26,6 @@ import com.lightson.findpropapi.model.UtilityPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPriceLocalAuthorityDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeAreaDetails;
 import com.lightson.findpropapi.model.RentPricePostcodeDetails;
-import com.lightson.findpropapi.model.RentPricePropertyTypeEnum;
 import com.lightson.findpropapi.model.RentPriceRegionDetails;
 import com.lightson.findpropapi.repository.LocalAuthorityRentPriceRepository;
 import com.lightson.findpropapi.repository.LocalAuthorityUtilityPriceRepository;
@@ -63,27 +60,15 @@ public class PriceService {
 
         private final Logger log = LoggerFactory.getLogger(PriceService.class);
 
-        public RentPriceResponse getRentPrice(double longitude, double latitude, double maxRange, String propertyType,
-                        int bedrooms) {
-
-                // init response and take start of processing time
-                Instant processingStart = Instant.now();
-                RentPriceResponse response = new RentPriceResponse();
-
-                // return back input params
-                updateParams(response, longitude, latitude, maxRange, propertyType, bedrooms);
+        public RentPriceResponse getRentPrice(RentPriceResponse response, double longitude, double latitude, double maxRange, String propertyType,
+                        int bedrooms) throws FindPropApiException {
 
                 // find nearest postcodes
                 List<Postcode> postcodes = getNearestPostcodes(longitude, latitude, maxRange);
                 if (postcodes == null || postcodes.size() == 0) {
-                        log.error(String.format(
-                                        "Cannot find nearest postcode for longitude %f, latitude %f, maxRange %f",
-                                        longitude, latitude, maxRange));
-
-                        response.setDuration(Duration.between(processingStart, Instant.now()).toMillis());
-                        response.setStatus(RentPriceResponse.StatusEnum.FAILURE);
-                        response.setCode(500);
-                        return response;
+                        throw new FindPropApiException(String.format(
+                                "Cannot find nearest postcode for longitude %f, latitude %f, maxRange %f",
+                                longitude, latitude, maxRange));
                 }
 
                 // get nearest postcode
@@ -92,25 +77,17 @@ public class PriceService {
                 // get local authority
                 LocalAuthority localAuthority = postcode.getLocalAuthority();
                 if (localAuthority == null) {
-                        log.error(String.format(
+                        throw new FindPropApiException(String.format(
                                         "Cannot find local authority for postcode %s",
                                         postcode.getCode()));
-                        response.setDuration(Duration.between(processingStart, Instant.now()).toMillis());
-                        response.setStatus(RentPriceResponse.StatusEnum.FAILURE);
-                        response.setCode(500);
-                        return response;
                 }
 
                 // get region
                 Region region = localAuthority.getRegion();
                 if (region == null) {
-                        log.error(String.format(
+                        throw new FindPropApiException(String.format(
                                         "Cannot find region for local authority %s",
                                         localAuthority.getName()));
-                        response.setDuration(Duration.between(processingStart, Instant.now()).toMillis());
-                        response.setStatus(RentPriceResponse.StatusEnum.FAILURE);
-                        response.setCode(500);
-                        return response;
                 }
 
                 // set rent price of region
@@ -142,23 +119,7 @@ public class PriceService {
                 // set rent upfront costs
                 setUpfrontCostDetails(response, localAuthorityRentPrice, postcodeAreaRentPrice, postcodeRentPrice);
 
-                // set status and processing time
-                response.setDuration(Duration.between(processingStart, Instant.now()).toMillis());
-                response.setStatus(RentPriceResponse.StatusEnum.OK);
-                response.setCode(200);
-
                 return response;
-        }
-
-        private void updateParams(RentPriceResponse response, double longitude, double latitude, double maxRange,
-                        String propertyType,
-                        int bedrooms) {
-                response.setTimestamp(new Date());
-                response.setBedrooms(bedrooms);
-                response.setLatitude(latitude);
-                response.setLongitude(longitude);
-                response.setMaxRange(maxRange);
-                response.setPropertyType(RentPricePropertyTypeEnum.valueOf(propertyType));
         }
 
         private void setRegionDetails(RentPriceResponse response, Region region, String propertyType,

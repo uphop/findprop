@@ -34,7 +34,7 @@ build/
 .idea
 
 ### Custom application config
-application-*.properties
+application-dev.properties
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
@@ -42,6 +42,5 @@ application-*.properties
 !.elasticbeanstalk/*.global.yml
 
 # Keys
-!**/src/main/**/keystore/
-*.pem
-*.p12
+findprop-api-dev-key-pair.pem
+findprop-api-cert-dev.p12

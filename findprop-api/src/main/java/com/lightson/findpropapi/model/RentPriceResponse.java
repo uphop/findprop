@@ -17,11 +17,13 @@ public class RentPriceResponse implements Serializable {
 
     public enum StatusEnum {
         OK,
-        FAILURE
+        FAILURE,
+        INVALID_API_KEY
     }
 
     private StatusEnum status;
     private int code;
+    private String message;
     private double longitude;
     private double latitude;
     private double maxRange;
@@ -205,5 +207,13 @@ public class RentPriceResponse implements Serializable {
 
     public void setDuration(Long duration) {
         this.duration = duration;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
