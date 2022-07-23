@@ -17,8 +17,7 @@ public class RentPriceResponse implements Serializable {
 
     public enum StatusEnum {
         OK,
-        FAILURE,
-        INVALID_API_KEY
+        FAILURE
     }
 
     private StatusEnum status;

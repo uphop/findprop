@@ -33,14 +33,14 @@ build/
 .vscode/
 .idea
 
-### Custom application config
-application-dev.properties
-
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
+### Custom application config
+application-dev.properties
+
 # Keys
-findprop-api-dev-key-pair.pem
-findprop-api-cert-dev.p12
+*.pem
+*.p12

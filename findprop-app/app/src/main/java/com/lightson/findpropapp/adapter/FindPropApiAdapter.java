@@ -16,8 +16,9 @@ import org.json.JSONObject;
 
 public class FindPropApiAdapter {
     private static final String TAG = FindPropApiAdapter.class.getSimpleName();
-    private static final String FINDPROP_API_BASE_URL = "https://localhost:8443/findprop/api/v1";
-    // private static final String FINDPROP_API_BASE_URL = "http://ec2-34-244-237-138.eu-west-1.compute.amazonaws.com:5000/findprop/api/v1";
+    // private static final String FINDPROP_API_BASE_URL = "http://localhost:5001/findprop/api/v1";
+    private static final String FINDPROP_API_BASE_URL = "https://findprop.info:8443/findprop/api/v1";
+    private static final String FINDPROP_API_KEY = "TONQn8aI8lK9l6IaE4xsX81uPoaKUOB59b";
     private final Context ctx;
 
     public FindPropApiAdapter(Context ctx) {
@@ -26,8 +27,8 @@ public class FindPropApiAdapter {
 
     public void getRentPrices(double longitude, double latitude, double maxRange, RentPricePropertyTypeEnum propertyType, int bedrooms, RentPriceCallback callback) {
         // prepare URL and call backend
-        String url = String.format(FINDPROP_API_BASE_URL + "/rent/price?longitude=%f&latitude=%f&maxRange=%f&propertyType=%s&bedrooms=%d",
-                longitude, latitude, maxRange, propertyType, bedrooms);
+        String url = String.format(FINDPROP_API_BASE_URL + "/rent/price?longitude=%f&latitude=%f&maxRange=%f&propertyType=%s&bedrooms=%d&apiKey=%s",
+                longitude, latitude, maxRange, propertyType, bedrooms, FINDPROP_API_KEY);
 
         call(url, Request.Method.GET, null, new Response.Listener<JSONObject>() {
             @Override
@@ -38,7 +39,7 @@ public class FindPropApiAdapter {
                     RentPriceResponse parsedResponse = objectMapper.readValue(response.toString(), RentPriceResponse.class);
 
                     if (parsedResponse.getStatus() != RentPriceResponse.StatusEnum.OK) {
-                        callback.onFailure(new Exception("Rent price retrieval failed."));
+                        callback.onFailure(new Exception("Rent price retrieval failed: " + parsedResponse.getMessage()));
                         return;
                     }
 
