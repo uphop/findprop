@@ -17,5 +17,4 @@ local.properties
 
 init_adb.sh
 google-services.json
-
 *.pem

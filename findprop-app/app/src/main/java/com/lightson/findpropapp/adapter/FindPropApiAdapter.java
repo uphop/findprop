@@ -8,6 +8,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lightson.findpropapp.BuildConfig;
 import com.lightson.findpropapp.model.RentPricePropertyTypeEnum;
 import com.lightson.findpropapp.model.RentPriceResponse;
 import com.lightson.findpropapp.network.RequestQueueSingleton;
@@ -16,9 +17,8 @@ import org.json.JSONObject;
 
 public class FindPropApiAdapter {
     private static final String TAG = FindPropApiAdapter.class.getSimpleName();
-    // private static final String FINDPROP_API_BASE_URL = "http://localhost:5001/findprop/api/v1";
-    private static final String FINDPROP_API_BASE_URL = "https://findprop.info:8443/findprop/api/v1";
-    private static final String FINDPROP_API_KEY = "TONQn8aI8lK9l6IaE4xsX81uPoaKUOB59b";
+    private static final String FINDPROP_API_BASE_URL = BuildConfig.API_URL;
+    private static final String FINDPROP_API_KEY = BuildConfig.API_KEY;
     private final Context ctx;
 
     public FindPropApiAdapter(Context ctx) {

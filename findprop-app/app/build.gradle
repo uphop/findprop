@@ -18,12 +18,35 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            applicationIdSuffix 'com.lightson.findpropapp'
+            applicationIdSuffix '.release'
         }
     }
+
+    flavorDimensions "targetEnvironment"
+    productFlavors {
+        local {
+            dimension "targetEnvironment"
+            applicationIdSuffix ".local"
+            versionNameSuffix "-local"
+            buildConfigField 'String', 'API_URL', '"http://localhost:5001/findprop/api/v1"'
+            buildConfigField 'String', 'API_KEY', '"mFKeDP71Bnh3PIwi3EoG"'
+        }
+        dev {
+            dimension "targetEnvironment"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            buildConfigField 'String', 'API_URL', '"https://findprop.info:8443/findprop/api/v1"'
+            buildConfigField 'String', 'API_KEY', '"TONQn8aI8lK9l6IaE4xsX81uPoaKUOB59b"'
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -36,7 +59,7 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.google.android.gms:play-services-location:20.0.0'
